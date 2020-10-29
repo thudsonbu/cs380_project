@@ -1,0 +1,9 @@
+1. sql get querry function that allows you to query the database
+2. Make table function - when you run that it will make a table true false delete button
+3. Product Page
+4. Techician Page
+5. Product Add Form
+6. Techniciant Add Form
+7. sql post query function
+8. sql search function
+9. Customer form w/ prefiled data
