@@ -28,33 +28,9 @@
 
 <body>
     <!-- Responsive Nabvar -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="index.html">
-            <img src="./images/avatar.png" class="myLogo" alt="myLogo">
-        </a>
-        <!-- Toggle Open Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-haspopup="true" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Navbar Content -->
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="navbar-nav navItem">
-                    <a class="nav-link link" href="./index.html"><span class="">Home</span></a>
-                </li>
-                <li class="navbar-nav navItem">
-                    <a class="nav-link link" href="./Assign1/index.html"><span class="">Assignment 1</span></a>
-                </li>
-                <li class="navbar-nav navItem">
-                    <a class="nav-link link" href="./person.php"><span class="">Person</span></a>
-                </li>
-                <li class="navbar-nav navItem">
-                    <a class="nav-link link" href="./census.php"><span class="">Census</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php
+        require '../view/nav.php';
+    ?>
 
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
