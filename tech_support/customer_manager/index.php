@@ -64,18 +64,28 @@
     </div>
 
     <!-- PAGE CONTENT -->
+    
     <div class='sectionContainer'>
-        <?php
+        <div class='sectionContainer'>
+            <?php
 
-        require "customerSearch.php";
+            require "customerSearch.php";
 
-        ?>
-    </div>
-    <div class='sectionContainer'>
+            ?>
+        </div>
         <div class='tableContainer'>
             <?php
 
-            $query = "SELECT firstname, lastname, email, city FROM customers;";
+            if (empty($_GET['lastname'])) {
+
+                $query = "SELECT firstname, lastname, email, city FROM customers;";
+
+            } else {
+
+                $Search = $_GET['lastname'];
+
+                $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
+            }
 
             require "../model/database.php";
             require "customerTable.php";
