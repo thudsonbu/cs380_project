@@ -45,8 +45,6 @@
         </div>
     </div>
 
-<h1 >Product List</h1>
-
     <!-- PAGE CONTENT -->
     <div class='sectionContainer'>
         <div class='tableContainer'>
