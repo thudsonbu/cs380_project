@@ -37,7 +37,7 @@ while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
     echo "<form method='POST' action='index.php'>";
     // inner loop. Print each field value for a result set record
     foreach ($line as $key => $value) {
-        echo "<td class='tableData'><input type='text' value='" . $value . "' name='" . $key . "'/></td>";
+        echo "<td class='tableData'>$value</td>";
     }
     
     // put delete button on form
