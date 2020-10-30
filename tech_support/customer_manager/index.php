@@ -58,20 +58,29 @@
 
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
-        <div class='pageTitle'>
-            SportPro Technical Support
-        </div>
         <div class='pageSubtitle'>
-            Sports manaagement software for sports enthusiasts.
+            Search Customer
         </div>
     </div>
 
     <!-- PAGE CONTENT -->
     <div class='sectionContainer'>
+        <?php
+
+        require "customerSearch.php";
+
+        ?>
+    </div>
+    <div class='sectionContainer'>
         <div class='tableContainer'>
             <?php
 
+            $query = "SELECT firstname, lastname, email, city FROM customers;";
+
+            require "../model/database.php";
             require "customerTable.php";
+
+            createCustomerTable($con, $query);
 
             ?>
         </div>
