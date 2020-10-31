@@ -6,8 +6,11 @@ echo "
         Search by Customer Lastname
     </div>
     <div class='customerSearchBar'>
-        LastName: <input type='text' name='lastname'><a href='index.php' class='resetButton'>Reset</a>
+        LastName: <input type='text' name='lastname'>
+        <button type='submit' class='button blue'>Search</button>
+        <a href='index.php' class='button grey'>Reset</a>
     </div>
+    
 ";
 
 if (!empty($_GET['message'])) {

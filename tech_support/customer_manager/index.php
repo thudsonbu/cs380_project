@@ -74,10 +74,10 @@
 
                     echo "HTML Injection Detected";
 
-                    $query = "SELECT firstname, lastname, email, city, customerID FROM customers;";
+                    $query = "SELECT firstname, lastname, email, city FROM customers;";
                 } else {
 
-                    $query = "SELECT firstname, lastname, email, city, customerID FROM customers WHERE lastname='$Search';";
+                    $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
                 }
 
             }

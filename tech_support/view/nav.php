@@ -2,7 +2,7 @@
 
 echo "
 
-<nav class='navbar navbar-expand-md navbar-dark bg-dark'>
+<nav class='navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark'>
     <!-- Brand -->
     <a class='navbar-brand' href='index.html'>
         <img src='../images/avatar.png' class='myLogo' alt='myLogo'>

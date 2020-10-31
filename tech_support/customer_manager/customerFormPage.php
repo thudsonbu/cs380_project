@@ -38,7 +38,7 @@
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
         <div class='pageTitle'>
-            Search Customer
+            Update Customer
         </div>
     </div>
 
