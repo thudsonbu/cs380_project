@@ -5,7 +5,7 @@ echo "
 <nav class='navbar navbar-expand-md navbar-dark bg-dark'>
     <!-- Brand -->
     <a class='navbar-brand' href='index.html'>
-        <img src='./images/avatar.png' class='myLogo' alt='myLogo'>
+        <img src='../images/avatar.png' class='myLogo' alt='myLogo'>
     </a>
     <!-- Toggle Open Button -->
     <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-haspopup='true' aria-expanded='false'>

@@ -1,6 +1,7 @@
 /*****************************************
 * Create the tech_support database
 *****************************************/
+USE hudsonthom;
 
 DROP TABLE  IF EXISTS products;
 CREATE TABLE products (

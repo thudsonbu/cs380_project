@@ -27,47 +27,61 @@
 
 
 <body>
-    <!-- Responsive Nabvar -->
+    <!-- RESPONSIVE NAVBAR -->
     <?php
-        require '../view/nav.php';
+        require '../view/nav.php'
     ?>
 
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
-        <div class='pageSubtitle'>
+        <div class='pageTitle'>
             Search Customer
         </div>
     </div>
 
     <!-- PAGE CONTENT -->
-    
     <div class='sectionContainer'>
-        <div class='sectionContainer'>
-            <?php
-
-            require "customerSearch.php";
-
-            ?>
-        </div>
         <div class='tableContainer'>
+            <div class='searchForm'>
+                <!-- FORM FOR SEARCHING CUSTOMERS -->
+                <?php
+
+                require "customerSearch.php";
+
+                ?>
+            </div>
             <?php
 
+            // CHECK IF THERE WAS A GET REQUEST SENT
             if (empty($_GET['lastname'])) {
-
+                // IF THERE WAS NO GET REQUEST SELECT ALL
                 $query = "SELECT firstname, lastname, email, city FROM customers;";
 
             } else {
-
+                // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
                 $Search = $_GET['lastname'];
 
                 $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
             }
 
+            // DATABASE, QUERY AND CUSTOMER TABLE CREATOR
             require "../model/database.php";
+            require "../model/selectQuery.php";
             require "customerTable.php";
 
-            createCustomerTable($con, $query);
+            $out = selectQuery($con, $query);
 
+            if($out[1]){
+
+                echo "Query Error";
+
+            } else if(empty($out[0])){
+
+                echo "No Results Found";
+            } else {
+
+                createCustomerTable($out[0]);
+            }
             ?>
         </div>
     </div>

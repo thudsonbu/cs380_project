@@ -1,7 +1,7 @@
 <?php
 
 echo "
-<form action='index.php' method='get' class='searchForm'>
+<form action='index.php' method='post' class='searchForm'>
     <div class='customerSearchBar'>
         FirstName: <input type='text' name='firstname'>
     </div>
@@ -32,5 +32,6 @@ echo "
     <div class='customerSearchBar'>
         Password: <input type='text' name='lastname'>
     </div>
+    <button type='submit' value='submit'>
 </form>
 ";

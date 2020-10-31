@@ -1,10 +1,6 @@
 <?php
 
-require "../model/database.php";
-
-function createCustomerTable($con, $query) {
-
-    $result = mysqli_query($con, $query);
+function createCustomerTable($result) {
 
     $fields = mysqli_fetch_fields($result);
 
@@ -36,8 +32,6 @@ function createCustomerTable($con, $query) {
     }
 
     echo "</table>";
-
-    mysqli_close($con);
 
 }
 
