@@ -52,6 +52,8 @@
             </div>
             <?php
 
+            require "../model/testInput.php";
+
             // CHECK IF THERE WAS A GET REQUEST SENT
             if (empty($_GET['lastname'])) {
                 // IF THERE WAS NO GET REQUEST SELECT ALL
@@ -61,7 +63,19 @@
                 // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
                 $Search = $_GET['lastname'];
 
-                $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
+                // TEST FOR HTML INJECTION
+                $isHtmlInjection = testInput($Search);
+
+                if($isHtmlInjection){
+
+                    echo "HTML Injection Detected";
+
+                    $query = "SELECT firstname, lastname, email, city FROM customers;";
+                } else {
+
+                    $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
+                }
+
             }
 
             // DATABASE, QUERY AND CUSTOMER TABLE CREATOR
@@ -71,17 +85,23 @@
 
             $out = selectQuery($con, $query);
 
-            if($out[1]){
+            if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
                 echo "Query Error";
 
-            } else if(empty($out[0])){
+            } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
                 echo "No Results Found";
-            } else {
+
+
+            } else { // IF NO ERROR AND RESULTS CREATE TABLE
 
                 createCustomerTable($out[0]);
             }
+
+            // CLOSE CONNECTION
+            mysqli_close($con);
+
             ?>
         </div>
     </div>
