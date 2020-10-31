@@ -2,8 +2,8 @@
 
 // Select query takes a connection ($con) and a query string ($query) and
 // performs the query while handling any errors that may occur.
-// The query result is returned (null if failure or no result) and a boolean
-// representing if an error has occured
+// The query result is returned (null if failure or no result) and the 
+// error object if there was one
 
 function selectQuery($con, $query){
 
@@ -16,15 +16,15 @@ function selectQuery($con, $query){
 
         if($rows < 1) {
             
-            return [null, false];
+            return [null, null];
 
         } else {
 
-            return [$result, false];
+            return [$result, null];
         }
 
     } catch(Exception $e) {
         
-        return [null, true];
+        return [null, $e];
     }
 }

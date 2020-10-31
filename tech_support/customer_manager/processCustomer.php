@@ -21,16 +21,16 @@ foreach($_POST as $key => $value) {
 }
 
 // get the customer id from super global
-$id = $_POST['customerID'];
+$email = $_POST['email'];
 
 // remove the , from the query with substr (this causes sytax error)
-$query = substr($query, 0, -2) . " WHERE CustomerID='$id';"; 
+$query = substr($query, 0, -2) . " WHERE email='$email';"; 
 
 $out = insertQuery($con, $query);
 
 // if succesful return to index and say it worked
 
-if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
+if(!empty($out[1])){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
     $error = $out[1]->getMessage();
 

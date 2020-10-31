@@ -15,12 +15,11 @@ $out = selectQuery($con, $query);
 
 if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
-    
-    echo "Query Error";
+    echo "<p class='message'>Query Error</p>";
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
-    echo "No Results Found";
+    echo "<p class='message'>No Results Found</p>";
 
 } else { // IF NO ERROR AND RESULTS CREATE TABLE
 
@@ -42,6 +41,10 @@ if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean err
     foreach ($fields as $field){
 
         $field_name = $field->name;
+
+        if ($field_name == 'customerID'){
+            continue;
+        };
 
         $field_value = $line[$field_name];
 

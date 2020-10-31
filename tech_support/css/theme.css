@@ -239,6 +239,6 @@ body {
     justify-content: space-between;
 }
 
-.errorMessage {
+.messageGood {
     font-size: .6em;
 }
