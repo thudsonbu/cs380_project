@@ -15,7 +15,9 @@ $out = selectQuery($con, $query);
 
 if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
-    echo "<p class='message'>Query Error</p>";
+    require "../errors/errorMessage.php";
+
+    errorMessage($out[1]);
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 

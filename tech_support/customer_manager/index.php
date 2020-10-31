@@ -91,11 +91,13 @@
 
             if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
-                echo "<p class='message red'>Query Error</p>";
+                require "../errors/errorMessage.php";
+
+                errorMessage($out[1]);
 
             } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
-                echo "<p class='message grey'>No Results Found</p>";
+                echo "<p class='message'>No Results Found</p>";
 
 
             } else { // IF NO ERROR AND RESULTS CREATE TABLE

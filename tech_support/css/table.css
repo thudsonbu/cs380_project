@@ -1,10 +1,3 @@
-.sectionContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .tableContainer {
     margin-top: 7vh;
     width: 100%;

@@ -39,6 +39,14 @@ body {
     text-align: center;
 }
 
+.sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 /* NAV STYLES */
 
 .myLogo {
@@ -239,6 +247,33 @@ body {
     justify-content: space-between;
 }
 
-.messageGood {
-    font-size: .6em;
+.message {
+    font-size: 1em;
+}
+
+.errorMessageBox {
+    background-color: #fabfbf;
+    width: 40%;
+    border-radius: 20px;
+    height: 200px;
+    padding: 20px;
+}
+
+.errorMessageTitle {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.errorMessage {
+    color: #a30000;
+    font-size: .8rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.returnButtonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
