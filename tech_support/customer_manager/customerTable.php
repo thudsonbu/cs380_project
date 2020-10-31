@@ -19,14 +19,26 @@ function createCustomerTable($result) {
 
     while ( $line = mysqli_fetch_array( $result, MYSQLI_ASSOC ) ) {
 
+        $selectLink = "customerFormPage.php?email=";
+        $loc = 0;
+
         echo "<tr class='tableDataRow'>";
 
             foreach ($line as $field_value) {
 
+                if ($loc == 2) {
+
+                    $selectLink = $selectLink . $field_value;
+                    
+                }
+
                 echo "<td class='tableData'>", "$field_value", "</td>";
+                
+
+                $loc += 1;
             }
 
-            echo "<td class='tableData'><button class='selectButton button blue'>Select</button></td>";
+            echo "<td class='tableData'><a href='$selectLink'><button class='button blue'>Select</button></a></td>";
 
         echo "</tr>";
     }

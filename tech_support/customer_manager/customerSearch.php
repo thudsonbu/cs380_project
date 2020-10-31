@@ -8,5 +8,18 @@ echo "
     <div class='customerSearchBar'>
         LastName: <input type='text' name='lastname'><a href='index.php' class='resetButton'>Reset</a>
     </div>
-</form>
 ";
+
+if (!empty($_GET['message'])) {
+
+    $message = $_GET['message'];
+
+    echo "
+    <div class='customerSearchTitle'>
+        $message
+    </div>
+    ";
+                    
+}
+
+echo "</form>";
