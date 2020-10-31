@@ -238,3 +238,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.errorMessage {
+    font-size: .6em;
+}

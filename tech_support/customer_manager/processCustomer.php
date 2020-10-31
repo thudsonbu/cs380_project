@@ -7,15 +7,24 @@ require "../model/database.php";
 require "../model/insertQuery.php";
 
 // build query start
-$query = "INSERT INTO Customers VALUES (";
+$query = "UPDATE Customers SET ";
 
 // for each value in _post append to query
 foreach($_POST as $key => $value) {
 
-    $query = $value . ", ";
+    // ingore adding the customer id
+    if($key == 'customerID'){
+        continue;
+    }
+
+    $query = $query . $key . "='" . $value ."', ";
 }
 
-$query = ");";
+// get the customer id from super global
+$id = $_POST['customerID'];
+
+// remove the , from the query with substr (this causes sytax error)
+$query = substr($query, 0, -2) . " WHERE CustomerID='$id';"; 
 
 $out = insertQuery($con, $query);
 
@@ -23,15 +32,13 @@ $out = insertQuery($con, $query);
 
 if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
-    echo "Query Error";
+    $error = $out[1]->getMessage();
 
-    header("Location: editCustomer.php?message='Error Could Not Update");
+    header("Location: index.php?message=$error");
 
 } else { // IF NO ERROR MUST HAVE BEEN ADDED
 
-    createCustomerTable($out[0]);
-
-    header("Location: index.php?message='Updated Succesfully");
+    header("Location: index.php?message=Updated Succesfully");
 }
 
 // CLOSE CONNECTION

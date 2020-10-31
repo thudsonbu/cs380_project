@@ -11,15 +11,15 @@ try {
 
     if($rows < 1) {
         
-        return [null, false];
+        return [null, null];
 
     } else {
 
-        return [$result, false];
+        return [$result, null];
     }
 
 } catch(Exception $e) {
     
-    return [null, true];
+    return [null, $e];
 }
 }

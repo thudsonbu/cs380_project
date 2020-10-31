@@ -19,7 +19,7 @@ if (!empty($_GET['message'])) {
 
     echo "
     <div class='customerSearchTitle'>
-        $message
+        <p class='message'>$message</p>
     </div>
     ";
                     

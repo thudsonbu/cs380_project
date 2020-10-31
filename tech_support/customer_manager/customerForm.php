@@ -6,13 +6,16 @@ require "../model/selectQuery.php";
 
 $email = $_GET['email'];
 
-$query = "SELECT firstname, lastname, address, city, state, postalcode
-countrycode, phone, email FROM customers WHERE email='$email'";
+$query = "SELECT * FROM customers WHERE email='$email'";
+
+// $query = "SELECT firstname, lastname, address, city, state, postalcode
+// countrycode, phone, email FROM customers WHERE email='$email'";
 
 $out = selectQuery($con, $query);
 
 if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
 
+    
     echo "Query Error";
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
@@ -55,8 +58,8 @@ if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean err
 
     echo "
     <div class='buttonContainer'>
-        <a href='index.php' class='button button-small grey'>Cancel</a>
-        <button type='submit' class='button button-small green'>Update Customer</button>
+        <a href='index.php' class='button grey'>Cancel</a>
+        <button type='submit' class='button green'>Update Customer</button>
     </div>
     ";
 
