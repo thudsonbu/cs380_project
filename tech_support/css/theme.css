@@ -136,3 +136,43 @@ body {
         font-size: .8em;
     }
 }
+
+.button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: .5em 1em;
+    margin: 5px;
+    border-radius: .5em;
+}
+
+.blue {
+    background-color: #1e8feb;
+    color: #ffffff;
+}
+
+.blue:hover {
+    background-color:#0058ac;
+}
+
+.red {
+    background-color: #eb3d30;
+    color: #ffffff;
+}
+
+.red:hover {
+    background-color: #a30000;
+}
+
+.green {
+    background-color: #83bb43;
+    color: #ffffff;
+}
+
+.green:hover {
+    background-color: #467f00;
+}

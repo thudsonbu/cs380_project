@@ -17,6 +17,9 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="../css/table.css">
 
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/customer.css">
+
     <!-- EMBEDED STYLES ARE PLACED IN PARTIALS/CREATENAMETABLE -->
     
     <!-- My Icon -->

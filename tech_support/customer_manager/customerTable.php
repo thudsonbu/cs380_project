@@ -26,7 +26,7 @@ function createCustomerTable($result) {
                 echo "<td class='tableData'>", "$field_value", "</td>";
             }
 
-            echo "<td class='tableData'><button class='selectButton'>Select</button></td>";
+            echo "<td class='tableData'><button class='selectButton button blue'>Select</button></td>";
 
         echo "</tr>";
     }
