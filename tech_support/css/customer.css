@@ -1,0 +1,22 @@
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+
+.customerSearchTitle {
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.customerSearchBar {
+    font-size: .8rem;
+    padding: 10px;
+}
+
+.resetButton {
+    padding-left: 5px;
+}
