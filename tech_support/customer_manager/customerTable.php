@@ -1,6 +1,24 @@
 <?php
 
-function createCustomerTable($result) {
+// DATABASE, QUERY AND CUSTOMER TABLE CREATOR
+require "../model/database.php";
+require "../model/queryHandler.php";
+
+$out = queryHandler($con, $query);
+
+if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
+
+    require "../errors/errorMessage.php";
+
+    errorMessage($out[1]); // show an error message box
+
+} else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
+
+    echo "<p class='message'>No Results Found</p>";
+
+} else { // IF NO ERROR AND RESULTS CREATE TABLE
+
+    $result = $out[0];
 
     // retrieve fields from query
     $fields = mysqli_fetch_fields($result);
@@ -57,5 +75,8 @@ function createCustomerTable($result) {
     echo "</table>";
 
 }
+
+// close connection
+mysqli_close($con);
 
 ?>
