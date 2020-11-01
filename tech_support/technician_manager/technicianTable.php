@@ -40,7 +40,7 @@ if($out[1]) {
     }
 
     echo" <th class='tableHeader'> 
-        <a class='button blue' href='newTech.php'>New</a>   
+        <a class='button green' href='newTech.php'>New</a>   
     </th>";
 
     echo "</tr>";
