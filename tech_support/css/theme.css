@@ -239,6 +239,7 @@ body {
 }
 
 .sectionTitle {
+    width: 100%;
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;

@@ -29,8 +29,8 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
     // form title
     echo "
-    <div class='formTitleContainer'>
-        <div class='formTitle'>
+    <div class='sectionTitleContainer'>
+        <div class='sectionTitle'>
             Update Customer Information
         </div>
     </div>
