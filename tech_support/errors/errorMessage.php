@@ -14,12 +14,30 @@ function errorMessage($e) {
                 $error_message
             </p>
             <div class='returnButtonContainer'>
-                <a href='index.php' class='button grey'>Home</a>
+                <a href='index.php' class='button grey'>Back</a>
             </div>
         </div>
     </div>
     ";
-    
+}
+
+function customErrorMessage($e) {
+
+    echo "
+    <div class='sectionContainer'>
+        <div class='errorMessageBox'>
+            <div class='errorMessageTitle'>
+                An Error Has Occured
+            </div>
+            <p class='errorMessage'>
+                $e
+            </p>
+            <div class='returnButtonContainer'>
+                <a href='index.php' class='button grey'>Back</a>
+            </div>
+        </div>
+    </div>
+    ";
 }
 
 ?>

@@ -1,7 +1,6 @@
 <?php
 
 //database connection and query
-require "../model/database.php";
 require "../model/queryHandler.php";
 
 // get the email of the customer that was selected
@@ -11,7 +10,7 @@ $email = $_GET['email'];
 $query = "SELECT * FROM customers WHERE email='$email'"; 
 
 // query the database
-$out = queryHandler($con, $query);
+$out = queryHandler($query);
 
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
@@ -73,6 +72,3 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     // end form
     echo "</form>";
 }
-
-// CLOSE CONNECTION
-mysqli_close($con);

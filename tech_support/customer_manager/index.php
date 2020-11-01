@@ -55,7 +55,6 @@
         </div>
     </div>
     <div class='sectionContainer'>
-        <div class='tableContainer'>
             <?php
 
             require "../model/testInput.php";
@@ -74,13 +73,15 @@
 
                 if($isHtmlInjection){
 
-                    echo "<p class='message'>HTML Injection Detected</p>";
+                    require "../errors/errorMessage.php";
 
-                    $query = "SELECT firstname, lastname, email, city FROM customers;";
-                } else {
+                    customErrorMessage("HTML INJECTION DETECTED");
 
-                    $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search';";
+                    exit();
+
                 }
+
+                $query = "SELECT firstname, lastname, email, city FROM customers WHERE email='$Search'";
 
             }
 
@@ -89,7 +90,6 @@
 
             
             ?>
-        </div>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

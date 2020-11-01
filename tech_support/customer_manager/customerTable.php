@@ -1,10 +1,9 @@
 <?php
 
 // DATABASE, QUERY AND CUSTOMER TABLE CREATOR
-require "../model/database.php";
 require "../model/queryHandler.php";
 
-$out = queryHandler($con, $query);
+$out = queryHandler($query);
 
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
@@ -14,7 +13,9 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
-    echo "<p class='message'>No Results Found</p>";
+    require "../errors/message.php";
+
+    message("No results found");
 
 } else { // IF NO ERROR AND RESULTS CREATE TABLE
 
@@ -24,7 +25,9 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     $fields = mysqli_fetch_fields($result);
 
     // open form
-    echo "<table class='peopleTable'>";
+    echo "
+    <div class='tableContainer'>
+    <table class='peopleTable'>";
 
     echo "
     <div class='sectionTitleContainer'>
@@ -78,11 +81,11 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     }
 
     // close table
-    echo "</table>";
+    echo "
+    </table>
+    </div>
+    ";
 
 }
-
-// close connection
-mysqli_close($con);
 
 ?>

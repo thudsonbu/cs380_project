@@ -75,10 +75,7 @@ mysqli_query($con, $query);
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
         <div class='pageTitle'>
-            SportPro Technical Support
-        </div>
-        <div class='technicianList'>
-            Sports manaagement software for sports enthusiasts.
+            SportsPro
         </div>
     </div>
 	<h2 style="text-align: center;">Added <?php echo $first ?> as Technician</h2>

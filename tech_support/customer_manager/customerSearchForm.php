@@ -15,7 +15,6 @@ echo "
     <div class='customerSearchBar'>
         LastName: <input type='text' name='lastname'>
         <button type='submit' class='button blue'>Search</button>
-        <a href='index.php' class='button grey'>Reset</a>
     </div>
 ";
 
