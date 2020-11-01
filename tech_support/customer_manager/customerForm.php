@@ -4,13 +4,13 @@
 require "../model/database.php";
 require "../model/selectQuery.php";
 
+// get the email of the customer that was selected
 $email = $_GET['email'];
 
-$query = "SELECT * FROM customers WHERE email='$email'";
+// find the customer in the datbase and get customer data
+$query = "SELECT * FROM customers WHERE email='$email'"; 
 
-// $query = "SELECT firstname, lastname, address, city, state, postalcode
-// countrycode, phone, email FROM customers WHERE email='$email'";
-
+// query the database
 $out = selectQuery($con, $query);
 
 if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
@@ -27,6 +27,7 @@ if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean err
 
     echo "<form action='processCustomer.php' method='post' class='form'>";
 
+    // form title
     echo "
     <div class='formTitleContainer'>
         <div class='formTitle'>
@@ -35,32 +36,33 @@ if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean err
     </div>
     ";
 
+    //  set variables from query
     $result = $out[0];
     $fields = mysqli_fetch_fields($result);
     $line = mysqli_fetch_array($result,  MYSQLI_ASSOC);
 
-    $loc = 0;
+    // print fields as form inputs from customer
     foreach ($fields as $field){
 
         $field_name = $field->name;
 
+        // do not include customer id in the form
         if ($field_name == 'customerID'){
             continue;
         };
 
         $field_value = $line[$field_name];
 
+        // add row to form
         echo "
         <div class='formEntry'>
             <div class='fieldName'>$field->name</div>
             <input class='fieldInput' type='text' name='$field->name' value='$field_value'>
         </div>
         ";
-
-        $loc += 1;
-
     }
 
+    // form submit buttons
     echo "
     <div class='buttonContainer'>
         <a href='index.php' class='button grey'>Cancel</a>
@@ -68,8 +70,8 @@ if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean err
     </div>
     ";
 
+    // end form
     echo "</form>";
-
 }
 
 // CLOSE CONNECTION

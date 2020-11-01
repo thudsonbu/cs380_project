@@ -72,7 +72,7 @@
 
                 if($isHtmlInjection){
 
-                    echo "<p class='message red'>HTML Injection Detected</p>";
+                    echo "<p class='message'>HTML Injection Detected</p>";
 
                     $query = "SELECT firstname, lastname, email, city FROM customers;";
                 } else {
@@ -93,7 +93,7 @@
 
                 require "../errors/errorMessage.php";
 
-                errorMessage($out[1]);
+                errorMessage($out[1]); // show an error message box
 
             } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
