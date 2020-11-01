@@ -49,7 +49,6 @@
             
             require "technicianTable.php";
            
-
             ?>
         </div>
     </div>

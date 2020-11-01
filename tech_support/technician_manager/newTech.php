@@ -41,8 +41,11 @@
             Sports manaagement software for sports enthusiasts.
         </div>
     </div>
+
 <h1>Register a New Technician</h1>
-<form action="techForm.php" method="post" >
+
+<form action="techForm.php" method="post">
+
 <table align="center">
 
 <tr><td>First Name:</td><td> <input type="text" name="first"></td></tr><br>
