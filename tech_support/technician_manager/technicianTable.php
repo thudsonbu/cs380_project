@@ -24,7 +24,13 @@ if($out[1]) {
     $result = $out[0];
 
     // loop over for headers
-    echo "<table class = 'peopleTable'><tr class= 'tableHeaderRow'>";
+    echo "<table class = 'peopleTable'>
+    
+    <div class='sectionTitleContainer'>
+        <div class='sectionTitle'>Technicians</div>
+    </div>
+    
+    <tr class= 'tableHeaderRow'>";
 
     $fields = mysqli_fetch_fields($result);
 
@@ -32,6 +38,11 @@ if($out[1]) {
 
         echo "<th class='tableHeader'> $field->name</th>  ";
     }
+
+    echo" <th class='tableHeader'> 
+        <a class='button blue' href='newTech.php'>New</a>   
+    </th>";
+
     echo "</tr>";
 
     // table column header done, now loop over result set.

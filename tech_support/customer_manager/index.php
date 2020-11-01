@@ -38,22 +38,24 @@
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
         <div class='pageTitle'>
-            Search Customer
+            SportsPro
         </div>
     </div>
 
     <!-- PAGE CONTENT -->
     <div class='sectionContainer'>
+        <div class='searchForm'>
+            <!-- FORM FOR SEARCHING CUSTOMERS -->
+            <?php
+
+            require "customerSearchForm.php";
+
+            // form includes insert feedback
+            ?>
+        </div>
+    </div>
+    <div class='sectionContainer'>
         <div class='tableContainer'>
-            <div class='searchForm'>
-                <!-- FORM FOR SEARCHING CUSTOMERS -->
-                <?php
-
-                require "customerSearchForm.php";
-
-                // form includes insert feedback
-                ?>
-            </div>
             <?php
 
             require "../model/testInput.php";

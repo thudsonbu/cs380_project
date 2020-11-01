@@ -32,6 +32,7 @@ body {
     text-align: center;
 }
 
+
 .pageSubtitle {
     color: #ffffff;
     font-size: 4rem;
@@ -45,6 +46,15 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
+}
+
+.miniSectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
 }
 
 /* NAV STYLES */
@@ -151,6 +161,7 @@ body {
     cursor: pointer;
     color: #ffffff;
     text-transform: uppercase;
+    font-weight: bold;
     font-size: 1em;
     letter-spacing: 1px;
     padding: .2em 1em;
@@ -216,17 +227,22 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
-.formTitleContainer {
+.sectionTitleContainer {
     width: 100%;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.formTitle {
+.sectionTitle {
     font-size: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-align: center;
 }
 
 .formEntry {

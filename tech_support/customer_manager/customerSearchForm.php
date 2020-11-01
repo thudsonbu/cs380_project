@@ -3,8 +3,10 @@
 // open form and add title
 echo "
 <form action='index.php' method='get' class='searchForm'>
-    <div class='customerSearchTitle'>
-        Search by Customer Lastname
+    <div class='sectionTitleContainer'>
+        <div class='sectionTitle'>
+            Search by Customer Lastname
+        </div>
     </div>
 ";
 
