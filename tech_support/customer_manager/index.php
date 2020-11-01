@@ -49,7 +49,7 @@
                 <!-- FORM FOR SEARCHING CUSTOMERS -->
                 <?php
 
-                require "customerSearch.php";
+                require "customerSearchForm.php";
 
                 // form includes insert feedback
                 ?>
@@ -84,12 +84,12 @@
 
             // DATABASE, QUERY AND CUSTOMER TABLE CREATOR
             require "../model/database.php";
-            require "../model/selectQuery.php";
+            require "../model/queryHandler.php";
             require "customerTable.php";
 
-            $out = selectQuery($con, $query);
+            $out = queryHandler($con, $query);
 
-            if($out[1]){ // IF ERROR ( selectQuery returns array with result and boolean error )
+            if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
                 require "../errors/errorMessage.php";
 

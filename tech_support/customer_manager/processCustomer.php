@@ -26,11 +26,11 @@ $email = $_POST['email'];
 // remove the , from the query with substr (this causes sytax error)
 $query = substr($query, 0, -2) . " WHERE email='$email';"; 
 
-$out = insertQuery($con, $query);
+$out = queryHandler($con, $query);
 
 // if succesful return to index and say it worked
 
-if(!empty($out[1])){ // IF ERROR ( selectQuery returns array with result and boolean error )
+if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
 
     $error = $out[1]->getMessage();
 

@@ -45,7 +45,7 @@
     <!-- PAGE CONTENT -->
     <div class='sectionContainer'>
         <?php
-            require "customerForm.php";
+            require "customerEditForm.php";
         ?>
     </div>
 

@@ -2,7 +2,7 @@
 // database (returns connection $con)
 require('../model/database.php');
 
-// if the delete was succesful the did superglobal will be set
+// if this weill check if the delete id was set (did is the delete id)
 if(isset($_GET['did'])) {
 
     // clear the string of any invalid characters
