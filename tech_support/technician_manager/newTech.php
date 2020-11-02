@@ -35,28 +35,43 @@
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
         <div class='pageTitle'>
-            SportPro Technical Support
-        </div>
-        <div class='technicianList'>
-            Sports manaagement software for sports enthusiasts.
+            SportsPro
         </div>
     </div>
 
-<h1>Register a New Technician</h1>
+    <div class='sectionContainer'>
+        <form action="techForm.php" class='form' method="post">
+            <div class='sectionTitleContainer'>
+                <div class='sectionTitle'>
+                    Update Customer Information
+                </div>
+            </div>
+            <div class='formEntry'>
+                <div class='fieldName'>First Name:</div>
+                <input class='fieldInput' type='text' name='first'>
+            </div>
+            <div class='formEntry'>
+                <div class='fieldName'>Last Name:</div>
+                <input class='fieldInput' type='text' name='last'>
+            </div>
+            <div class='formEntry'>
+                <div class='fieldName'>Email:</div>
+                <input class='fieldInput' type='text' name='email'>
+            </div>
+            <div class='formEntry'>
+                <div class='fieldName'>Phone Number:</div>
+                <input class='fieldInput' type='text' name='phone'>
+            </div>
+            <div class='formEntry'>
+                <div class='fieldName'>Password:</div>
+                <input class='fieldInput' type='password' name='pass'>
+            </div>
+            <div class='buttonContainer'>
+                <a href='index.php' class='button grey'>Cancel</a>
+                <button type='submit' class='button green'>Save Technician</button>
+            </div>
+        </form>
+    </div>
 
-<form action="techForm.php" method="post">
-
-<table align="center">
-
-<tr><td>First Name:</td><td> <input type="text" name="first"></td></tr><br>
-<tr><td>Last Name:</td><td> <input type="text" name="last"></td></tr><br>
-<tr><td>Email:</td><td> <input type="text" name="email"></td></tr><br>
-<tr><td>Phone:</td><td> <input type="text" name="phone"></td></tr><br>
-<tr><td>Password:</td><td> <input type="password" name="pass"></td></tr><br>
-
-<tr><td colspan="2"><input type="submit" value="Submit"></td></tr>
-</table>
-</form>
-    
 </body>
 </html>

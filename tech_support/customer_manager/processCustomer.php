@@ -1,10 +1,9 @@
 <?php
 
-// get database connection
-require "../model/database.php";
-
 // put/post query
-require "../model/insertQuery.php";
+require "../model/insertHandler.php";
+
+
 
 // build query start
 $query = "UPDATE Customers SET ";

@@ -20,7 +20,9 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
-    echo "<p class='message'>No Results Found</p>";
+    require "../errors/message.php";
+
+    message("Customer not found");
 
 } else { // IF NO ERROR AND RESULTS CREATE TABLE
 
@@ -56,7 +58,7 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
         echo "
         <div class='formEntry'>
             <div class='fieldName'>$field->name</div>
-            <input class='fieldInput' type='text' name='$field->name' value='$field_value'>
+            <input class='fieldInput' type='text' name='$field->name' value='$field_value' required>
         </div>
         ";
     }
