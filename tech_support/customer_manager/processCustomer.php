@@ -1,9 +1,7 @@
 <?php
 
 // put/post query
-require "../model/insertHandler.php";
-
-
+require "../model/queryHandler.php";
 
 // build query start
 $query = "UPDATE Customers SET ";
@@ -33,7 +31,7 @@ if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and bo
 
     $error = $out[1]->getMessage();
 
-    header("Location: index.php?message=$error");
+    header("Location: index.php?error=$error");
 
 } else { // IF NO ERROR MUST HAVE BEEN ADDED
 

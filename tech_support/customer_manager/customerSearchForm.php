@@ -18,19 +18,5 @@ echo "
     </div>
 ";
 
-// this is used to check if there was a message 
-// the message would be either updated succesfully or reports an error
-if (!empty($_GET['message'])) {
-
-    $message = $_GET['message'];
-
-    echo "
-    <div class='customerSearchTitle'>
-        <p class='message'>$message</p>
-    </div>
-    ";
-                    
-}
-
 // close form
 echo "</form>";

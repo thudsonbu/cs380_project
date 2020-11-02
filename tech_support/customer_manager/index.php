@@ -55,6 +55,33 @@
         </div>
     </div>
     <div class='sectionContainer'>
+        <!-- FORM FOR SEARCHING CUSTOMERS -->
+        <?php
+        // this is used to check if there was a message 
+        // the message would be either updated succesfully or reports an error
+        if (!empty($_GET['message'])) {
+
+            $message = $_GET['message'];
+
+            require "../errors/successMessage.php";
+
+            successMessage("Customer Updated Succesfully");
+                            
+        }
+
+        if (!empty($_GET['error'])) {
+
+            $error = $_GET['error'];
+
+            require "../errors/errorMessage.php";
+
+            customErrorMessage($error);
+                            
+        }
+        ?>
+    </div>
+
+    <div class='sectionContainer'>
             <?php
 
             require "../model/testInput.php";
@@ -81,7 +108,7 @@
 
                 }
 
-                $query = "SELECT firstname, lastname, email, city FROM customers WHERE email='$Search'";
+                $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search'";
 
             }
 

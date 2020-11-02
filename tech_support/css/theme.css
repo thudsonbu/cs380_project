@@ -271,10 +271,9 @@ body {
 
 .errorMessageBox {
     background-color: #fabfbf;
-    width: 40%;
     border-radius: 20px;
-    height: 200px;
     padding: 20px;
+    max-width: 90%;
 }
 
 .errorMessageTitle {
@@ -298,14 +297,28 @@ body {
 
 .messageBox {
     background-color: #ffffff;
-    width: 40%;
     border-radius: 20px;
-    height: 200px;
     padding: 20px;
+    max-width: 90%;
 }
 
 .messageTitle {
     margin: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.successMessageBox {
+    background-color: #b4d787;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 90%;
+}
+
+.successMessageTitle {
+    color: #558e16;
+    margin: 20px;
     font-size: 1.3rem;
     text-align: center;
     padding: 10px;
