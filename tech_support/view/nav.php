@@ -2,7 +2,7 @@
 
 echo "
 
-<nav class='navbar navbar-fixed-top navbar-expand-md navbar-dark bg-dark'>
+<nav class='navbar navbar-fixed-top navbar-expand-md navbar-light bg-light'>
     <!-- Brand -->
     <a class='navbar-brand' href='index.html'>
         <img src='../images/avatar.png' class='myLogo' alt='myLogo'>
@@ -15,7 +15,7 @@ echo "
     <div class='collapse navbar-collapse' id='navbarCollapse'>
         <ul class='navbar-nav ml-auto'>
             <li class='navbar-nav navItem'>
-                <a class='nav-link link' href='../index.html'><span class=''>Home</span></a>
+                <a class='nav-link link' href='../index.php'><span class=''>Home</span></a>
             </li>
             <li class='navbar-nav navItem'>
                 <a class='nav-link link' href='../product_manager/index.php'><span class=''>Product</span></a>

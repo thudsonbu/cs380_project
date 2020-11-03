@@ -1,10 +1,16 @@
 body {
-    background: url("../images/MountainBackground.jpg");
+    /* background: url("../images/MountainBackground.jpg"); */
+    background-color: #0058ac;
     height: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
+i {
+    color: #444444;
+    padding-right: 10px;
 }
 
 /* PAGE TITLE AND HEADER STYLES */
@@ -35,7 +41,7 @@ body {
 
 .pageSubtitle {
     color: #ffffff;
-    font-size: 4rem;
+    font-size: 2rem;
     width: 100%;
     text-align: center;
 }
@@ -45,7 +51,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 96%;
     margin: 10px;
 }
 
@@ -67,7 +73,7 @@ body {
 }
 
 .link {
-    color: #000000;
+    color: #444444;;
 }
 
 .linkContainer {
@@ -91,20 +97,22 @@ body {
     display: block;
     position: relative;
     background-color: #ffffff;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 300px;
-    color: #000000;
+    color: #444444;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: .5em 1em;
-    margin: 0 auto;
-    border-radius: 1.15em;
+    padding: 1em 1em;
+    margin: 1em;
+    border-radius: .5em;
     box-shadow: 0 .3em #9f9f9f;
 }
 
 .squishyButton:hover {
     box-shadow: 0 .2em #9f9f9f;
     top: .1em;
+    text-decoration: none;
+    color: #444444;
 }
 
 .squishyButton:active {
@@ -152,7 +160,7 @@ body {
     }
 
     .squishyButton {
-        font-size: .8em;
+        font-size: 1.2em;
     }
 }
 
@@ -176,11 +184,17 @@ body {
 }
 
 .button-large {
-    font-size: 1.2em;
+    font-size: 2em;
     letter-spacing: 1px;
     padding: .5em 1em;
     margin: 5px;
     border-radius: .5em;
+    text-transform: uppercase;
+}
+
+.button-large:hover {
+    text-decoration: none;
+    color: white;
 }
 
 .blue {
@@ -259,10 +273,19 @@ body {
 }
 
 .buttonContainer {
-    margin-top: 10px;
+    margin-top: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.homeButtonContainer {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .message {

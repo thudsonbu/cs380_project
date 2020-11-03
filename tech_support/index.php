@@ -1,27 +1,82 @@
-<?php include 'view/header.php'; ?>
-<main>
-    <nav>
-        
-    <h2>Administrators</h2>
-    <ul>
-        <li><a href="product_manager">Manage Products</a></li>
-        <li><a href="under_construction.php">Manage Technicians</a></li>
-        <li><a href="under_construction.php">Manage Customers</a></li>
-        <li><a href="under_construction.php">Create Incident</a></li>
-        <li><a href="under_construction.php">Assign Incident</a></li>
-        <li><a href="under_construction.php">Display Incidents</a></li>
-    </ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <h2>Technicians</h2>    
-    <ul>
-        <li><a href="under_construction.php">Update Incident</a></li>
-    </ul>
+    <!-- Bootstrap Style Sheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <h2>Customers</h2>
-    <ul>
-        <li><a href="under_construction.php">Register Product</a></li>
-    </ul>
+    <!-- Custom Font -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <!-- Nav Styles -->
+    <link rel="stylesheet" href="./css/theme.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/table.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./css/customer.css">
+
+    <!-- EMBEDED STYLES ARE PLACED IN PARTIALS/CREATENAMETABLE -->
     
+    <!-- My Icon -->
+    <link rel="icon" href="./images/avatar.png">
+
+    <title>CS380 A3 - Customer</title>
+</head>
+
+
+<body>   
+
+    <nav class='navbar navbar-fixed-top navbar-expand-md navbar-light bg-light'>
+        <!-- Brand -->
+        <a class='navbar-brand' href='index.html'>
+            <img src='./images/avatar.png' class='myLogo' alt='myLogo'>
+        </a>
+        <!-- Toggle Open Button -->
+        <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-haspopup='true' aria-expanded='false'>
+            <span class='navbar-toggler-icon'></span>
+        </button>
+        <!-- Navbar Content -->
+        <div class='collapse navbar-collapse' id='navbarCollapse'>
+            <ul class='navbar-nav ml-auto'>
+                <li class='navbar-nav navItem'>
+                    <a class='nav-link link' href='./index.html'><span class=''>Home</span></a>
+                </li>
+                <li class='navbar-nav navItem'>
+                    <a class='nav-link link' href='./product_manager/index.php'><span class=''>Product</span></a>
+                </li>
+                <li class='navbar-nav navItem'>
+                    <a class='nav-link link' href='./technician_manager/index.php'><span class=''>Technician</span></a>
+                </li>
+                <li class='navbar-nav navItem'>
+                    <a class='nav-link link' href='./customer_manager/index.php'><span class=''>Customer</span></a>
+                </li>
+            </ul>
+        </div>
     </nav>
-</section>
-<?php include 'view/footer.php'; ?>
+
+    <!-- PAGE TITLE -->
+    <div class='pageTitleContainer'>
+        <div class='pageTitle'>
+            SportsPro
+        </div>
+        <div class='pageSubtitle'>
+            Smart sports management software.
+        </div>
+    </div>
+
+    
+    <div class='homeButtonContainer'>
+        <a href='./customer_manager/index.php' class='squishyButton'><i class="fas fa-users"></i>Customers</a>
+        <a href='./product_manager/index.php' class='squishyButton'><i class="fas fa-shopping-cart"></i>Products</a>
+        <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
+    </div>
+
+</div>
