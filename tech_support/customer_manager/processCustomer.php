@@ -2,49 +2,59 @@
 
 // put/post query
 require "../model/postHandler.php";
+require "../model/testInput.php";
 
 // build query start
 $query = "UPDATE Customers SET ";
+$htmlInjection = false;
 
-// for each value in _post append to query
+// for each value in _post append to query and test for html injection
 foreach($_POST as $key => $value) {
 
-    // ingore adding the customer id
-    if($key == 'customerID'){
-        continue;
+    if(testInput($value)){
+
+        $htmlInjection = true;
     }
 
     $query = $query . $key . "='" . $value ."', ";
 }
 
-// get the customer id from super global
-$email = $_POST['email'];
+if(!$htmlInjection) {
 
-// remove the , from the query with substr (this causes sytax error)
-$query = substr($query, 0, -2) . "WHERE email='$email'"; 
+    // get the customer id from super global
+    $email = $_POST['email'];
 
-$out = post($query);
+    // remove the , from the query with substr (this causes sytax error)
+    $query = substr($query, 0, -2) . "WHERE email='$email'"; 
 
-// if succesful return to index and say it worked
+    $out = post($query);
 
-if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
+    // if succesful return to index and say it worked
 
-    $error = $out[1]->getMessage();
+    if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
 
-    header("Location: index.php?error=$error");
+        $error = $out[1]->getMessage();
 
-} else if(!$out[0]) { // No errors but no records effected
+        header("Location: index.php?error=$error");
 
-    $rowCount = $out[0];
+    } else if(!$out[0]) { // No errors but no records effected
 
-    header("Location: index.php?error='$rowCount Rows Updated'");
+        $rowCount = $out[0];
 
+        header("Location: index.php?error='$rowCount Rows Updated'");
+
+    } else {
+
+        $rowCount = $out[0];
+
+        header("Location: index.php?message='$rowCount Rows Updated'");
+    }
 } else {
 
-    $rowCount = $out[0];
-
-    header("Location: index.php?message='$rowCount Rows Updated'");
+    header("Location: customerFormPage.php?error='HTML INJECTION DETECTED");
 }
+
+
 
 // CLOSE CONNECTION
 mysqli_close($con); 

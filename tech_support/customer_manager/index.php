@@ -68,7 +68,7 @@
 
             require "../errors/successMessage.php";
 
-            successMessage("Customer Updated Succesfully");
+            successMessage($message);
                             
         }
 

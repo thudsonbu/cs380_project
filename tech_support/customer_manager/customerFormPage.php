@@ -45,7 +45,19 @@
     <!-- PAGE CONTENT -->
     <div class='sectionContainer'>
         <?php
-            require "customerEditForm.php";
+
+            if(isset($_GET['error'])){
+
+                $error = $_GET['error'];
+
+                require "../errors/errorMessage.php";
+
+                customErrorMessage($error);
+                
+            } else {
+
+                require "customerEditForm.php";
+            }
         ?>
     </div>
 
