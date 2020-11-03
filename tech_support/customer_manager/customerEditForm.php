@@ -1,7 +1,7 @@
 <?php
 
 //database connection and query
-require "../model/queryHandler.php";
+require "../model/getHandler.php";
 
 // get the email of the customer that was selected
 $email = $_GET['email'];
@@ -10,7 +10,7 @@ $email = $_GET['email'];
 $query = "SELECT * FROM customers WHERE email='$email'"; 
 
 // query the database
-$out = queryHandler($query);
+$out = get($query);
 
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 

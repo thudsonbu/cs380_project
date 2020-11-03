@@ -1,7 +1,7 @@
 <?php
 
 // put/post query
-require "../model/queryHandler.php";
+require "../model/postHandler.php";
 
 // build query start
 $query = "UPDATE Customers SET ";
@@ -23,7 +23,7 @@ $email = $_POST['email'];
 // remove the , from the query with substr (this causes sytax error)
 $query = substr($query, 0, -2) . "WHERE email='$email'"; 
 
-$out = queryHandler($query);
+$out = post($query);
 
 // if succesful return to index and say it worked
 
@@ -33,11 +33,13 @@ if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and bo
 
     header("Location: index.php?error=$error");
 
-} else { // IF NO ERROR MUST HAVE BEEN ADDED
+} else if(!$out[0]) { // No errors but no records effected
 
-    $updated = $out[0]->getMessage();
+    header("Location: index.php?error='No Records Effected'");
 
-    header("Location: index.php?message='Updated Succesfully'");
+} else {
+
+    header("Location: index.php?message='Customer Updated Succesfully");
 }
 
 // CLOSE CONNECTION

@@ -33,13 +33,7 @@ function post($query){
 
             $success = mysqli_query($con, $query);
 
-            if($success && (mysqli_affected_rows() > 0)) {
-
-                return [true, null];
-            } else {
-
-                return [false, null];
-            }
+            return [$success, null];
             
         } catch(Exception $e) {
             
