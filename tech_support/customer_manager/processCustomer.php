@@ -35,11 +35,15 @@ if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and bo
 
 } else if(!$out[0]) { // No errors but no records effected
 
-    header("Location: index.php?error='No Records Effected'");
+    $rowCount = $out[0];
+
+    header("Location: index.php?error='$rowCount Rows Updated'");
 
 } else {
 
-    header("Location: index.php?message='Customer Updated Succesfully");
+    $rowCount = $out[0];
+
+    header("Location: index.php?message='$rowCount Rows Updated'");
 }
 
 // CLOSE CONNECTION

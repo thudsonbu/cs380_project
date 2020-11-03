@@ -2,8 +2,8 @@
 
 /* 
 The post method takes a sql query string and performs the query
-on the database. The method returns an array of two elements. The first element
-in the array is a boolean value true if any rows were affected. The
+on the database. The method returns an array of two elements. The first 
+element in the array is the number of rows affected by the query. The
 second element is the error object if there was one (null otherswise);
 
 Database connection and querry errors will be handled by this method however
@@ -23,7 +23,7 @@ function post($query){
 
     } catch(Exception $e) {
         
-        return [false, $e];
+        return [0, $e];
     }
     
     // if database connection, attempt deletion
@@ -33,11 +33,13 @@ function post($query){
 
             $success = mysqli_query($con, $query);
 
-            return [$success, null];
+            $rowCount = $con->affected_rows;
+
+            return [$rowCount, null];
             
         } catch(Exception $e) {
             
-            return [false, $e];
+            return [0, $e];
         }
     }
 
