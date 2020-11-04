@@ -48,19 +48,38 @@
             
             <h1>Customer Login</h1>
 <?php
+require '../model/getHandler.php';
+
 
 // Grab User submitted information
 $email = $_POST["login"];
 
-// Connect to the database
-require '../model/database.php';
-
 $query = "SELECT * FROM customers WHERE email='$email' AND email IS NOT NULL;";
 
-$result = mysqli_query($con, $query);
+$out = get($query);
 
-$row = mysqli_fetch_array($result);
+if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     
+    require "../errors/errorMessage.php";
+    
+    errorMessage($out[1]); // show an error message box
+    
+} else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
+    
+    require "../errors/message.php";
+    
+    message("Sorry, your credentials is invalid");
+    
+} else { // IF NO ERROR AND RESULTS CREATE TABLE
+    
+    $result = $out[0];
+    
+    // retrieve fields from query
+    $fields = mysqli_fetch_fields($result);
+    
+}
+
+
 if($row["email"]==$email){
    
     require 'register.php';
