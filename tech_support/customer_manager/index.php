@@ -68,7 +68,7 @@ makeHeader('Customer Index');
         // CHECK IF THERE WAS A GET REQUEST SENT
         if (empty($_GET['lastname'])) {
             // IF THERE WAS NO GET REQUEST SELECT ALL
-            $query = "SELECT firstname, lastname, email, city FROM customers;";
+            $query = "SELECT customerID, firstname, lastname, email, city FROM customers;";
 
         } else {
             // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
@@ -87,7 +87,7 @@ makeHeader('Customer Index');
 
             }
 
-            $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search'";
+            $query = "SELECT customerID, firstname, lastname, email, city FROM customers WHERE lastname='$Search'";
 
         }
 
