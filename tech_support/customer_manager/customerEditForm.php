@@ -4,10 +4,10 @@
 require "../model/getHandler.php";
 
 // get the email of the customer that was selected
-$email = $_GET['email'];
+$customerID = $_GET['customerID'];
 
 // find the customer in the datbase and get customer data
-$customerQuery = "SELECT * FROM customers WHERE email='$email'"; 
+$customerQuery = "SELECT * FROM customers WHERE customerID='$customerID'"; 
 
 // create query for countries
 $countryQuery = "SELECT * FROM countries";

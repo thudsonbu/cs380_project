@@ -40,7 +40,14 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     // create table header
     foreach ($fields as $field) {
 
-        echo "<th class='tableHeader'> $field->name </th>";
+        $fieldName = $field->name;
+
+        if($fieldName == 'customerID'){ // dont display customer id field
+
+            continue;
+        }
+
+        echo "<th class='tableHeader'> $fieldName </th>";
     }
 
     // select column of table header
@@ -52,31 +59,33 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     // for each line in the query result add a new row and print information
     while ( $line = mysqli_fetch_array( $result, MYSQLI_ASSOC ) ) {
 
-        $selectLink = "customerFormPage.php?email=";
-        $loc = 0;
-
-        // add table data row
-        echo "<tr class='tableDataRow'>";
-
-            // add table fields
-            foreach ($line as $field_value) {
-
-                // this adds the email to the select button link
-                if ($loc == 2) {
-
-                    $selectLink = $selectLink . $field_value;
-                }
-
-                // add field value
-                echo "<td class='tableData'>", "$field_value", "</td>";
-
-                $loc += 1; // keeps track of row 
-            }
-
-            // add select button
-            echo "<td class='tableData'><a href='$selectLink'><button class='button blue'>Select</button></a></td>";
+        // create select link to custome redit form
+        $selectLink = "customerFormPage.php?customerID=";
+        // add row
+        echo "<tr class='tableDataRow'";
         
-            // close table row
+        foreach ($fields as $field) {
+
+            $fieldName = $field->name;
+            $fieldValue = $line[$fieldName];
+
+            if($fieldName=='customerID'){ // dont display customer ID field
+                
+                $selectLink = $selectLink . $fieldValue;
+
+                echo "<td class='dontDisplay'></td>"; // not sure why this is necessary
+
+            } else { // add table row
+
+                echo "<td class='tableData'> $fieldValue </td>";
+            }
+            
+        }
+
+        // add select button
+        echo "<td class='tableData'><a href='$selectLink'><button class='button blue'>Select</button></a></td>";
+    
+        // close table row
         echo "</tr>";
     }
 
