@@ -22,10 +22,10 @@ foreach($_POST as $key => $value) {
 if(!$htmlInjection) {
 
     // get the customer id from super global
-    $email = $_POST['email'];
+    $customerID = $_POST['customerID'];
 
     // remove the , from the query with substr (this causes sytax error)
-    $query = substr($query, 0, -2) . "WHERE email='$email'"; 
+    $query = substr($query, 0, -2) . "WHERE customerID='$customerID'"; 
 
     $out = post($query);
 
