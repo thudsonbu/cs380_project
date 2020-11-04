@@ -1,133 +1,105 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap Style Sheets -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<?php 
 
-    <!-- Custom Font -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+require '../view/header.php';
 
-    <!-- icons -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+makeHeader('Customer Index');
 
-    <!-- Nav Styles -->
-    <link rel="stylesheet" href="../css/theme.css">
+?>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="../css/table.css">
+<!-- RESPONSIVE NAVBAR -->
+<?php
+    require '../view/nav.php'
+?>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="../css/customer.css">
-
-    <!-- EMBEDED STYLES ARE PLACED IN PARTIALS/CREATENAMETABLE -->
-    
-    <!-- My Icon -->
-    <link rel="icon" href="./images/avatar.png">
-
-    <title>CS380 A3 - Customer</title>
-</head>
-
-
-<body>
-    <!-- RESPONSIVE NAVBAR -->
-    <?php
-        require '../view/nav.php'
-    ?>
-
-    <!-- PAGE TITLE -->
-    <div class='pageTitleContainer'>
-        <div class='pageTitle'>
-            SportsPro
-        </div>
+<!-- PAGE TITLE -->
+<div class='pageTitleContainer'>
+    <div class='pageTitle'>
+        Customers
     </div>
+</div>
 
-    <!-- PAGE CONTENT -->
-    <div class='sectionContainer'>
-        <div class='searchForm'>
-            <!-- FORM FOR SEARCHING CUSTOMERS -->
-            <?php
-
-            require "customerSearchForm.php";
-
-            // form includes insert feedback
-            ?>
-        </div>
-    </div>
-    <div class='sectionContainer'>
+<!-- PAGE CONTENT -->
+<div class='sectionContainer'>
+    <div class='searchForm'>
         <!-- FORM FOR SEARCHING CUSTOMERS -->
         <?php
-        // this is used to check if there was a message 
-        // the message would be either updated succesfully or reports an error
-        if (!empty($_GET['message'])) {
 
-            $message = $_GET['message'];
+        require "customerSearchForm.php";
 
-            require "../errors/successMessage.php";
-
-            successMessage($message);
-                            
-        }
-
-        if (!empty($_GET['error'])) {
-
-            $error = $_GET['error'];
-
-            require "../errors/errorMessage.php";
-
-            customErrorMessage($error);
-                            
-        }
+        // form includes insert feedback
         ?>
     </div>
+</div>
 
-    <div class='sectionContainer'>
-            <?php
 
-            require "../model/testInput.php";
+<div class='sectionContainer'>
+    <!-- FORM FOR SEARCHING CUSTOMERS -->
+    <?php
+    // this is used to check if there was a message 
+    // the message would be either updated succesfully or reports an error
+    if (!empty($_GET['message'])) {
 
-            // CHECK IF THERE WAS A GET REQUEST SENT
-            if (empty($_GET['lastname'])) {
-                // IF THERE WAS NO GET REQUEST SELECT ALL
-                $query = "SELECT firstname, lastname, email, city FROM customers;";
+        $message = $_GET['message'];
 
-            } else {
-                // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
-                $Search = $_GET['lastname'];
+        require "../errors/successMessage.php";
 
-                // TEST FOR HTML INJECTION
-                $isHtmlInjection = testInput($Search);
+        successMessage($message);
+                        
+    }
 
-                if($isHtmlInjection){
+    if (!empty($_GET['error'])) {
 
-                    require "../errors/errorMessage.php";
+        $error = $_GET['error'];
 
-                    customErrorMessage("HTML INJECTION DETECTED");
+        require "../errors/errorMessage.php";
 
-                    exit();
+        customErrorMessage($error);
+                        
+    }
+    ?>
+</div>
 
-                }
+<div class='sectionContainer'>
+        <?php
 
-                $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search'";
+        require "../model/testInput.php";
+
+        // CHECK IF THERE WAS A GET REQUEST SENT
+        if (empty($_GET['lastname'])) {
+            // IF THERE WAS NO GET REQUEST SELECT ALL
+            $query = "SELECT firstname, lastname, email, city FROM customers;";
+
+        } else {
+            // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
+            $Search = $_GET['lastname'];
+
+            // TEST FOR HTML INJECTION
+            $isHtmlInjection = testInput($Search);
+
+            if($isHtmlInjection){
+
+                require "../errors/errorMessage.php";
+
+                customErrorMessage("HTML INJECTION DETECTED");
+
+                exit();
 
             }
 
-            
-            require "customerTable.php";
+            $query = "SELECT firstname, lastname, email, city FROM customers WHERE lastname='$Search'";
 
-            
-            ?>
-    </div>
+        }
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        require "customerTable.php";
 
-</body>
+        
+        ?>
+</div>
 
-</html>
+<?php
 
+require '../view/footer.php';
 
+?>

@@ -1,21 +1,41 @@
-<!DOCTYPE html>
-<html>
+<?php
 
-<!-- the head section -->
-<head>
-    <title>SportsPro Technical Support</title>
-    <link rel="stylesheet" type="text/css"
-          href="/tech_support/css/main.css">
-</head>
+function makeHeader($pageTitle) {
 
-<!-- the body section -->
-<body>
-<header>
-    <h1>SportsPro Technical Support</h1>
-    <p>Sports management software for the sports enthusiast</p>
-    <nav>
-        <ul>
-            <li><a href="/tech_support/index.php">Home</a></li>
-        </ul>
-    </nav>
-</header>
+    echo "
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+    
+        <!-- Bootstrap Style Sheets -->
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    
+        <!-- Custom Font -->
+        <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet'>
+    
+        <!-- Nav Styles -->
+        <link rel='stylesheet' href='../css/theme.css'>
+    
+        <!-- Custom Styles -->
+        <link rel='stylesheet' href='../css/table.css'>
+    
+        <!-- Custom Styles -->
+        <link rel='stylesheet' href='../css/customer.css'>
+    
+        <!-- EMBEDED STYLES ARE PLACED IN PARTIALS/CREATENAMETABLE -->
+        
+        <!-- My Icon -->
+        <link rel='icon' href='./images/avatar.png'>
+    
+        <title>SportsPro $pageTitle</title>
+    </head>
+    
+    
+    <body>
+    ";
+}
+
