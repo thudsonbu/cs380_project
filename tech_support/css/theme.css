@@ -1,6 +1,6 @@
 body {
     /* background: url("../images/MountainBackground.jpg"); */
-    background-color: #f69100;
+    background-color: #0058ac;
     height: 100%;
     background-size: cover;
     background-position: center;
@@ -11,6 +11,21 @@ body {
 i {
     color: #444444;
     padding-right: 10px;
+}
+
+footer {
+    height: 100px;
+    margin-top: 30px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerCopyright {
+    font-size: .7rem;
+    text-align: center;
 }
 
 /* PAGE TITLE AND HEADER STYLES */
