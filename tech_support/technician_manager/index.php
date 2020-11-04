@@ -43,6 +43,7 @@
     <div class='sectionContainer'>
         <div class='tableContainer'>
             <?php
+            $query = "SELECT * FROM technicians;";
             
             require "technicianTable.php";
            

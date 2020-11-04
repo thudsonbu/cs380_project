@@ -1,12 +1,10 @@
 <?php
 
-require('../model/database.php');
-require('../model/queryHandler.php');
+// DATABASE, QUERY AND CUSTOMER TABLE CREATOR
+require "../model/getHandler.php";
 
-// Perform SQL query
-$query = "SELECT * FROM technicians;";
+$out = get($query);
 
-$out = queryHandler($con, $query);
 
 // if there waas an error report the error
 if($out[1]) {
@@ -18,6 +16,9 @@ if($out[1]) {
 } else if(empty($out[0])) { //no results were returned
 
     echo "<p class='message'>No Results Found</p>";
+    echo" <th class='tableHeader'>
+        <a class='button green' href='newTech.php'>Add a Technician</a>
+    </th>";
 
 } else {
 
@@ -64,8 +65,5 @@ if($out[1]) {
     echo "</table>";
 
 }
-
-// close connection
-mysqli_close ($con);
 
 ?>
