@@ -7,24 +7,42 @@ require "../model/getHandler.php";
 $email = $_GET['email'];
 
 // find the customer in the datbase and get customer data
-$query = "SELECT * FROM customers WHERE email='$email'"; 
+$customerQuery = "SELECT * FROM customers WHERE email='$email'"; 
 
-// query the database
-$out = get($query);
+// create query for countries
+$countryQuery = "SELECT * FROM countries";
 
-if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
+// query the database for the customer
+$customerResponse = get($customerQuery);
+
+// query the database for the countries
+$countryResponse = get($countryQuery);
+
+if($customerResponse[1]){ // error in customer query
 
     require "../errors/errorMessage.php";
 
-    errorMessage($out[1]);
+    errorMessage($customerResponse[1]);
 
-} else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
+} else if(empty($customerResponse[0])){ // no error but no results returned from customer query
 
     require "../errors/message.php";
 
     message("Customer not found");
 
-} else { // IF NO ERROR AND RESULTS CREATE TABLE
+} else if($countryResponse[1]){ // error returned from country query
+
+    require "../errors/errorMessage.php";
+
+    errorMessage($countryResponse[1]);
+
+} else if(empty($countryResponse[0])){ // no error but no countries returned
+
+    require "../errors/message.php";
+
+    customErrorMessage("Countries Not Found");
+
+} else { // if there were not erros and everything returned, make the table
 
     echo "<form action='processCustomer.php' method='post' class='form'>";
 
@@ -38,29 +56,66 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     ";
 
     //  set variables from query
-    $result = $out[0];
-    $fields = mysqli_fetch_fields($result);
-    $line = mysqli_fetch_array($result,  MYSQLI_ASSOC);
+    $customerResult = $customerResponse[0];
+    $fields = mysqli_fetch_fields($customerResult);
+    $line = mysqli_fetch_array($customerResult,  MYSQLI_ASSOC);
 
     // print fields as form inputs from customer
     foreach ($fields as $field){
 
         $field_name = $field->name;
-
-        // do not include customer id in the form
-        if ($field_name == 'customerID'){
-            continue;
-        };
-
         $field_value = $line[$field_name];
 
-        // add row to form
-        echo "
-        <div class='formEntry'>
-            <div class='fieldName'>$field->name</div>
-            <input class='fieldInput' type='text' name='$field->name' value='$field_value' required>
-        </div>
-        ";
+        // customer id should not be displayed
+        if ($field_name == 'customerID'){
+            echo "
+                <div class='dontDisplay'>
+                    <div class='dontDisplay'>$field->name</div>
+                    <input class='dontDisplay' type='text' name='$field->name' value='$field_value' required>
+                </div>
+            ";
+        } else if($field_name == 'countryCode') { 
+            // open country select
+            echo "
+            <div class='formEntry'>
+                <div class='fieldName'>Country</div>
+                <select class='inputField' name='countryCode'>
+            ";
+            // for each country in the country query
+            $countryResult = $countryResponse[0];
+            
+            while($country = mysqli_fetch_array( $countryResult, MYSQLI_ASSOC )) {
+
+                $countryCode = $country['countryCode'];
+                $countryName = $country['countryName'];
+                // create an option
+
+                if($field_value==$countryCode){ // if this is the customers country make it selected
+
+                    echo "<option value='$countryCode' selected>$countryName</option>";
+                } else {
+
+                    echo "<option value='$countryCode'>$countryName</option>";
+                }
+            }
+            // close country select
+            echo "
+                </select>
+            </div>
+            ";
+
+        } else {
+
+            // add row to form
+            echo "
+            <div class='formEntry'>
+                <div class='fieldName'>$field->name</div>
+                <input class='fieldInput' type='text' name='$field->name' value='$field_value' required>
+            </div>
+            ";
+        }
+
+        
     }
 
     // form submit buttons
