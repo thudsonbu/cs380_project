@@ -365,3 +365,35 @@ footer {
 .dontDisplay {
     display: none;
 }
+
+.searchForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.customerSearchTitle {
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.inputBar {
+    font-size: .8rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.input {
+    margin-top:5px;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: 2px #444444;
+}

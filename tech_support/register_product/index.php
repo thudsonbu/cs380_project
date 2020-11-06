@@ -18,24 +18,25 @@ makeHeader('Register Index');
     </div>
 </div>
 
-    <!-- PAGE CONTENT -->
-    <div class='sectionContainer'>
-        <div class='tableContainer'>
-            
-            <h1>Customer Login</h1>
-            <p>You must login before you can register a product </p>
-            
-          
-			<form method='post' action='processLogin.php'>            
-            <table align="center">
-            <tr><td>Email:</td><td> <input type="text" name="login" class="solid"></td></tr><br>
-            <tr><td colspan="2"><input type="submit" value="Login"></td></tr>
-            </table>
-            </form>
-            
- 
+<!-- PAGE CONTENT -->
+<div class='sectionContainer'>
+    <form action='processLogin.php' method='post' class='searchForm'>
+        <div class='sectionTitleContainer'>
+            <div class='sectionTitle'>
+                Customer Login
+            </div>
         </div>
-    </div>
+        <div class='sectionTitleContainer'>
+            <p>You must login before you can register a product </p>
+        </div>
+        <div class='inputBar'>
+            <div class='input'>
+                Email: <input type='text' name='login'>
+            </div>
+            <button type='submit' class='button blue'>Login</button>
+        </div>
+    </form>
+</div>
 
 <?php
 

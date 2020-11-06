@@ -91,10 +91,8 @@ makeHeader('Customer Index');
 
         }
 
-        
         require "customerTable.php";
-
-        
+  
         ?>
 </div>
 
