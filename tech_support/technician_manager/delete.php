@@ -24,13 +24,13 @@ if(isset($_GET['did'])) {
         
         $rowCount = $out[0];
         
-        header("Location: index.php?error='$rowCount Rows Updated'");
+        header("Location: index.php?error='$rowCount Technicians Deleted'");
         
     } else {
         
         $rowCount = $out[0];
         
-        header("Location: index.php?message='$rowCount Rows Updated'");
+        header("Location: index.php?message='$rowCount Technician Deleted '");
     }
 }
 
