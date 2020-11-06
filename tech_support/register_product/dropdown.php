@@ -1,14 +1,16 @@
 <?php
 
-require '../model/database.php';
+require_once '../model/getHandler.php';
 
-$query = "SELECT name FROM products;";
+$dropDown = "SELECT name FROM products;";
 
-$result = mysqli_query($con, $query);
+$out = get($dropDown);
 
-echo "<select name='name'>";
-while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-    echo "<option value='" . $line['name'] . "'>" . $line['name'] . "</option>";
+$final = $out[0];
+
+echo "<select name='productName'>";
+while ($row = mysqli_fetch_array($final, MYSQLI_ASSOC)) {
+    echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
 }
 echo "</select>";
 ?>
