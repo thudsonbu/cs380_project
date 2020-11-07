@@ -22,7 +22,7 @@ makeHeader('Technician Index');
     <!-- PAGE CONTENT -->
     
   <div class='sectionContainer'>
-    <!-- FORM FOR SEARCHING CUSTOMERS -->
+
     <?php
     // this is used to check if there was a message 
     // the message would be either updated succesfully or reports an error

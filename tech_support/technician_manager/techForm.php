@@ -30,7 +30,7 @@ if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and bo
     
     header("Location: index.php?error=$error");
     
-} else if(!$out[0]) { // No errors but no records effected
+} else if(!$out[0]) { // No errors but no records affected
     
     $rowCount = $out[0];
     

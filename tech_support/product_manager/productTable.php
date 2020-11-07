@@ -1,53 +1,69 @@
 <?php
-require('../model/database.php');
 
-// Check connection
-if (mysqli_connect_errno ( $con )) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error ()."<br>";
-    exit("Connect Error");
-}
-else echo '' . '<br/>';
+// DATABASE, QUERY AND CUSTOMER TABLE CREATOR
+require "../model/getHandler.php";
 
-// creating the delete button to remove records
-if (! empty($_POST['productCode'])) {
-    $productID = $_POST['productCode'];
-    $query = "DELETE FROM products WHERE productCode='$productID';";
-    $result = mysqli_query($con, $query);
-}
+$out = get($query);
 
-// Perform SQL query
-$query = "SELECT * FROM products;";
-$result = mysqli_query($con, $query) or  die('Query failed: ' . mysqli_errno($con));
-
-// loop over for headers
-echo "<table class = 'peopleTable'><tr class= 'tableHeaderRow'>";
-$finfo = mysqli_fetch_fields($result);
-
-foreach ($finfo as $val){
-    echo "<th class='tableHeader'> $val->name</th>  ";
-}
-echo "</tr>";
-
-// table column header done, now loop over result set.
-// Create a form for each record in result set.
-// Print field values for each record
-while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+// if there waas an error report the error
+if($out[1]) {
     
-    echo "<tr class= 'tableHeaderRow'>";
-    echo "<form method='POST' action='index.php'>";
-    // inner loop. Print each field value for a result set record
-    foreach ($line as $key => $value) {
-        echo "<td class='tableData'>$value</td>";
+    require "../errors/errorMessage.php";
+    
+    errorMessage($out[1]);
+    
+} else if(empty($out[0])) { // no results were returned
+    
+    echo "<p class='message'>No Results Found</p>";
+    echo "<th class='tableHeader'>
+        <a class='button green' href='addProduct.php'>Add Product</a>
+        </th>";
+    
+} else {
+    
+    $result = $out[0];
+    
+    // loop over for headers
+    echo "<table class = 'peopleTable'>
+        
+    <div class='sectionTitleContainer'>
+        <div class='sectionTitle'>Products</div>
+    </div>
+        
+    <tr class= 'tableHeaderRow'>";
+
+    $fields = mysqli_fetch_fields($result);
+  
+    foreach ($fields as $field){
+        
+        echo "<th class='tableHeader'> $field->name</th>  ";
     }
     
-    // put delete button on form
-    echo "<td class='deleteButton'><input type='submit' value='delete' name='foo'/></td></tr>";
-    echo "</form>";
-} // end while
-
-echo "</table>";
-
-// close connection
-mysqli_close ($con);
+    echo" <th class='tableHeader'>
+        <a class='button green' href='addProduct.php'>New</a>
+    </th>";
+    
+    echo "</tr>";
+    
+    // table column header done, now loop over result set.
+    // Create a form for each record in result set.
+    // Print field values for each record
+    while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+        
+        echo "<tr class= 'tableHeaderRow'>";
+        // inner loop. Print each field value for a result set record
+        foreach ($line as $key => $value) {
+            
+            echo "<td class='tableData'>", "$value", "</td>";
+        }
+        
+        // put delete button on form
+        echo "<td><a class='button red' href='delete.php?dProd=".$line['productCode']."'>Delete</a></td>"  ;
+    } // end while
+    
+    echo "</table>";
+    
+}
 
 ?>
+     
