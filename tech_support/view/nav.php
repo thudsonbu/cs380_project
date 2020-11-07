@@ -4,7 +4,7 @@ echo "
 
 <nav class='navbar navbar-fixed-top navbar-expand-md navbar-light bg-light'>
     <!-- Brand -->
-    <a class='navbar-brand' href='index.html'>
+    <a class='navbar-brand' href='../index.php'>
         <img src='../images/avatar.png' class='myLogo' alt='myLogo'>
     </a>
     <!-- Toggle Open Button -->
@@ -25,6 +25,9 @@ echo "
             </li>
             <li class='navbar-nav navItem'>
                 <a class='nav-link link' href='../customer_manager/index.php'><span class=''>Customer</span></a>
+            </li>
+            <li class='navbar-nav navItem'>
+                <a class='nav-link link' href='../register_product/index.php'><span class=''>Register Product</span></a>
             </li>
         </ul>
     </div>

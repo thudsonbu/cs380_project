@@ -33,12 +33,11 @@ makeHeader('Login');
     require "../errors/errorMessage.php";
     
     errorMessage($out[1]); // show an error message box
-        
-    
 ?>    
         
   </div>
-  <?php
+
+<?php
 
 require '../view/footer.php';
 
