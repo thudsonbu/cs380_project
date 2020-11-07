@@ -23,7 +23,8 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 } else { // IF NO ERROR AND RESULTS CREATE TABLE
     
    require 'account.php';
-    }
+
+}
         
 
 ?>    
