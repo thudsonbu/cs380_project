@@ -1,12 +1,24 @@
 <?php
 
 // put/post query
-require "../model/postHandler.php";
+require "../model/postCustomer.php";
 require "../model/testInput.php";
 
 // build query start
 $query = "UPDATE Customers SET ";
 $htmlInjection = false;
+
+$customerID = $_POST['customerID'];
+$firstName = $_POST['firstName'];
+$lastName = $_POST['lastName'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$postalCost = $_POST['postalCode'];
+$countryCode= $_POST['countryCode'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
+$password = $_POST['password'];
 
 // for each value in _post append to query and test for html injection
 foreach($_POST as $key => $value) {
@@ -15,19 +27,26 @@ foreach($_POST as $key => $value) {
 
         $htmlInjection = true;
     }
-
-    $query = $query . $key . "='" . $value ."', ";
 }
 
 if(!$htmlInjection) {
 
-    // get the customer id from super global
-    $customerID = $_POST['customerID'];
+    // // remove the , from the query with substr (this causes sytax error)
+    // $query = substr($query, 0, -2) . "WHERE customerID='$customerID'"; 
 
-    // remove the , from the query with substr (this causes sytax error)
-    $query = substr($query, 0, -2) . "WHERE customerID='$customerID'"; 
-
-    $out = post($query);
+    $out = postCustomer(
+        $firstName,
+        $lastName,
+        $address,
+        $city,
+        $state,
+        $postalCode,
+        $countryCode,
+        $phone,
+        $email,
+        $password,
+        $customerID
+    );
 
     // if succesful return to index and say it worked
 
