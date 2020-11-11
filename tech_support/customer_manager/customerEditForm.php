@@ -1,20 +1,17 @@
 <?php
 
 //database connection and query
-require "../model/getHandler.php";
+require "../model/getCountries.php";
 require "../model/getCustomer.php";
 
 // get the email of the customer that was selected
 $customerID = $_GET['customerID'];
 
-// create query for countries
-$countryQuery = "SELECT * FROM countries";
-
 // query the database for the customer
 $customerResponse = getCustomer($customerID);
 
 // query the database for the countries
-$countryResponse = get($countryQuery);
+$countryResponse = getCountries();
 
 if($customerResponse[1]){ // error in customer query
 
