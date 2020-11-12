@@ -23,8 +23,6 @@ makeHeader('Login');
         <div class='tableContainer'>
             
 <?php
-$result = $out[0];
-
 echo "
     <div class='sectionTitleContainer'>
         <div class='sectionTitle'>Invalid Login</div>

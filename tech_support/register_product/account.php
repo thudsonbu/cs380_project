@@ -1,4 +1,5 @@
 <?php
+require '../model/sessionConfig.php';
 
 require '../view/header.php';
 
@@ -22,9 +23,7 @@ makeHeader('Login');
 <div class='sectionContainer'>
     <div class='searchForm'>
             
-    <?php
-        $result = $out[0];
-        
+    <?php        
         echo "
         <div class='sectionTitleContainer'>
             <div class='sectionTitle'>Register Product</div>
@@ -32,23 +31,25 @@ makeHeader('Login');
         <div class='sectionTitleContainer'>
         ";
         
+        
         // Create a form for each record in result set.
         // Print field values for each record
-        while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
-            $firstName = $line['firstName'];
-            $lastName = $line['lastName'];
+            $firstName = $_SESSION["first"];
+            $lastName = $_SESSION["last"];
+            $email = $_SESSION['email'];
 
             echo "<p> Welcome $firstName $lastName. </p>";
 
             echo "</div>";
-        }
+                
+        require 'dropdown.php';
 
-        echo "<div class='sectionTitleContainer'>";
+     
         
-        require 'button.php';
-
-        echo "</div>";
+        echo "You are logged in as $email <br><br>";
+        
+        echo "<a class='button red' href='logout.php' tite = 'Logout'>Logout.</a>";
         
     ?>    
     </div>

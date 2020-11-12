@@ -1,30 +1,42 @@
 <?php
-session_start();
+require '../model/sessionConfig.php';
 
-require_once '../model/getHandler.php';
+require '../model/getCustomerLogin.php';
 
 
 // Grab User submitted information
+
 $_SESSION['email'] = $_POST['login'];
 $email = $_SESSION['email'];
-$query = "SELECT * FROM customers WHERE email='$email' AND email IS NOT NULL AND email != '';";
 
-$out = get($query);
+require ("../model/testInput.php");
+//$email = testInput($email);
 
-if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
+$loginResponse = getCustomerLogin($email);
+
+
+if($loginResponse[1]){ // error in customer query
     
+    unset($_SESSION["email"]);
     require 'lockOut.php';
     
-} else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
+} else if(empty($loginResponse[0])){ // no error but no results returned from customer query
     
+    unset($_SESSION["email"]);
     require "lockout2.php";
     
-    
 } else { // IF NO ERROR AND RESULTS CREATE TABLE
-    
-   require 'account.php';
-
+    $loginResponse = $loginResponse[0];
+    $line = mysqli_fetch_array($loginResponse,  MYSQLI_ASSOC);if(is_array($line)) {
+        $_SESSION["first"] = $line['firstName'];
+        $_SESSION["last"] = $line['lastName'];
+        $_SESSION["id"] = $line['customerID'];
+        
+        header("Location:account.php");
+    }
 }
+   
+
         
 
 ?>    

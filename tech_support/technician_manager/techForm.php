@@ -1,8 +1,10 @@
 <?php
-require "../model/postHandler.php";
+require "../model/postTech.php";
+require "../model/testInput.php";
 
 
-if (empty($_POST['first']) or empty($_POST['last']) or empty($_POST['email']) or empty($_POST['phone']) or empty($_POST['pass'])) throw new Exception("form fields not filled in");
+if (empty($_POST['first']) or empty($_POST['last']) or empty($_POST['email']) or empty($_POST['phone']) or empty($_POST['pass'])) 
+    throw new Exception("form fields not filled in");
 
 
 $first = $_POST['first'];
@@ -12,36 +14,53 @@ $phone = $_POST['phone'];
 $pass = $_POST['pass'];
 
 // test name for HTML characters to avoid HTML Injection
-require ("TestInput.php");
-$first = test_input($first);
-$last = test_input($last);
-$email = test_input($email);
-$phone = test_input($phone);
-$pass = test_input($pass);
+foreach($_POST as $key => $value) {
+    
+    if(testInput($value)){
+        
+        $htmlInjection = true;
+    }
+}
 
-// Perform SQL query
-$query = "INSERT INTO technicians (firstName, lastName, email, phone, password) VALUES('$first', '$last', '$email', '$phone', '$pass')";
-
-$out = post($query);
-
-if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
+if(!$htmlInjection) {
     
-    $error = $out[1]->getMessage();
+    // // remove the , from the query with substr (this causes sytax error)
+    // $query = substr($query, 0, -2) . "WHERE customerID='$customerID'";
     
-    header("Location: index.php?error=$error");
+    $out = postTech(
+        $first,
+        $last,
+        $email,
+        $phone,
+        $pass
+        );
     
-} else if(!$out[0]) { // No errors but no records affected
-    
-    $rowCount = $out[0];
-    
-    header("Location: index.php?error='$rowCount Rows Updated'");
-    
+    if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
+        
+        $error = $out[1]->getMessage();
+        
+        header("Location: index.php?error=$error");
+        
+    } else if(!$out[0]) { // No errors but no records effected
+        
+        $rowCount = $out[0];
+        
+        header("Location: index.php?error='$rowCount Technicians Added'");
+        
+    } else {
+        
+        $rowCount = $out[0];
+        
+        header("Location: index.php?message='$rowCount Technician Added'");
+    }
 } else {
     
-    $rowCount = $out[0];
-    
-    header("Location: index.php?message='$rowCount Rows Updated'");
+    header("Location: customerFormPage.php?error='HTML INJECTION DETECTED");
 }
 
 
-?>
+
+// CLOSE CONNECTION
+mysqli_close($con);
+
+// if failure return to customer form and say failure reason

@@ -2,15 +2,46 @@
 
 require_once '../model/getHandler.php';
 
-$dropDown = "SELECT name FROM products;";
+$dropDown = "SELECT productCode, name FROM products;";
 
 $out = get($dropDown);
 
-$final = $out[0];
+if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
-echo "<select name='productName'>";
-while ($row = mysqli_fetch_array($final, MYSQLI_ASSOC)) {
-    echo "<option value='" . $row['name'] . "'>" . $row['name'] . "</option>";
+    require "../errors/errorMessage.php";
+    
+    errorMessage($out[1]);
+    
+} else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
+    
+    $e = 'No Products to Register For';
+    
+    require '../errors/registerError.php';
+    
+    registerErrorMessage($e);
+    
+} else { // IF NO ERROR AND RESULTS CREATE TABLE
+
+    $final = $out[0];
+    
+    echo "<form method='POST' action='register.php'>";
+    
+    echo "<select name='productCode'>";
+    while ($row = mysqli_fetch_array($final, MYSQLI_ASSOC)) {
+        echo "<option value='" . $row['productCode'] . "'>" . $row['name'] . "</option>";
+    }
+    echo "</select>";
+    
+    echo "<div class='sectionTitleContainer'>";
+    
+
+    echo"<input class='button green' type='submit' value='Register' name='register'>
+        </form>";
+    
+    echo "</div>";
+    
+  
 }
-echo "</select>";
+
+
 ?>
