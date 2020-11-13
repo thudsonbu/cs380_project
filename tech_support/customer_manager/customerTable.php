@@ -1,10 +1,5 @@
 <?php
 
-// DATABASE, QUERY AND CUSTOMER TABLE CREATOR
-require "../model/getHandler.php";
-
-$out = get($query);
-
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
     require "../errors/errorMessage.php";

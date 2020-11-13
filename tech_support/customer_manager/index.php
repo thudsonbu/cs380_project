@@ -70,12 +70,17 @@ makeHeader('Customer Index');
             // IF THERE WAS NO GET REQUEST SELECT ALL
             $query = "SELECT customerID, CONCAT(firstname, ' ', lastname) AS 'Name', email, city FROM customers;";
 
+            // DATABASE, QUERY AND CUSTOMER TABLE CREATOR
+            require "../model/getHandler.php";
+
+            $out = get($query);
+
         } else {
             // IF THERE WAS A GET REQUEST USE THE SUPER GLOBAL LAST NAME IN QUERY
-            $Search = $_GET['lastname'];
+            $lastName = $_GET['lastname'];
 
             // TEST FOR HTML INJECTION
-            $isHtmlInjection = testInput($Search);
+            $isHtmlInjection = testInput($lastName);
 
             if($isHtmlInjection){
 
@@ -87,14 +92,14 @@ makeHeader('Customer Index');
 
             }
 
-            $query = "SELECT customerID, CONCAT(firstname, ' ', lastname) AS 'Name', email, city FROM customers WHERE lastname='$Search'";
+            require "../model/searchCustomer.php";
+
+            $out = searchCustomer($lastName);
 
         }
-
         
         require "customerTable.php";
 
-        
         ?>
 </div>
 

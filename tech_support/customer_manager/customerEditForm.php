@@ -74,7 +74,7 @@ if($customerResponse[1]){ // error in customer query
             echo "
             <div class='formEntry'>
                 <div class='fieldName'>Country</div>
-                <select class='inputField' name='countryCode'>
+                <select class='fieldInput' name='countryCode'>
             ";
             // for each country in the country query
             $countryResult = $countryResponse[0];
