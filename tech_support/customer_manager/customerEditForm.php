@@ -23,7 +23,7 @@ if($customerResponse[1]){ // error in customer query
 
     require "../errors/message.php";
 
-    message("Customer not found");
+    message("Customer Not Found");
 
 } else if($countryResponse[1]){ // error returned from country query
 
@@ -61,12 +61,105 @@ if($customerResponse[1]){ // error in customer query
         $field_name = $field->name;
         $field_value = $line[$field_name];
 
+        // switch($field_name) {
+        //     // don't dispaly customer id
+        //     case 'customerID':
+        //         echo "
+        //         <div class='dontDisplay'>
+        //             <div class='dontDisplay'>$field->name</div>
+        //             <input class='dontDisplay' type='text' name='$field->name' value='$field_value'>
+        //         </div>
+        //         ";
+        //     break;
+        //     case 'postalCode':
+        //         // postal code is required with between 1 and 21 characters
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>$field->name</div>
+        //             <input class='fieldInput' type='text' pattern='{1,20}' name='$field->name' 
+        //             value='$field_value' title='postal code must be between 1 and 21 characters' required>
+        //         </div>
+        //         ";
+        //     break;
+        //     case 'countryCode':
+        //         // country code drop down
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>Country</div>
+        //             <select class='fieldInput' name='countryCode'>
+        //         ";
+        //         // for each country in the country query
+        //         $countryResult = $countryResponse[0];
+                
+        //         while($country = mysqli_fetch_array( $countryResult, MYSQLI_ASSOC )) {
+
+        //             $countryCode = $country['countryCode'];
+        //             $countryName = $country['countryName'];
+        //             // create an option
+
+        //             if($field_value==$countryCode){ // if this is the customers country make it selected
+
+        //                 echo "<option value='$countryCode' selected>$countryName</option>";
+        //             } else {
+
+        //                 echo "<option value='$countryCode'>$countryName</option>";
+        //             }
+        //         }
+        //         // close country select
+        //         echo "
+        //             </select>
+        //         </div>
+        //         ";
+        //     break;
+        //     case 'phone':
+        //         // phone must be in (999) 999-9999 format
+        //         // add row to form
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>$field->name</div>
+        //             <input class='fieldInput' type='text' name='$field->name' value='$field_value' 
+        //             title='phone must be in the following format (999) 999 9999' required>
+        //         </div>
+        //         ";
+        //     break;
+        //     case 'email': 
+        //         // must be a valid email address
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>$field->name</div>
+        //             <input class='fieldInput' pattern='[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$({1,20})' 
+        //             title='must be a valid email address' type='text' name='$field->name' value='$field_value' required>
+        //         </div>
+        //         ";
+        //     break;
+        //     case 'password':
+        //         // between 6 and 21 characters
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>$field->name</div>
+        //             <input class='fieldInput' type='text' pattern='{6,20}' name='$field->name' value='$field_value' 
+        //             title='password must be between 6 and 21 characters' required>
+        //         </div>
+        //         ";
+        //     break;
+        //     default: 
+        //         // add row to form
+        //         echo "
+        //         <div class='formEntry'>
+        //             <div class='fieldName'>$field->name</div>
+        //             <input class='fieldInput' pattern='{1,51}' type='text' name='$field->name' value='$field_value' 
+        //             title='must between 1 and 50 characters' required>
+        //         </div>
+        //         ";
+        //     break;
+        // }
+
         // customer id should not be displayed
         if ($field_name == 'customerID'){
             echo "
                 <div class='dontDisplay'>
                     <div class='dontDisplay'>$field->name</div>
-                    <input class='dontDisplay' type='text' name='$field->name' value='$field_value' required>
+                    <input class='dontDisplay' type='text' name='$field->name' value='$field_value'>
                 </div>
             ";
         } else if($field_name == 'countryCode') { 
@@ -104,12 +197,21 @@ if($customerResponse[1]){ // error in customer query
             // add row to form
             echo "
             <div class='formEntry'>
-                <div class='fieldName'>$field->name</div>
-                <input class='fieldInput' type='text' name='$field->name' value='$field_value' required>
+                <div class='fieldName'>$field_name</div>
+                <input class='fieldInput' type='text' name='$field_name' value='$field_value' required>
+            ";
+
+            if(isset($_GET[$field_name . 'Error'])){
+
+                $errorMessage = $_GET[$field_name . 'Error'];
+
+                echo "<div class='fieldError'>$errorMessage</div>";
+            }
+            
+            echo "
             </div>
             ";
         }
-
         
     }
 

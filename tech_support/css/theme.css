@@ -254,7 +254,7 @@ footer {
     width: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     flex-wrap: wrap;
     margin-bottom: 20px;
     border-radius: 10px;
@@ -280,11 +280,16 @@ footer {
     padding: 5px;
     text-transform: uppercase;
     font-size: .8rem;
+    min-width: 150px;
     width: 50%;
 }
 
 .fieldInput {
     width: 90%;
+}
+
+.fieldError {
+    color: #eb3d30;
 }
 
 .buttonContainer {
