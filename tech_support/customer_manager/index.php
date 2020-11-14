@@ -38,13 +38,23 @@ makeHeader('Customer Index');
     <?php
     // this is used to check if there was a message 
     // the message would be either updated succesfully or reports an error
+    if (!empty($_GET['success'])) {
+
+        $success = $_GET['success'];
+
+        require "../errors/successMessage.php";
+
+        successMessage($success);
+                        
+    }
+
     if (!empty($_GET['message'])) {
 
         $message = $_GET['message'];
 
-        require "../errors/successMessage.php";
+        require "../errors/message.php";
 
-        successMessage($message);
+        message($message);
                         
     }
 

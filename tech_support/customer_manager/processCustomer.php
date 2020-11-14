@@ -27,7 +27,7 @@ foreach($_POST as $key => $value) {
     // test for html injection
     if(testInput($value)){
 
-        header("Location: customerFormPage.php?error='HTML INJECTION DETECTED");
+        header("Location: customerFormPage.php?error=HTML INJECTION DETECTED");
 
         exit();
     }
@@ -88,9 +88,6 @@ if($inputError){
 
 } else {
 
-    // // remove the , from the query with substr (this causes sytax error)
-    // $query = substr($query, 0, -2) . "WHERE customerID='$customerID'"; 
-
     $out = postCustomer(
         $firstName,
         $lastName,
@@ -117,13 +114,13 @@ if($inputError){
 
         $rowCount = $out[0];
 
-        header("Location: index.php?error='$rowCount Rows Updated'");
+        header("Location: index.php?message=No Changes Made");
 
     } else {
 
         $rowCount = $out[0];
 
-        header("Location: index.php?message='$rowCount Rows Updated'");
+        header("Location: index.php?success=Customer Updated");
     }
 }
 
