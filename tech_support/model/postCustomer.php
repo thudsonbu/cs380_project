@@ -20,7 +20,7 @@ function postCustomer(
         $countryCode,
         $phone,
         $email,
-        $password,
+        $pass,
         $customerID
     ){
 
@@ -68,8 +68,8 @@ function postCustomer(
                 $countryCode,
                 $phone,
                 $email,
-                $password,
-                $customerID,
+                $pass,
+                $customerID
             );
             mysqli_stmt_execute($query);
             $result = mysqli_stmt_get_result($query);
