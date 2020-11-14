@@ -21,15 +21,13 @@ makeHeader('Customer Index');
 
 <!-- PAGE CONTENT -->
 <div class='sectionContainer'>
-    <div class='searchForm'>
-        <!-- FORM FOR SEARCHING CUSTOMERS -->
-        <?php
+    <!-- FORM FOR SEARCHING CUSTOMERS -->
+    <?php
 
-        require "customerSearchForm.php";
+    require "customerSearchForm.php";
 
-        // form includes insert feedback
-        ?>
-    </div>
+    // form includes insert feedback
+    ?>
 </div>
 
 
