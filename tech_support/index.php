@@ -34,10 +34,10 @@
 
 <body>   
 
-    <nav class='navbar navbar-fixed-top navbar-expand-md navbar-light bg-light'>
+    <nav class='navbar fixed-top navbar-expand-md navbar-light bg-light'>
         <!-- Brand -->
-        <a class='navbar-brand' href='index.php'>
-            <img src='./images/avatar.png' class='myLogo' alt='myLogo'>
+        <a class='navbar-brand' href='../index.php'>
+            <img src='images/avatar.png' class='myLogo' alt='myLogo'>
         </a>
         <!-- Toggle Open Button -->
         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarCollapse' aria-haspopup='true' aria-expanded='false'>
@@ -45,21 +45,31 @@
         </button>
         <!-- Navbar Content -->
         <div class='collapse navbar-collapse' id='navbarCollapse'>
-            <ul class='navbar-nav ml-auto'>
+            <ul class='navbar-nav'>
                 <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./index.php'><span class=''>Home</span></a>
+                    <a class='nav-link link' href='index.php'><span class=''>Home</span></a>
+                </li>
+                <li class='nav-item dropdown navItem'>
+                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        Products
+                    </a>
+                    <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                        <a class='dropdown-item' href='./product_manager/index.php'>View Products</a>
+                        <a class='dropdown-item' href='./product_manager/addProduct.php'>New Products</a>
+                        <a class='dropdown-item' href='./register_product/index.php'>Register Product</a>
+                    </div>
+                </li>
+                <li class='nav-item dropdown navItem'>
+                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        Technicians
+                    </a>
+                    <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                        <a class='dropdown-item' href='./technician_manager/index.php'>View Technicians</a>
+                        <a class='dropdown-item' href='./technician_manager/newTech.php'>New Technician</a>
+                    </div>
                 </li>
                 <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./product_manager/index.php'><span class=''>Product</span></a>
-                </li>
-                <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./technician_manager/index.php'><span class=''>Technician</span></a>
-                </li>
-                <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./customer_manager/index.php'><span class=''>Customer</span></a>
-                </li>
-                <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./register/index.php'><span class=''>Register Product</span></a>
+                    <a class='nav-link link' href='./customer_manager/index.php'><span class=''>Customers</span></a>
                 </li>
             </ul>
         </div>
@@ -84,3 +94,17 @@
     </div>
 
 </div>
+
+<footer class='footer'>
+    <div class='footerCopyright'>
+        &#169; SportPro Technologies 2020
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

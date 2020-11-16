@@ -28,6 +28,10 @@ footer {
     text-align: center;
 }
 
+.userIcon {
+    color: #000000;
+}
+
 /* PAGE TITLE AND HEADER STYLES */
 .jumboTron {
     height: 80vh;
@@ -43,6 +47,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 .pageTitle {
@@ -83,8 +88,8 @@ footer {
 
 .myLogo {
     margin-left: 10px;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 
 .link {
@@ -100,10 +105,28 @@ footer {
 }
 
 .navItem {
-    margin: 10px;
+    margin: 0px 5px 0px 5px;
+    font-size: .8rem;
 }
 .navbar {
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    margin-bottom: 50px;
+}
+
+.top {
+    padding-top: 5px;
+}
+
+.greenText {
+    color: #83bb43;
+}
+
+.greyText {
+    color: #979797;
+}
+
+.redText {
+    color: #eb3d30;
 }
 
 /* MAIN BUTTON STYLES */
