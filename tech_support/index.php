@@ -72,6 +72,37 @@
                     <a class='nav-link link' href='./customer_manager/index.php'><span class=''>Customers</span></a>
                 </li>
             </ul>
+
+<?php
+if (isset($_SESSION['email'])){
+
+    $firstname = $_SESSION['first'];
+
+    echo "
+        <div class='nav-item dropdown ml-auto'>
+            <a class='nav-link dropdown-toggle greenText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greenText'></i>$firstname
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                <a class='dropdown-item redText' href='register_product/logout.php'>Loggout</a>
+            </div>
+        </div>
+    ";
+} else {
+
+    echo "
+        <div class='nav-item dropdown ml-auto'>
+            <a class='nav-link dropdown-toggle greyText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greyText'></i>
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                <a class='dropdown-item greenText' href='register_product/index.php'>Login</a>
+            </div>
+        </div>
+    ";
+}
+?>
+
         </div>
     </nav>
 

@@ -45,18 +45,27 @@ if (isset($_SESSION['email'])){
     $firstname = $_SESSION['first'];
 
     echo "
-        <li class='navbar-nav greenText ml-auto'>
-            <i class='fas fa-user top greenText'></i>$firstname
-        </li>
+        <div class='nav-item dropdown ml-auto'>
+            <a class='nav-link dropdown-toggle greenText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greenText'></i>$firstname
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                <a class='dropdown-item redText' href='../register_product/logout.php'>Loggout</a>
+            </div>
+        </div>
     ";
 } else {
 
     echo "
-        <li class='navbar-nav ml-auto'>
-            <i class='fas fa-user-times top greyText'></i>
-        </li>
+        <div class='nav-item dropdown ml-auto'>
+            <a class='nav-link dropdown-toggle greyText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greyText'></i>
+            </a>
+            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                <a class='dropdown-item greenText' href='../register_product/index.php'>Login</a>
+            </div>
+        </div>
     ";
-
 }
 
 echo "
