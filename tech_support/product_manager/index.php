@@ -1,6 +1,7 @@
 <!-- This is Part A of Assignment 3: Manage Products (Wei) -->
 
-<?php 
+<?php
+    require '../session/sessionConfig.php';
     require '../view/header.php';
     makeHeader('Product Index');
 ?>

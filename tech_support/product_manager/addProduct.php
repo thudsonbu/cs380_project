@@ -1,6 +1,8 @@
     <!-- Utilizing the header.php to format the header of the website -->
 
-<?php 
+<?php
+
+    require '../session/sessionConfig.php';
     require '../view/header.php';
     makeHeader('Products Index');
 ?>

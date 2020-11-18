@@ -1,5 +1,7 @@
 
-<?php 
+<?php
+
+require '../session/sessionConfig.php';
 
 require '../view/header.php';
 
