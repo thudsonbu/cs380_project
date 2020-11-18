@@ -1,6 +1,6 @@
 <?php 
 
-require '../model/sessionConfig.php';
+require '../session/sessionConfig.php';
 
 if(isset($_SESSION['email'])) {
     header("Location:account.php");

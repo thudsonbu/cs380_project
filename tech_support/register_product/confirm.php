@@ -1,6 +1,6 @@
 <?php 
 
-require '../model/sessionConfig.php';
+require '../session/sessionConfig.php';
 
 require '../view/header.php';
 

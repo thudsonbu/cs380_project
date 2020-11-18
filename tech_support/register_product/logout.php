@@ -1,5 +1,5 @@
 <?php
-require '../model/sessionConfig.php';
+require '../session/sessionConfig.php';
 
 unset($_SESSION["email"]);
 unset($_SESSION["first"]);

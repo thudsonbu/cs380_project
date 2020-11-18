@@ -1,7 +1,7 @@
 <?php
-require '../model/sessionConfig.php';
+require '../session/sessionConfig.php';
 
-require '../model/getCustomerLogin.php';
+require '../session/getCustomerLogin.php';
 
 
 // Grab User submitted information

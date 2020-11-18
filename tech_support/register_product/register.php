@@ -1,5 +1,5 @@
 <?php
-require '../model/sessionConfig.php';
+require '../session/sessionConfig.php';
 require '../model/postRegister.php';
 
 $date = date("Y-m-d");

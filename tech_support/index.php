@@ -1,3 +1,7 @@
+<?php 
+require 'session/sessionConfig.php';
+?>
+
 <!DOCTYPE html>
 <html lang="EN">
 <head>
