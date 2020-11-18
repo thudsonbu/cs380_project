@@ -11,5 +11,3 @@ function registerErrorMessage($e) {
     </div>
     ";
 }
-
-?>

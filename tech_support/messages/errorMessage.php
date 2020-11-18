@@ -39,7 +39,3 @@ function customErrorMessage($e) {
     </div>
     ";
 }
-
-?>
-
-

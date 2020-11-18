@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="EN">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -36,7 +36,7 @@
 
     <nav class='navbar fixed-top navbar-expand-md navbar-light bg-light'>
         <!-- Brand -->
-        <a class='navbar-brand' href='../index.php'>
+        <a class='navbar-brand' href='index.php'>
             <img src='images/avatar.png' class='myLogo' alt='myLogo'>
         </a>
         <!-- Toggle Open Button -->
@@ -124,7 +124,6 @@ if (isset($_SESSION['email'])){
         <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Register Product</a>
     </div>
 
-</div>
 
 <footer class='footer'>
     <div class='footerCopyright'>

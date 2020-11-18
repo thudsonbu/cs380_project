@@ -37,7 +37,7 @@ if($customerResponse[1]){ // error in customer query
 
     customErrorMessage("Countries Not Found");
 
-} else { // if there were not erros and everything returned, make the table
+} else { // if there were not errors and everything returned, make the table
 
     echo "<form action='processCustomer.php' method='post' class='form'>";
 

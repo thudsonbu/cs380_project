@@ -102,7 +102,7 @@ makeHeader('Customer Index');
 
             }
 
-            require "../model/searchCustomer.php";
+            require "../model/customer/searchCustomer.php";
 
             $out = searchCustomer($lastName);
 
