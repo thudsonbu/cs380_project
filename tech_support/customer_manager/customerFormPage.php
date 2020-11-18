@@ -1,6 +1,8 @@
 
 <?php 
 
+require '../model/sessionConfig.php';
+
 require '../view/header.php';
 
 makeHeader('Update Customer');
