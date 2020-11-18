@@ -27,7 +27,7 @@ echo "
     <div class='sectionTitleContainer'>
         <div class='sectionTitle'>Invalid Login</div>
     </div>";
-require "../errors/message.php";
+require "../messages/message.php";
 
 message("Sorry, your email is invalid. Enter a valid email.");
     

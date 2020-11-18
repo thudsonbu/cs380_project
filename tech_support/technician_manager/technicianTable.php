@@ -9,7 +9,7 @@ $out = get($query);
 // if there waas an error report the error
 if($out[1]) {
 
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
 
     errorMessage($out[1]);
 

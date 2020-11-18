@@ -27,7 +27,7 @@
 
         $message = $_GET['message'];
 
-        require "../errors/successMessage.php";
+        require "../messages/successMessage.php";
 
         successMessage($message);
                         
@@ -37,7 +37,7 @@
         
         $error = $_GET['error'];
         
-        require "../errors/errorMessage.php";
+        require "../messages/errorMessage.php";
         
         customErrorMessage($error);
         

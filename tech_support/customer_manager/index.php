@@ -42,7 +42,7 @@ makeHeader('Customer Index');
 
         $success = $_GET['success'];
 
-        require "../errors/successMessage.php";
+        require "../messages/successMessage.php";
 
         successMessage($success);
                         
@@ -52,7 +52,7 @@ makeHeader('Customer Index');
 
         $message = $_GET['message'];
 
-        require "../errors/message.php";
+        require "../messages/message.php";
 
         message($message);
                         
@@ -62,7 +62,7 @@ makeHeader('Customer Index');
 
         $error = $_GET['error'];
 
-        require "../errors/errorMessage.php";
+        require "../messages/errorMessage.php";
 
         customErrorMessage($error);
                         
@@ -94,7 +94,7 @@ makeHeader('Customer Index');
 
             if($isHtmlInjection){
 
-                require "../errors/errorMessage.php";
+                require "../messages/errorMessage.php";
 
                 customErrorMessage("HTML INJECTION DETECTED");
 

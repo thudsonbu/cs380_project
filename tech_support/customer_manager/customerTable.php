@@ -2,13 +2,13 @@
 
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
 
     errorMessage($out[1]); // show an error message box
 
 } else if(empty($out[0])){ // IF NO ERROR BUT NO RESULTS
 
-    require "../errors/message.php";
+    require "../messages/message.php";
 
     message("No results found");
 

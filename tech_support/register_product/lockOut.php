@@ -30,7 +30,7 @@ makeHeader('Login');
         <div class='sectionTitle'>Error</div>
     </div>";
     
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
     
     errorMessage($out[1]); // show an error message box
 ?>    

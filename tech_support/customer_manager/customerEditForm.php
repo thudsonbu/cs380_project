@@ -15,25 +15,25 @@ $countryResponse = getCountries();
 
 if($customerResponse[1]){ // error in customer query
 
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
 
     errorMessage($customerResponse[1]);
 
 } else if(empty($customerResponse[0])){ // no error but no results returned from customer query
 
-    require "../errors/message.php";
+    require "../messages/message.php";
 
     message("Customer Not Found");
 
 } else if($countryResponse[1]){ // error returned from country query
 
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
 
     errorMessage($countryResponse[1]);
 
 } else if(empty($countryResponse[0])){ // no error but no countries returned
 
-    require "../errors/message.php";
+    require "../messages/message.php";
 
     customErrorMessage("Countries Not Found");
 

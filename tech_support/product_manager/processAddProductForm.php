@@ -30,7 +30,7 @@ if (! empty($_POST['code']) or
         $error = $outarray[1]->getMessage();
         header("Location: index.php?error=$error");
     }
-    // No errors but no records affected
+    // No messages but no records affected
     else if(!$outarray[0]) {
         $rowTotal = $outarray[0];
         header("Location: index.php?error='$rowTotal Rows updated' ");

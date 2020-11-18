@@ -7,7 +7,7 @@ in the array is the results of the query if there were any (null otherwise).
 The second element returns the error that was thrown if there was an error 
 (null otherwise); 
 
-Database connection and querry errors will be handled by this method however
+Database connection and querry messages will be handled by this method however
 it is up to the user to implement what should happen should an error be returned.
 */
 

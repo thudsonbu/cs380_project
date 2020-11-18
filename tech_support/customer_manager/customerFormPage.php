@@ -26,7 +26,7 @@ require '../view/nav.php'
 
             $error = $_GET['error'];
 
-            require "../errors/errorMessage.php";
+            require "../messages/errorMessage.php";
 
             customErrorMessage($error);
 

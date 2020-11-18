@@ -8,7 +8,7 @@ $out = get($dropDown);
 
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
-    require "../errors/errorMessage.php";
+    require "../messages/errorMessage.php";
     
     errorMessage($out[1]);
     
@@ -16,7 +16,7 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     
     $e = 'No Products to Register For';
     
-    require '../errors/registerError.php';
+    require '../messages/registerError.php';
     
     registerErrorMessage($e);
     

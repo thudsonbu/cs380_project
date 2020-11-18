@@ -20,7 +20,7 @@ if(isset($_GET['dProd'])) {
         
         header("Location: index.php?error=$error");
         
-    } else if(!$outarray[0]) { // No errors but no records effected
+    } else if(!$outarray[0]) { // No messages but no records effected
         
         $rowCount = $outarray[0];
         
