@@ -1,4 +1,5 @@
 <?php 
+
 require '../model/sessionConfig.php';
 
 if(isset($_SESSION['email'])) {
