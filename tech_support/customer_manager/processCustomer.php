@@ -1,7 +1,7 @@
 <?php
 
 // put/post query
-require "../model/postCustomer.php";
+require "../model/customer/postCustomer.php";
 require "../model/testInput.php";
 
 $customerID = $_POST['customerID'];

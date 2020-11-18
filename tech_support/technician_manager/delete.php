@@ -1,7 +1,7 @@
 <?php
 // if this will check if the delete id was set (did is the delete id)
 require "../model/postHandler.php";
-require "../model/deleteTech.php";
+require "../model/technician/deleteTech.php";
 
 if(isset($_GET['did'])) {
 

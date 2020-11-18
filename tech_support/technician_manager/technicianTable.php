@@ -5,7 +5,6 @@ require "../model/getHandler.php";
 
 $out = get($query);
 
-
 // if there waas an error report the error
 if($out[1]) {
 

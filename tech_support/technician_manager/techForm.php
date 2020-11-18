@@ -1,5 +1,5 @@
 <?php
-require "../model/postTech.php";
+require "../model/technician/postTech.php";
 require "../model/testInput.php";
 
 

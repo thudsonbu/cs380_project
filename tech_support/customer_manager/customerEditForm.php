@@ -1,8 +1,8 @@
 <?php
 
 //database connection and query
-require "../model/getCountries.php";
-require "../model/getCustomer.php";
+require "../model/customer/getCountries.php";
+require "../model/customer/getCustomer.php";
 
 // get the email of the customer that was selected
 $customerID = $_GET['customerID'];
