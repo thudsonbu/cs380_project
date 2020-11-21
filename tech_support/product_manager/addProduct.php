@@ -42,8 +42,8 @@
                 <input class='fieldInput' type='text' name='version' required>
             </div>
             <div class='formEntry'>
-                <div class='fieldName'>Release Date</div>
-                <input class='fieldInput' type='text' name='releaseDate' required>
+                <div class='fieldName'>Release Date (YYYY-MM-DD)</div>
+                <input class='fieldInput' type='date' name='releaseDate' required>
             </div>
             <div class='buttonContainer'>
                 <a href='index.php' class='button grey'>Cancel</a>

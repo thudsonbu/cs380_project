@@ -494,16 +494,37 @@ footer {
     justify-content: space-between;
 }
 
+.reportFormEntry {
+    padding: 5px;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: 0;
+}
+
 .reportFormHeading {
     text-transform: uppercase;
 }
 
-.reportFormContent {
-    width: 200px;
-    text-align: right;
+.reportFormDescription {
+    width: 100%;
 }
 
-.reportFormDropdown {
-    width: 200px;
-    text-align: right;
+.reportForm {
+    padding: 20px;
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
 }

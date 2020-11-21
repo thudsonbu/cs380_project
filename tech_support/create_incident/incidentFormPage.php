@@ -63,7 +63,7 @@ echo "
 // PAGE CONTENT
 echo "
     <div class='sectionContainer'>
-        <form action='processIncident.php' method='post' class='searchForm'>
+        <form action='processIncident.php' method='post' class='reportForm'>
             <div class='sectionTitleContainer'>
                 <div class='sectionTitle'>
                     Create Incident: Incident Report
@@ -84,14 +84,10 @@ echo "
             echo "
             </div>
             <div class='reportFormEntry'>
-                <p class='reportFormHeading'>Title:</p>
-                <input class='reportFormContent' type='text' name='titleName' required>
+                <input class='reportFormDescription' type='text' name='titleName' placeholder='Title:' required>
             </div>
             <div class='reportFormEntry'>
-                <p class='reportFormHeading'>Description:</p>
-            </div> 
-            <div class='reportFormEntry'>
-                <textarea class='reportFormContent' rows='5' cols='50' name='description' required></textarea>
+                <textarea class='reportFormDescription' rows='5' placeholder='Description:' name='description' required></textarea>
             </div>
             <div class='buttonContainer'>
                 <a href='index.php' class='button grey'>Cancel</a>

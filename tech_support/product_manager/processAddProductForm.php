@@ -29,23 +29,23 @@ if (! empty($_POST['code']) or
     }
 
     // Perform SQL query
-    $query = "INSERT INTO products (productCode, name, version, releaseDate) VALUES('$code', '$name', '$version', '$releaseDate')";
-    $outarray = post($query);
+    require '../model/postProduct.php';
+    $outArray = postProduct($code, $name, $version, $releaseDate);
     
     // IF ERROR ( queryHandler returns array with result and boolean error )
-    if(!empty($outarray[1])) {
-        $error = $outarray[1]->getMessage();
+    if(!empty($outArray[1])) {
+        $error = $outArray[1]->getMessage();
         header("Location: index.php?error=$error");
         exit();
     }
     // No messages but no records affected
-    else if(!$outarray[0]) {
-        $rowTotal = $outarray[0];
+    else if(!$outArray[0]) {
+        $rowTotal = $outArray[0];
         header("Location: index.php?message='$rowTotal Rows updated' ");
         exit();
     }
     else {
-        $rowTotal = $outarray[0];
+        $rowTotal = $outArray[0];
         header("Location: index.php?message='$rowTotal Rows updated' ");
         exit();
     }
