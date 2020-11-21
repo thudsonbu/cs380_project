@@ -18,7 +18,7 @@ function searchCustomer($lastName) {
 
     // attempt database connection
     try {
-        require "../connectionVariables.php";
+        require "../model/connectionVariables.php";
 
         $con = mysqli_connect($host, $username, $password, $dbname);
 

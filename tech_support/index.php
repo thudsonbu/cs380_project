@@ -36,6 +36,8 @@ require 'session/sessionConfig.php';
 </head>
 
 
+
+
 <body>   
 
     <nav class='navbar fixed-top navbar-expand-md navbar-light bg-light'>
@@ -72,8 +74,14 @@ require 'session/sessionConfig.php';
                         <a class='dropdown-item' href='./technician_manager/newTech.php'>New Technician</a>
                     </div>
                 </li>
-                <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./customer_manager/index.php'><span class=''>Customers</span></a>
+                <li class='nav-item dropdown navItem'>
+                    <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                        Customer
+                    </a>
+                    <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                        <a class='dropdown-item' href='./customer_manager/index.php'>View Customer</a>
+                        <a class='dropdown-item' href='./create_incident/index.php'>Create Incident</a>
+                    </div>
                 </li>
             </ul>
 
@@ -126,6 +134,7 @@ if (isset($_SESSION['email'])){
         <a href='./product_manager/index.php' class='squishyButton'><i class="fas fa-shopping-cart"></i>Products</a>
         <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
         <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Register Product</a>
+        <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Create Incident</a>
     </div>
 
 

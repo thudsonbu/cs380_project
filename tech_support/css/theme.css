@@ -433,3 +433,28 @@ footer {
     border: none;
     border-bottom: 2px #444444;
 }
+
+.reportFormEntry {
+    padding: 5px;
+    min-width: 150px;
+    width: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.reportFormHeading {
+    text-transform: uppercase;
+}
+
+.reportFormContent {
+    width: 200px;
+    text-align: right;
+}
+
+.reportFormDropdown {
+    width: 200px;
+    text-align: right;
+}

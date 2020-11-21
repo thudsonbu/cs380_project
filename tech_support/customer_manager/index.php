@@ -1,12 +1,11 @@
-
+<!-- SESSION DETECTION AND PAGE HEADER -->
 <?php 
-
+// SESSION DETECTION
 require '../session/sessionConfig.php';
-
+// MAKE HEADER METHOD
 require '../view/header.php';
-
+// CREATE HEADER WITH PAGE TITLE
 makeHeader('Customer Index');
-
 ?>
 
 <!-- RESPONSIVE NAVBAR -->
@@ -32,7 +31,7 @@ makeHeader('Customer Index');
     ?>
 </div>
 
-
+<!-- MESSAGE BOXES -->
 <div class='sectionContainer'>
     <!-- FORM FOR SEARCHING CUSTOMERS -->
     <?php
@@ -70,6 +69,7 @@ makeHeader('Customer Index');
     ?>
 </div>
 
+<!-- CUSTOMER TABLE -->
 <div class='sectionContainer'>
         <?php
 
@@ -113,6 +113,7 @@ makeHeader('Customer Index');
         ?>
 </div>
 
+<!-- PAGE FOOTER -->
 <?php
 
 require '../view/footer.php';

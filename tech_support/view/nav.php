@@ -33,8 +33,14 @@ echo "
                     <a class='dropdown-item' href='../technician_manager/newTech.php'>New Technician</a>
                 </div>
             </li>
-            <li class='navbar-nav navItem'>
-                <a class='nav-link link' href='../customer_manager/index.php'><span class=''>Customers</span></a>
+            <li class='nav-item dropdown navItem'>
+                <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                    Customer
+                </a>
+                <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                    <a class='dropdown-item' href='../customer_manager/index.php'>View Customer</a>
+                    <a class='dropdown-item' href='../create_incident/index.php'>Create Incident</a>
+                </div>
             </li>
         </ul>
 
