@@ -119,7 +119,6 @@ if($customerResponse[1]){ // error in customer query
             </div>
             ";
         }
-        
     }
 
     // form submit buttons

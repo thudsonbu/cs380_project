@@ -38,7 +38,7 @@ if(isset($_SESSION['email'])) {
             </div>
             <div class='inputBar'>
                 <div class='input'>
-                    Email: <input type='text' name='login'>
+                    <input placeholder='Email' type='text' name='login'>
                 </div>
                 <button type='submit' class='button blue'>Login</button>
             </div>

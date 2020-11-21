@@ -67,7 +67,7 @@ echo "
             </div>
             <div class='inputBar'>
                 <div class='input'>
-                    Email: <input type='text' name='email' required>
+                    <input placeholder='Email' type='text' name='email' required>
                 </div>
                 <button type='submit' class='button blue'>Search</button>
             </div>

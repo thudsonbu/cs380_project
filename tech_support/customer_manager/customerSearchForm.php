@@ -14,7 +14,7 @@ echo "
 echo "
     <div class='customerSearchBar'>
         <div class='customerSearchBarInput'>
-            <input type='text' name='lastname'>
+            <input placeholder='Lastname' type='text' name='lastname'>
         </div>
         <button type='submit' class='button blue'>Search</button>
     </div>
