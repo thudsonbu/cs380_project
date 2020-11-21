@@ -133,8 +133,8 @@ if (isset($_SESSION['email'])){
         <a href='./customer_manager/index.php' class='squishyButton'><i class="fas fa-users"></i>Customers</a>
         <a href='./product_manager/index.php' class='squishyButton' ><i class="fas fa-shopping-cart"></i>Products</a>
         <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
-        <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Register Product</a>
-        <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Create Incident</a>
+        <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-cash-register"></i>Register Product</a>
+        <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-radiation-alt"></i>Create Incident</a>
     </div>
 
 
