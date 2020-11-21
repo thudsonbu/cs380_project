@@ -1,16 +1,16 @@
 .tableContainer {
     margin-top: 3vh;
     border-radius: 10px;
-    width: 90%;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 2%;
-    padding-bottom: 5%;
+    padding: 20px;
     margin-bottom: 5%;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    width: 90%;
+    max-width: 1000px;
 }
 
 
@@ -20,7 +20,7 @@ table, th, td {
 
 .peopleTable {
     width: 90%;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 @media (max-width: 1100px) {

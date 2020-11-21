@@ -14,8 +14,8 @@ i {
 }
 
 footer {
-    height: 100px;
-    margin-top: 100px;
+    height: 20vh;
+    margin-top: 15.5vh;
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -42,18 +42,18 @@ footer {
 }
 
 .pageTitleContainer {
-    height: 40vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
 }
 
 .pageTitle {
     color: #ffffff;
-    font-size: 9rem;
-    padding: .5rem;
+    font-size: 7rem;
+    margin-top: 5vh;
+    padding: .7rem;
     width: 100%;
     text-align: center;
 }
@@ -61,7 +61,7 @@ footer {
 
 .pageSubtitle {
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 2.2rem;
     width: 100%;
     text-align: center;
 }
@@ -138,7 +138,6 @@ footer {
     display: block;
     position: relative;
     background-color: #ffffff;
-    font-size: 1.5em;
     font-weight: 300px;
     color: #444444;
     text-transform: uppercase;
@@ -147,6 +146,7 @@ footer {
     margin: 1em;
     border-radius: .5em;
     box-shadow: 0 .3em #9f9f9f;
+    font-size: 1.5rem;
 }
 
 .squishyButton:hover {
@@ -166,34 +166,22 @@ footer {
 @media (max-width: 1400px) {
 
     .pageTitle {
-        font-size: 8em;
+        font-size: 6em;
     }
     
     .pageSubtitle {
-        font-size: 4em;
+        font-size: 3em;
+    }
+
+    .squishyButton {
+        font-size: 1.4rem;
     }
 }
 
 @media (max-width: 1100px) {
 
     .pageTitle {
-        font-size: 7em;
-    }
-
-    .pageSubtitle {
-        font-size: 3em;
-    }
-
-    .squishyButton {
-        font-size: 1.5em;
-    }
-}
-
-
-@media (max-width: 900px) {
-
-    .pageTitle {
-        font-size: 5em;
+        font-size: 4em;
     }
 
     .pageSubtitle {
@@ -201,9 +189,60 @@ footer {
     }
 
     .squishyButton {
-        font-size: 1.2em;
+        font-size: 1.2rem;
+        padding: .8rem .8rem;
+    }
+
+    .jumboTron {
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pageTitleContainer {
+        height: 30vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
     }
 }
+
+
+@media (max-width: 900px) {
+
+    .pageTitle {
+        font-size: 3em;
+    }
+
+    .pageSubtitle {
+        font-size: 1.5em;
+    }
+
+    .squishyButton {
+        font-size: 1rem;
+        padding: .65rem .65rem;
+
+    }
+}
+
+/*@media (max-width: 780px) {*/
+
+/*    .pageTitle {*/
+/*        font-size: 2.3em;*/
+/*    }*/
+
+/*    .pageSubtitle {*/
+/*        font-size: 1.3em;*/
+/*    }*/
+
+/*    .squishyButton {*/
+/*        font-size: .8em;*/
+/*    }*/
+/*}*/
 
 .button {
     outline: none;
@@ -285,6 +324,7 @@ footer {
     margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    max-width: 800px;
 }
 
 .sectionTitleContainer {
@@ -297,10 +337,18 @@ footer {
 
 .sectionTitle {
     width: 100%;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
+}
+
+@media (max-width: 800px) {
+
+    .sectionTitle {
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
 }
 
 .formEntry {
@@ -412,6 +460,7 @@ footer {
     width: 90%;
     border-radius: 10px;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    max-width: 1000px;
 }
 
 .customerSearchTitle {

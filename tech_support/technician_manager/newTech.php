@@ -25,7 +25,7 @@ makeHeader('Technician Index');
         <form action="techForm.php" class='form' method="post">
             <div class='sectionTitleContainer'>
                 <div class='sectionTitle'>
-                    Update Technician Information
+                    New Technician
                 </div>
             </div>
             <div class='formEntry'>

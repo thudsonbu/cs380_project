@@ -95,7 +95,7 @@ echo "
             </div>
             <div class='buttonContainer'>
                 <a href='index.php' class='button grey'>Cancel</a>
-                <button type='submit' class='button green'>Submit Incident</button>
+                <button type='submit' class='button green'>Submit</button>
             </div>
         </form>
     </div>";

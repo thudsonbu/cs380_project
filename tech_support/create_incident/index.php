@@ -69,7 +69,7 @@ echo "
                 <div class='input'>
                     Email: <input type='text' name='email' required>
                 </div>
-                <button type='submit' class='button blue'>Search Customer</button>
+                <button type='submit' class='button blue'>Search</button>
             </div>
         </form>
     </div>";

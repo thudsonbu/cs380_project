@@ -32,7 +32,7 @@ require 'session/sessionConfig.php';
     <!-- My Icon -->
     <link rel="icon" href="./images/avatar.png">
 
-    <title>CS380 A3 - Customer</title>
+    <title>Sports Pro: Home</title>
 </head>
 
 
@@ -96,7 +96,7 @@ if (isset($_SESSION['email'])){
                 <i class='fas fa-user top greenText'></i>$firstname
             </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item redText' href='register_product/logout.php'>Loggout</a>
+                <a class='dropdown-item redText' href='register_product/logout.php'>Logout</a>
             </div>
         </div>
     ";
@@ -131,7 +131,7 @@ if (isset($_SESSION['email'])){
     
     <div class='homeButtonContainer'>
         <a href='./customer_manager/index.php' class='squishyButton'><i class="fas fa-users"></i>Customers</a>
-        <a href='./product_manager/index.php' class='squishyButton'><i class="fas fa-shopping-cart"></i>Products</a>
+        <a href='./product_manager/index.php' class='squishyButton' ><i class="fas fa-shopping-cart"></i>Products</a>
         <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
         <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Register Product</a>
         <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Create Incident</a>

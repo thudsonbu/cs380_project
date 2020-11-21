@@ -16,6 +16,7 @@ if (! empty($_POST['code']) or
     
     // test name for HTML characters to avoid HTML Injection
     require ("testInput.php");
+
     $code = test_input($code);
     $name = test_input($name);
     $version = test_input($version);
