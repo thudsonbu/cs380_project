@@ -108,9 +108,7 @@ if (isset($_SESSION['email'])){
                 <i class='fas fa-user top greyText'></i>
             </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item greenText' href='userAuth/adminLogin.php'>Admin Login</a>
-                <a class='dropdown-item greenText' href='userAuth/techLogin.php'>Tech Login</a>
-                <a class='dropdown-item greenText' href='userAuth/customerLogin.php'>Customer Login</a>
+                <a class='dropdown-item greenText' href='register_product/index.php'>Login</a>
             </div>
         </div>
     ";
@@ -126,18 +124,17 @@ if (isset($_SESSION['email'])){
             SportsPro
         </div>
         <div class='pageSubtitle'>
-            Smart sports management software.<br>
-            Please Select your login type.
+            Smart sports management software.
         </div>
     </div>
-    
-<br> <br>
 
+    
     <div class='homeButtonContainer'>
-        <a href='userAuth/adminLogin.php' class='squishyButton'><i class="fas fa-book"></i>Admin</a>
-        <a href='userAuth/techLogin.php' class='squishyButton' ><i class="fas fa-wrench"></i>Technician</a>
-        <a href='userAuth/customerLogin.php' class='squishyButton'><i class="fas fa-user"></i>Customer</a>
-        
+        <a href='./customer_manager/index.php' class='squishyButton'><i class="fas fa-users"></i>Customers</a>
+        <a href='./product_manager/index.php' class='squishyButton' ><i class="fas fa-shopping-cart"></i>Products</a>
+        <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
+        <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-cash-register"></i>Register Product</a>
+        <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-radiation-alt"></i>Create Incident</a>
     </div>
 
 

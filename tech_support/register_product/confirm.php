@@ -2,6 +2,8 @@
 
 require '../session/sessionConfig.php';
 
+require '../session/expiredSession.php';
+
 require '../view/header.php';
 
 makeHeader('Register Index');

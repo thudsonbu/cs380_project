@@ -2,6 +2,8 @@
 
 require '../session/sessionConfig.php';
 
+require '../session/expiredSession.php';
+
 require '../view/header.php';
 
 makeHeader('Login');
@@ -38,7 +40,7 @@ makeHeader('Login');
 
             $firstName = $_SESSION["first"];
             $lastName = $_SESSION["last"];
-            $email = $_SESSION['email'];
+            $email = $_SESSION['user'];
 
             echo "<p> Welcome $firstName $lastName. </p>";
 

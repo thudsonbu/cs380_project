@@ -11,8 +11,7 @@
  it is up to the user to implement what should happen should an error be returned.
  */
 
-//create function
-function getCustomerLogin($email){
+function getAdminLogin($user, $pass){
     
     // allow MySQLi error reporting and Exception handling
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
@@ -33,8 +32,9 @@ function getCustomerLogin($email){
         
         try {
             
-            $query = mysqli_prepare($con, "SELECT * FROM customers WHERE email=? AND email IS NOT NULL AND email != ''");
-            mysqli_stmt_bind_param($query, "s", $email);
+            $query = mysqli_prepare($con, "SELECT * FROM administrators WHERE username=?  AND password=? ");
+            mysqli_stmt_bind_param($query, "ss", $user, $pass);
+            
             mysqli_stmt_execute($query);
             $result = mysqli_stmt_get_result($query);
             
