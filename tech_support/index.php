@@ -130,14 +130,11 @@ if (isset($_SESSION['email'])){
             Please Select your login type.
         </div>
     </div>
-    
-<br> <br>
 
     <div class='homeButtonContainer'>
         <a href='userAuth/adminLogin.php' class='squishyButton'><i class="fas fa-book"></i>Admin</a>
         <a href='userAuth/techLogin.php' class='squishyButton' ><i class="fas fa-wrench"></i>Technician</a>
         <a href='userAuth/customerLogin.php' class='squishyButton'><i class="fas fa-user"></i>Customer</a>
-        
     </div>
 
 

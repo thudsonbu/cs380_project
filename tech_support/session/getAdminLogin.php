@@ -32,7 +32,7 @@ function getAdminLogin($user, $pass){
         
         try {
             
-            $query = mysqli_prepare($con, "SELECT * FROM administrators WHERE username=?  AND password=? ");
+            $query = mysqli_prepare($con, "SELECT * FROM administrators WHERE username=? AND password=? ");
             mysqli_stmt_bind_param($query, "ss", $user, $pass);
             
             mysqli_stmt_execute($query);

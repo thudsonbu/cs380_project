@@ -1,10 +1,10 @@
 body {
-    /* background: url("../images/MountainBackground.jpg"); */
     background-color: #0058ac;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
 }
 
 i {
@@ -13,8 +13,8 @@ i {
 }
 
 footer {
-    height: 20vh;
-    margin-top: 15.5vh;
+    height: 10vh;
+    align-self: end;
     background-color: #ffffff;
     display: flex;
     align-items: center;
@@ -187,10 +187,10 @@ footer {
         font-size: 2em;
     }
 
-    .squishyButton {
-        font-size: 1.2rem;
-        padding: .8rem .8rem;
-    }
+    /*.squishyButton {*/
+    /*    font-size: 1.2rem;*/
+    /*    padding: .8rem .8rem;*/
+    /*}*/
 
     .jumboTron {
         height: 60vh;
@@ -219,12 +219,6 @@ footer {
 
     .pageSubtitle {
         font-size: 1.5em;
-    }
-
-    .squishyButton {
-        font-size: 1rem;
-        padding: .65rem .65rem;
-
     }
 }
 
@@ -375,7 +369,6 @@ footer {
 }
 
 .homeButtonContainer {
-    margin-top: 50px;
     width: 100%;
     display: flex;
     justify-content: space-around;
