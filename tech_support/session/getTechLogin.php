@@ -32,7 +32,7 @@ function getTechLogin($email, $pass){
         
         try {
             
-            $query = mysqli_prepare($con, "SELECT * FROM technicians WHERE email=?  AND password=? ");
+            $query = mysqli_prepare($con, "SELECT * FROM technicians WHERE email=?  AND password=?");
             mysqli_stmt_bind_param($query, "ss", $email, $pass);
             
             mysqli_stmt_execute($query);

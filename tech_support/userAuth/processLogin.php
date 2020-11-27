@@ -3,7 +3,7 @@
 require '../session/sessionConfig.php';
 require 'validateLogin.php';
 
-//Detemine if the user is an admin
+//Determine if the user is an admin
 if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     
     // Grab User submitted information and assign to session
@@ -12,7 +12,7 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     
     //!!do we want to test the input at all here??
     
-    //Begin authentification of credentials.
+    //Begin authentication of credentials.
     require '../session/getAdminLogin.php';
     $loginResponse = getAdminLogin($_SESSION['user'], $_SESSION['pass']);
     
@@ -30,7 +30,7 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
         header("Location:../homepage.php");
         
     }
-//Detemine if the user is a technician
+//Determine if the user is a technician
 } elseif (!empty($_POST["techEmail"]) & !empty($_POST["techPass"])){
     
     // Grab User submitted information and assign to session
@@ -39,7 +39,7 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     
     //hi tom do we want to test input here?
     
-    //Begin authentification of credentials
+    //Begin authentication of credentials
     require '../session/getTechLogin.php';
     $loginResponse = getTechLogin($_SESSION['user'], $_SESSION['pass']);
 
@@ -58,7 +58,7 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
         header("Location:../technician_manager/index.php");
         
     }
-//Detemine if the user is a customer
+//Determine if the user is a customer
 } elseif (!empty($_POST["custEmail"])){
     
     // Grab User submitted information and assign to session
@@ -66,7 +66,7 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     
     //hi tom do we want to test input here?
     
-    //Begin authentification of crednetials
+    //Begin authentication of credentials
     require '../session/getCustomerLogin.php';
     $loginResponse = getCustomerLogin($_SESSION['user']);
 
@@ -87,10 +87,5 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
         
     }
 }
-
-
-
-
-
 
 ?>    
