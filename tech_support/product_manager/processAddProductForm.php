@@ -17,10 +17,10 @@ if (! empty($_POST['code']) or
     // test name for HTML characters to avoid HTML Injection
     require ("../model/testInput.php");
 
-    $codeHtmlInjection = testInput($code);
-    $nameHtmlInjection = testInput($name);
-    $versionHtmlInjection = testInput($version);
-    $releaseDateHtmlInjection = testInput($releaseDate);
+    $codeHtmlInjection = testHTMLInj($code);
+    $nameHtmlInjection = testHTMLInj($name);
+    $versionHtmlInjection = testHTMLInj($version);
+    $releaseDateHtmlInjection = testHTMLInj($releaseDate);
 
     if($codeHtmlInjection or $nameHtmlInjection or $versionHtmlInjection or $releaseDateHtmlInjection){
         $err = 'HTML INJECTION DETECTED';

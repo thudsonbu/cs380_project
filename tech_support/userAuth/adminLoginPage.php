@@ -2,16 +2,11 @@
 
 require '../session/sessionConfig.php';
 
-
-
 require '../view/header.php';
 
 makeHeader('Admin Index');
 
-
-
 //RESPONSIVE NAVBAR
-
 require '../view/nav.php';
 
 //PAGE TITLE
@@ -25,7 +20,7 @@ echo "
 //PAGE CONTENT
 echo "
 <div class='sectionContainer'>
-    <form action='processLogin.php' method='post' class='searchForm'>
+    <form action='processAdminLogin.php' method='post' class='loginForm'>
         <div class='sectionTitleContainer'>
             <div class='sectionTitle'>
                 Admin Login
@@ -49,9 +44,13 @@ echo "
         <div class='inputBar'>
             <div class='input'>
                 <input placeholder='Username' type='text' name='adminUser'>
+            </div>
+            <div class='input'>
                 <input placeholder='Password' type='password' name='adminPass'>
             </div>
-            <button type='submit' class='button blue'>Login</button>
+            <div class='input'>
+                <button type='submit' class='button blue'>Login</button>
+            </div>
         </div>
     </form>
 </div>";

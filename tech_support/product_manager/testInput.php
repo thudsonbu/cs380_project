@@ -1,7 +1,7 @@
 <?php
 // test user input to help prevent HTML injection
 
-function test_input($data){
+function testHTMLInj($data){
     $original = $data;
     
     /*convert 5 predefined characters into HTML values.

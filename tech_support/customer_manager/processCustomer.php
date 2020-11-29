@@ -25,7 +25,7 @@ $errorUrl = "Location: customerFormPage.php?customerID=$customerID";
 foreach($_POST as $key => $value) {
 
     // test for html injection
-    if(testInput($value)){
+    if(testHTMLInj($value)){
 
         header("Location: customerFormPage.php?error=HTML INJECTION DETECTED");
 

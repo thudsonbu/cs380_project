@@ -86,9 +86,9 @@ require 'session/sessionConfig.php';
             </ul>
 
 <?php
-if (isset($_SESSION['email'])){
+if (isset($_SESSION['logged_in'])){
 
-    $firstname = $_SESSION['first'];
+    $firstname = $_SESSION['user'];
 
     echo "
         <div class='nav-item dropdown ml-auto'>
@@ -109,7 +109,7 @@ if (isset($_SESSION['email'])){
             </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item greenText' href='userAuth/adminLogin.php'>Admin Login</a>
-                <a class='dropdown-item greenText' href='userAuth/techLogin.php'>Tech Login</a>
+                <a class='dropdown-item greenText' href='userAuth/techLoginPage.php'>Tech Login</a>
                 <a class='dropdown-item greenText' href='userAuth/customerLogin.php'>Customer Login</a>
             </div>
         </div>
@@ -132,9 +132,9 @@ if (isset($_SESSION['email'])){
     </div>
 
     <div class='homeButtonContainer'>
-        <a href='userAuth/adminLogin.php' class='squishyButton'><i class="fas fa-book"></i>Admin</a>
-        <a href='userAuth/techLogin.php' class='squishyButton' ><i class="fas fa-wrench"></i>Technician</a>
-        <a href='userAuth/customerLogin.php' class='squishyButton'><i class="fas fa-user"></i>Customer</a>
+        <a href='userAuth/adminLoginPage.php' class='squishyButton'><i class="fas fa-book"></i>Admin</a>
+        <a href='userAuth/techLoginPage.php' class='squishyButton' ><i class="fas fa-wrench"></i>Technician</a>
+        <a href='userAuth/customerLoginPage.php' class='squishyButton'><i class="fas fa-user"></i>Customer</a>
     </div>
 
 

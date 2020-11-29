@@ -16,7 +16,7 @@ $pass = $_POST['pass'];
 // test name for HTML characters to avoid HTML Injection
 foreach($_POST as $key => $value) {
     
-    if(testInput($value)){
+    if(testHTMLInj($value)){
         
         $htmlInjection = true;
     }

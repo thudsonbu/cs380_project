@@ -95,7 +95,7 @@ makeHeader('Customer Index');
             $lastName = $_GET['lastname'];
 
             // TEST FOR HTML INJECTION
-            $isHtmlInjection = testInput($lastName);
+            $isHtmlInjection = testHTMLInj($lastName);
 
             if($isHtmlInjection){
 

@@ -11,7 +11,9 @@ if (isset($_SESSION['email'])){
         
         //redirect to logout.php
         header("Location: ../index.php?error='You have been logged out due to inactivity.'");
+        
     } else{ //if we haven't expired:
+        
         $_SESSION['last_activity'] = time(); //this was the moment of last activity.
     }
 } else 

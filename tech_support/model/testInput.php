@@ -2,7 +2,7 @@
     //test user input to help prevent HTML injection
     // returns true if injection found
 
-    function testInput($data){
+    function testHTMLInj($data){
         $original = $data;
         
         /*convert 5 predefined characters into HTML values.		

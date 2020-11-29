@@ -86,14 +86,14 @@ require 'session/sessionConfig.php';
             </ul>
 
 <?php
-if (isset($_SESSION['email'])){
+if ($_SESSION['logged_in']){
 
-    $firstname = $_SESSION['first'];
+    $user = $_SESSION['user'];
 
     echo "
         <div class='nav-item dropdown ml-auto'>
             <a class='nav-link dropdown-toggle greenText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                <i class='fas fa-user top greenText'></i>$firstname
+                <i class='fas fa-user top greenText'></i>$user
             </a>
             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item redText' href='register_product/logout.php'>Logout</a>

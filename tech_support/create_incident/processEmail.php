@@ -5,7 +5,7 @@ $email = $_POST['email'];
 // INCLUDE THE TEST INPUT METHOD
 require "../model/testInput.php";
 // TEST THE INPUT FOR HTML INJECTION (NOT SQL INJECTION)
-$emailInjection = testInput($email);
+$emailInjection = testHTMLInj($email);
 // IF THERE IS HTML INJECTION SEND BACK TO HOME PAGE WITH AN ERROR MESSAGE
 if($emailInjection){
     header("Location: index.php?error=HTML INJECTION DETECTED");

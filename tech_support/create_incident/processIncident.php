@@ -8,8 +8,8 @@ $productCode = $_POST['productCode'];
 // TEST INPUT
 require "../model/testInput.php";
 // TEST INPUT FOR HTML INJECTION
-$titleInjection = testInput($title);
-$descInjection = testInput($description);
+$titleInjection = testHTMLInj($title);
+$descInjection = testHTMLInj($description);
 if($titleInjection || $descInjection){
     header("Location: incidentFormPage.php?error=HTML INJECTION FOUND");
     exit();

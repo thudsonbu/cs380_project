@@ -47,13 +47,13 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     
         if(is_array($line)) {
 
-        $_SESSION["first"] = $line['username'];
+        $_SESSION["user"] = $line['username'];
              
         //establish permission as type admin
         $_SESSION['permission'] = "admin";
         
         //display index page
-        header("Location:../homepage.php");
+        header("Location:../menuPage.php");
     }
     }
     

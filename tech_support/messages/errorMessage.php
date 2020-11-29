@@ -45,7 +45,7 @@ function buttonlessErrorMessage($e) {
     echo "
     <div class='sectionContainer'>
         <div class='errorMessageBox'>
-            <div class='errorMessageTitle errorMessage'>
+            <div class='errorMessageTitle'>
                 $e
             </div>
         </div>

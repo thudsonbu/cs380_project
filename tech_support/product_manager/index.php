@@ -21,8 +21,7 @@
     </div>
 </div>
 
-    <div class='sectionContainer'>
-    
+
     <?php
     // this is used to check if there was a message 
     // the message would be either updated succesfully or reports an error
@@ -47,8 +46,7 @@
     }
     ?>
     
-</div>  
- 
+
     <div class='sectionContainer'>
         <div class='tableContainer'>
             <?php    

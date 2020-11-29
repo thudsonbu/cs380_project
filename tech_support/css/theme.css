@@ -1,4 +1,5 @@
 body {
+    padding-top: 10vh;
     background-color: #0058ac;
     display: flex;
     flex-direction: column;
@@ -41,7 +42,7 @@ footer {
 }
 
 .pageTitleContainer {
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -71,7 +72,7 @@ footer {
     justify-content: center;
     align-items: center;
     width: 96%;
-    margin: 10px;
+    margin: 20px;
 }
 
 .miniSectionContainer {
@@ -373,7 +374,7 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 .message {
@@ -382,13 +383,14 @@ footer {
 
 .errorMessageBox {
     background-color: #fabfbf;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 10px;
     max-width: 90%;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
 }
 
 .errorMessageTitle {
+    color: #a30000;
     font-size: 1.3rem;
     text-align: center;
     padding: 10px;
@@ -409,14 +411,14 @@ footer {
 
 .messageBox {
     background-color: #ffffff;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 10px;
     max-width: 90%;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
 }
 
 .messageTitle {
-    margin: 25px;
+    margin: 15px;
     font-size: 1.3rem;
     text-align: center;
     padding: 10px;
@@ -424,15 +426,15 @@ footer {
 
 .successMessageBox {
     background-color: #b4d787;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 10px;
+    padding: 10px;
     max-width: 90%;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
 }
 
 .successMessageTitle {
     color: #558e16;
-    margin: 20px;
+    margin: 10px;
     font-size: 1.3rem;
     text-align: center;
     padding: 10px;
@@ -456,6 +458,20 @@ footer {
     max-width: 1000px;
 }
 
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    width: 90%;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    max-width: 500px;
+}
+
 .customerSearchTitle {
     font-size: 1.3rem;
     padding: 10px;
@@ -467,13 +483,17 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .input {
-    margin-top:5px;
+    margin-top: 2vh;
+    margin-right: 10px;
     text-transform: uppercase;
     border: none;
-    border-bottom: 2px #444444;
+    display: flex;
+    justify-content: space-between;
 }
 
 .reportFormEntry {
