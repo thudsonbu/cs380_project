@@ -48,11 +48,9 @@ makeHeader('Login');
                 
         require 'dropdown.php';
 
-     
-        
         echo "You are logged in as $email <br><br>";
         
-        echo "<a class='button red' href='logout.php' tite ='Logout'>Logout</a>";
+        echo "<a class='button red' href='logout.php' title='Logout'>Logout</a>";
         
     ?>    
     </div>
