@@ -39,3 +39,16 @@ function customErrorMessage($e) {
     </div>
     ";
 }
+
+function buttonlessErrorMessage($e) {
+
+    echo "
+    <div class='sectionContainer'>
+        <div class='errorMessageBox'>
+            <div class='errorMessageTitle errorMessage'>
+                $e
+            </div>
+        </div>
+    </div>
+    ";
+}

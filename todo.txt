@@ -1,0 +1,10 @@
+1. Refactor process login to seperate files - Tom
+2. Change the adminLogin, customerLogin, and customerLogin to pick up error messages - Tom
+3. Nav bar permissions - Tom
+4. Refactor session config to send to relevant auth page if not auth - Tom
+5. Update navbar login logic - Tom
+    Three options for loging in
+    Icon Changes
+6. Create incident view table (similar to customer index table) that should allow for selecting incident - Trev
+    Table should exclude description
+7. Update incident (updates to create incident from to detect incident data) - Trev

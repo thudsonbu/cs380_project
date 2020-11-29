@@ -11,7 +11,6 @@ if(isset($_SESSION['email'])) {
     makeHeader('Register Index');
     
     
-    
     //RESPONSIVE NAVBAR
     
     require '../view/nav.php';
@@ -32,6 +31,18 @@ if(isset($_SESSION['email'])) {
                 <div class='sectionTitle'>
                     Customer Login
                 </div>
+            </div>
+            <div class='sectionContainer'>
+            ";
+            if (!empty($_GET['error'])) {
+
+                $error = $_GET['error'];
+        
+                require "../messages/errorMessage.php";
+        
+                buttonlessErrorMessage($error);                  
+            }
+            echo "
             </div>
             <div class='sectionTitleContainer'>
                 <p>Please enter your customer email to login.</p>

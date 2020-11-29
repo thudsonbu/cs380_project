@@ -18,11 +18,11 @@ makeHeader('Login');
     </div>
 </div>
 
-    <!-- PAGE CONTENT -->
-    <div class='sectionContainer'>
-        <div class='tableContainer'>
+<!-- PAGE CONTENT -->
+<div class='sectionContainer'>
             
 <?php
+
 echo "
     <div class='sectionTitleContainer'>
         <div class='sectionTitle'>Invalid Login</div>
@@ -33,8 +33,8 @@ message("Sorry, your email is invalid. Enter a valid email.");
     
 ?>    
         
-  </div>
-  <?php
+</div>
+<?php
 
 require '../view/footer.php';
 

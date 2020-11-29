@@ -488,7 +488,6 @@ INSERT INTO incidents VALUES
 (51, 1067, 'LEAGD10', NULL, '2014-07-10', NULL, 'Error when adding new records', 'Received error 340: database exceeds size limit.'), 
 (52, 1066, 'TEAM10', NULL, '2014-07-11', NULL, 'Installation problem', 'Customer states that the setup program failed with code 203 during configuration.');
 
-
 DROP TABLE  IF EXISTS administrators;
 CREATE TABLE administrators (
   username    VARCHAR(40)    NOT NULL     UNIQUE,

@@ -18,9 +18,8 @@ makeHeader('Login');
     </div>
 </div>
 
-    <!-- PAGE CONTENT -->
-    <div class='sectionContainer'>
-        <div class='tableContainer'>
+<!-- PAGE CONTENT -->
+ <div class='sectionContainer'>
             
 <?php
     $result = $out[0];
@@ -35,7 +34,7 @@ makeHeader('Login');
     errorMessage($out[1]); // show an error message box
 ?>    
         
-  </div>
+</div>
 
 <?php
 

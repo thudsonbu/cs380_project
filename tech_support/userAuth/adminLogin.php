@@ -31,6 +31,18 @@ echo "
                 Admin Login
             </div>
         </div>
+        <div class='sectionContainer'>
+            ";
+            if (!empty($_GET['error'])) {
+
+                $error = $_GET['error'];
+        
+                require "../messages/errorMessage.php";
+        
+                buttonlessErrorMessage($error);                  
+            }
+            echo "
+        </div>
         <div class='sectionTitleContainer'>
             <p>Please enter your administrator credentials to login.</p>
         </div>

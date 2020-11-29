@@ -10,17 +10,43 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
     $_SESSION['user'] = $_POST['adminUser'];
     $_SESSION['pass'] = $_POST['adminPass'];
     
-    //!!do we want to test the input at all here??
+    //!!do we want to test the input at all here?
     
     //Begin authentication of credentials.
     require '../session/getAdminLogin.php';
     $loginResponse = getAdminLogin($_SESSION['user'], $_SESSION['pass']);
     
-    //confirm credentials are in database
-    $loginResponse = testLogin($loginResponse);
+    // //confirm credentials are in database
+    // $loginResponse = testLogin($loginResponse);
+
+    // check if database error
+    if($loginResponse[1]){
+
+        session_unset();
+
+        $errorMessage = $loginResponse[1]->getMessage();
+
+        header("Location: adminLogin.php?error=$errorMessage");
+
+    } else if (empty($loginResponse[0])){ // no error but no results returned from customer query
+        
+        session_unset();
     
-    //pull specific information from query
-    $line = mysqli_fetch_array($loginResponse,  MYSQLI_ASSOC);if(is_array($line)) {
+        header("Location: adminLogin.php?error=Invalid Credentials");
+
+    } else {
+        $loginResponse = $loginResponse[0];
+                  
+        // Login time is stored in a session variable
+        $_SESSION['logged_in'] = true; //set you've logged in
+        $_SESSION['last_activity'] = time(); //your last activity was now, having logged in.
+        $_SESSION['expire_time'] = 30; //expire time in seconds
+
+        //pull specific information from query
+        $line = mysqli_fetch_array($loginResponse,  MYSQLI_ASSOC); 
+    
+        if(is_array($line)) {
+
         $_SESSION["first"] = $line['username'];
              
         //establish permission as type admin
@@ -28,8 +54,9 @@ if (!empty($_POST["adminUser"]) and !empty($_POST["adminPass"])) {
         
         //display index page
         header("Location:../homepage.php");
-        
     }
+    }
+    
 //Determine if the user is a technician
 } elseif (!empty($_POST["techEmail"]) & !empty($_POST["techPass"])){
     

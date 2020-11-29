@@ -2,6 +2,11 @@
 <?php 
 // SESSION DETECTION
 require '../session/sessionConfig.php';
+
+if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot access
+
+    header('Location:../userAuth/adminLogin.php?error=Access Denied');
+}
 // MAKE HEADER METHOD
 require '../view/header.php';
 // CREATE HEADER WITH PAGE TITLE
