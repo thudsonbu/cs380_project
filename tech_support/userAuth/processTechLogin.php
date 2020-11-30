@@ -19,11 +19,11 @@ if( !empty($_POST['techUser']) and !empty($_POST['techPass'])) {
     if($loginResponse[1]){ // database error
 
         $errorMessage = $loginResponse[1]->getMessage();
-        header("Location: techLoginPage.php?=$errorMessage");
+        header("Location: techLoginPage.php?error=$errorMessage");
 
     } else if(empty($loginResponse[0])){ // admin was not found
 
-        header("Location:techLoginPage.php?=Invalid Credentials");
+        header("Location:techLoginPage.php?error=Invalid Credentials");
 
     } else { // admin was found
 

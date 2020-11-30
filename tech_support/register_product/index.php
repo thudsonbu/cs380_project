@@ -36,11 +36,13 @@ if(isset($_SESSION['email'])) {
             <div class='sectionTitleContainer'>
                 <p>You must login before you can register a product </p>
             </div>
-            <div class='inputBar'>
+            <div class='inputContainer'>
                 <div class='input'>
-                    <input placeholder='Email' type='text' name='login'>
+                    <input class='inputBox' placeholder='Email' type='text' name='login'>
                 </div>
-                <button type='submit' class='button blue'>Login</button>
+                <div class='input'> 
+                    <button type='submit' class='button blue'>Login</button>
+                </div>
             </div>
         </form>
     </div>";

@@ -374,7 +374,7 @@ footer {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 10vh;
+    margin-top: 13vh;
 }
 
 .message {
@@ -446,27 +446,24 @@ footer {
 
 .searchForm {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px;
     background-color: #ffffff;
-    width: 90%;
     border-radius: 10px;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
-    max-width: 1000px;
+    max-width: 500px;
 }
 
 .loginForm {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     padding: 20px;
+    margin: 20px;
     background-color: #ffffff;
-    width: 90%;
     border-radius: 10px;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
     max-width: 500px;
@@ -477,7 +474,7 @@ footer {
     padding: 10px;
 }
 
-.inputBar {
+.inputContainer {
     font-size: .8rem;
     padding: 10px;
     display: flex;
@@ -493,7 +490,18 @@ footer {
     text-transform: uppercase;
     border: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.inputBox {
+    width: 80%;
+}
+
+@media (max-width: 600px) {
+
+    .input {
+        width: 100%;
+    }
 }
 
 .reportFormEntry {

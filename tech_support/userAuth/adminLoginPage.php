@@ -41,12 +41,12 @@ echo "
         <div class='sectionTitleContainer'>
             <p>Please enter your administrator credentials to login.</p>
         </div>
-        <div class='inputBar'>
+        <div class='inputContainer'>
             <div class='input'>
-                <input placeholder='Username' type='text' name='adminUser'>
+                <input class='inputBox' placeholder='Username' type='text' name='adminUser'>
             </div>
             <div class='input'>
-                <input placeholder='Password' type='password' name='adminPass'>
+                <input class='inputBox' placeholder='Password' type='password' name='adminPass'>
             </div>
             <div class='input'>
                 <button type='submit' class='button blue'>Login</button>

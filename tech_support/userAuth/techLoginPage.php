@@ -39,14 +39,14 @@ if (!empty($_GET['error'])) {
 echo "
         </div>
         <div class='sectionTitleContainer'>
-            <p>Please enter your administrator credentials to login.</p>
+            <p>Enter your email and password to login.</p>
         </div>
-        <div class='inputBar'>
+        <div class='inputContainer'>
             <div class='input'>
-                <input placeholder='Username' type='text' name='techUser'>
+                <input class='inputBox' placeholder='Email' type='text' name='techUser'>
             </div>
             <div class='input'>
-                <input placeholder='Password' type='password' name='techPass'>
+                <input class='inputBox' placeholder='Password' type='password' name='techPass'>
             </div>
             <div class='input'>
                 <button type='submit' class='button blue'>Login</button>

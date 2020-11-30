@@ -2,63 +2,56 @@
 
 require '../session/sessionConfig.php';
 
-if(isset($_SESSION['email'])) {
-    header("Location:account.php");
-} else {
-    
-    require '../view/header.php';
-    
-    makeHeader('Register Index');
-    
-    
-    //RESPONSIVE NAVBAR
-    
-    require '../view/nav.php';
-    
-    //PAGE TITLE
-    echo "
-    <div class='pageTitleContainer'>
-        <div class='pageTitle'>
-            Register
-        </div>
-    </div>";
-    
-    //PAGE CONTENT
-    echo "
-    <div class='sectionContainer'>
-        <form action='processLogin.php' method='post' class='searchForm'>
-            <div class='sectionTitleContainer'>
-                <div class='sectionTitle'>
-                    Customer Login
-                </div>
-            </div>
-            <div class='sectionContainer'>
-            ";
-            if (!empty($_GET['error'])) {
+require '../view/header.php';
 
-                $error = $_GET['error'];
-        
-                require "../messages/errorMessage.php";
-        
-                buttonlessErrorMessage($error);                  
-            }
-            echo "
+makeHeader('Tech Login');
+
+//RESPONSIVE NAVBAR
+require '../view/nav.php';
+
+//PAGE TITLE
+echo "
+<div class='pageTitleContainer'>
+    <div class='pageTitle'>
+        Customer
+    </div>
+</div>";
+
+//PAGE CONTENT
+echo "
+<div class='sectionContainer'>
+    <form action='processCustomerLogin.php' method='post' class='loginForm'>
+        <div class='sectionTitleContainer'>
+            <div class='sectionTitle'>
+                Customer Login
             </div>
-            <div class='sectionTitleContainer'>
-                <p>Please enter your customer email to login.</p>
+        </div>
+        <div class='sectionContainer'>
+            ";
+if (!empty($_GET['error'])) {
+
+    $error = $_GET['error'];
+
+    require "../messages/errorMessage.php";
+
+    buttonlessErrorMessage($error);
+}
+echo "
+        </div>
+        <div class='sectionTitleContainer'>
+            <p>Enter your email to login.</p>
+        </div>
+        <div class='inputContainer'>
+            <div class='input'>
+                <input class='inputBox' placeholder='Username' type='text' name='customerUser'>
             </div>
-            <div class='inputBar'>
-                <div class='input'>
-                    <input placeholder='Email' type='text' name='custEmail'>
-                </div>
+            <div class='input'>
                 <button type='submit' class='button blue'>Login</button>
             </div>
-        </form>
-    </div>";
-    
-    
-    require '../view/footer.php';
-    
-}
-?>
+        </div>
+    </form>
+</div>";
+
+
+require '../view/footer.php';
 

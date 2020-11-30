@@ -19,11 +19,11 @@ if( !empty($_POST['adminUser']) and !empty($_POST['adminPass'])) {
     if($loginResponse[1]){ // database error
 
         $errorMessage = $loginResponse[1]->getMessage();
-        header("Location: adminLoginPage.php?=$errorMessage");
+        header("Location: adminLoginPage.php?error=$errorMessage");
 
     } else if(empty($loginResponse[0])){ // admin was not found
 
-        header("Location:adminLoginPage.php?=Invalid Credentials");
+        header("Location:adminLoginPage.php?error=Invalid Credentials");
 
     } else { // admin was found
 
