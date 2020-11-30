@@ -81,6 +81,8 @@ require 'session/sessionConfig.php';
                     <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                         <a class='dropdown-item' href='./customer_manager/index.php'>View Customer</a>
                         <a class='dropdown-item' href='./create_incident/index.php'>Create Incident</a>
+                        <a class='dropdown-item' href='./update_incident/index.php'>Assign Incident</a>
+                        
                     </div>
                 </li>
             </ul>
@@ -135,6 +137,8 @@ if ($_SESSION['logged_in']){
         <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
         <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-cash-register"></i>Register Product</a>
         <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-radiation-alt"></i>Create Incident</a>
+        <a href='./update_incident/index.php' class='squishyButton'><i class="fas fa-edit"></i>Update Incident</a>
+        
     </div>
 
 

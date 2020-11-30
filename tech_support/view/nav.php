@@ -40,6 +40,7 @@ echo "
                 <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                     <a class='dropdown-item' href='../customer_manager/index.php'>View Customer</a>
                     <a class='dropdown-item' href='../create_incident/index.php'>Create Incident</a>
+                    <a class='dropdown-item' href='../update_incident/index.php'>Assign Incident</a>
                 </div>
             </li>
         </ul>
