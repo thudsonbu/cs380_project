@@ -375,6 +375,7 @@ footer {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 13vh;
+    max-width: 1000px;
 }
 
 .message {
@@ -494,13 +495,13 @@ footer {
 }
 
 .inputBox {
-    width: 80%;
+    width: 100%;
 }
 
 @media (max-width: 600px) {
 
     .input {
-        width: 100%;
+        width: 80%;
     }
 }
 

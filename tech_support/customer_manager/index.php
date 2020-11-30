@@ -5,7 +5,7 @@ require '../session/sessionConfig.php';
 
 if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot access
 
-    header('Location:../userAuth/adminLogin.php?error=Access Denied');
+    header('Location:../userAuth/adminLoginPage.php?error=Access Denied');
 }
 // MAKE HEADER METHOD
 require '../view/header.php';
