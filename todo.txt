@@ -1,7 +1,6 @@
-1. Refactor process login to seperate files - Tom
-2. Change the adminLogin, customerLogin, and customerLogin to pick up error messages - Tom
 3. Nav bar permissions - Tom
 4. Refactor session config to send to relevant auth page if not auth - Tom
 5. Update navbar login logic - Tom
     Three options for loging in
     Icon Changes
+6. redirect logged in people to home instead of login

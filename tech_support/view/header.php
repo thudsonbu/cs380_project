@@ -29,11 +29,20 @@ function makeHeader($pageTitle) {
     
         <!-- Custom Styles -->
         <link rel='stylesheet' href='../css/customer.css'>
+
+        <!-- Nav Styles -->
+        <link rel='stylesheet' href='./css/theme.css'>
+    
+        <!-- Custom Styles -->
+        <link rel='stylesheet' href='./css/table.css'>
+    
+        <!-- Custom Styles -->
+        <link rel='stylesheet' href='./css/customer.css'>
     
         <!-- EMBEDED STYLES ARE PLACED IN PARTIALS/CREATENAMETABLE -->
         
         <!-- My Icon -->
-        <link rel='icon' href='./images/avatar.png'>
+        <link rel='icon' href='../images/avatar.png'>
     
         <title>SportsPro $pageTitle</title>
     </head>
