@@ -27,15 +27,22 @@ if( !empty($_POST['techUser']) and !empty($_POST['techPass'])) {
 
     } else { // admin was found
 
+        //get ID from query
+        $line = mysqli_fetch_array($loginResponse[0],  MYSQLI_ASSOC);
+        $techID = $line['techID'];
+        
+        
         $_SESSION['user'] = $username;
         $_SESSION['pass'] = $password;
+        $_SESSION['techID'] = $techID;
+
         // general variables
         $_SESSION['logged_in'] = true; // you have logged in
         $_SESSION['last_activity'] = time(); // sets the time of last activity to now
         $_SESSION['expire_time'] = 30; // expire time
         // session permission level
         $_SESSION['permission'] = 'tech';
-        header("Location: ../menuPage.php");
+        header("Location: ../tech_incident/index.php");
     }
 
 } else { // reject due to user or pass missing

@@ -112,7 +112,7 @@ if (isset($_SESSION['logged_in'])){
             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item greenText' href='userAuth/adminLogin.php'>Admin Login</a>
                 <a class='dropdown-item greenText' href='userAuth/techLoginPage.php'>Tech Login</a>
-                <a class='dropdown-item greenText' href='userAuth/customerLogin.php'>Customer Login</a>
+                <a class='dropdown-item greenText' href='userAuth/customerLoginPage.php'>Customer Login</a>
             </div>
         </div>
     ";

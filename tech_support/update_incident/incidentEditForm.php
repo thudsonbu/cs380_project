@@ -121,6 +121,26 @@ if($incidentResponse[1]){ // error in incident query
             </div>
             ";
             
+        } else if($field_name == 'customerID' || $field_name == 'productCode' || $field_name == 'dateOpened') {
+            
+            // add row to form
+            echo "
+            <div class='formEntry'>
+                <div class='fieldName'>$field_name</div>
+                <input class='fieldInput' type='text' name='$field_name' value='$field_value' readonly>
+            ";
+            
+            if(isset($_GET[$field_name . 'Error'])){
+                
+                $errorMessage = $_GET[$field_name . 'Error'];
+                
+                echo "<div class='fieldError'>$errorMessage</div>";
+            }
+            
+            echo "
+            </div>
+            ";
+            
         } else {
             
             // add row to form
