@@ -5,6 +5,11 @@
     require '../session/sessionConfig.php';
     require '../view/header.php';
     makeHeader('Products Index');
+
+    if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot access
+
+        header('Location:../userAuth/adminLoginPage.php?error=Access Denied');
+    }
 ?>
 
     <!-- Responsive Nabvar -->
