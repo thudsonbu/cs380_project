@@ -3,7 +3,7 @@ require '../session/sessionConfig.php';
 require '../model/postRegister.php';
 
 $date = date("Y-m-d");
-$customerID = $_SESSION['id'];
+$customerID = $_SESSION['customerID'];
 $productCode = $_POST['productCode'];
 
 

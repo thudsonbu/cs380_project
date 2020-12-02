@@ -24,9 +24,20 @@ if( !empty($_POST['customerUser'])) {
 
         header("Location:customerLoginPage.php?error=Invalid Credentials");
 
-    } else { // admin was found
+    } else { // customer was found
 
+        //Assign fields to session
+        $line = mysqli_fetch_array($loginResponse[0],  MYSQLI_ASSOC);
+        $customerID = $line['customerID'];
+        $customerFirst = $line['firstName'];
+        $customerLast = $line['lastName'];
+        
         $_SESSION['user'] = $username;
+        $_SESSION['customerID'] = $customerID;
+        $_SESSION['firstName'] = $customerFirst;
+        $_SESSION['lastName'] = $customerLast;
+        
+        
         // general variables
         $_SESSION['logged_in'] = true; // you have logged in
         $_SESSION['last_activity'] = time(); // sets the time of last activity to now

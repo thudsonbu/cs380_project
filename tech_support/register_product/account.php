@@ -1,9 +1,5 @@
 <?php
 
-require '../session/sessionConfig.php';
-
-require '../session/expiredSession.php';
-
 require '../view/header.php';
 
 makeHeader('Login');
@@ -38,8 +34,8 @@ makeHeader('Login');
         // Create a form for each record in result set.
         // Print field values for each record
 
-            $firstName = $_SESSION["first"];
-            $lastName = $_SESSION["last"];
+            $firstName = $_SESSION["firstName"];
+            $lastName = $_SESSION["lastName"];
             $email = $_SESSION['user'];
 
             echo "<p> Welcome $firstName $lastName. </p>";
@@ -50,7 +46,7 @@ makeHeader('Login');
 
         echo "You are logged in as $email <br><br>";
         
-        echo "<a class='button red' href='logout.php' title='Logout'>Logout</a>";
+        echo "<a class='button red' href='../userAuth/logout.php' title='Logout'>Logout</a>";
         
     ?>    
     </div>
