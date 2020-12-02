@@ -30,7 +30,7 @@ echo "
             if($loggedIn){
                 echo "
                 <li class='navbar-nav navItem'>
-                    <a class='nav-link link' href='./index.php'>Menu</a>
+                    <a class='nav-link link' href='./manuPage.php'>Menu</a>
                 </li>
                 ";
             }
