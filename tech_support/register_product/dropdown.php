@@ -6,6 +6,7 @@ $dropDown = "SELECT productCode, name FROM products;";
 
 $out = get($dropDown);
 
+
 if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
 
     require "../messages/errorMessage.php";

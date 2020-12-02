@@ -1,5 +1,6 @@
 <?php
 
+
 require '../session/sessionConfig.php'; // required for session to be accessed (set variables)
 require '../model/testInput.php'; // test_input() used to test for html injection
 require '../session/getCustomerLogin.php'; // getAdminLogin() used as prepared statement function

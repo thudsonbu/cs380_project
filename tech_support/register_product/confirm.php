@@ -8,6 +8,7 @@ require '../view/header.php';
 
 makeHeader('Register Index');
 
+
 ?>
 
 <!-- RESPONSIVE NAVBAR -->

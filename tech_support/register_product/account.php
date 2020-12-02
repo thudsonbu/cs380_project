@@ -4,6 +4,7 @@ require '../view/header.php';
 
 makeHeader('Login');
 
+
 ?>
 
 <!-- RESPONSIVE NAVBAR -->

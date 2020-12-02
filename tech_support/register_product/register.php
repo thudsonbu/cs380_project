@@ -10,8 +10,6 @@ $productCode = $_POST['productCode'];
 $registerResponse = postRegister($customerID, $productCode, $date);
 
 
-
-
 if($registerResponse[1]){ // error in customer query
     
     $error = $registerResponse[1]->getMessage();

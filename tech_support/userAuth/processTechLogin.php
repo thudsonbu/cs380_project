@@ -4,6 +4,7 @@ require '../session/sessionConfig.php'; // required for session to be accessed (
 require '../model/testInput.php'; // test_input() used to test for html injection
 require '../session/getTechLogin.php'; // getAdminLogin() used as prepared statement function
 
+
 // check if all credentials were filled in
 if( !empty($_POST['techUser']) and !empty($_POST['techPass'])) {
     // grab user info
