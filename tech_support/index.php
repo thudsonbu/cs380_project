@@ -114,7 +114,7 @@ if (isset($_SESSION['logged_in'])){
             <a class='nav-link dropdown-toggle greenText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                 <i class='fas fa-user top greenText'></i>$user
             </a>
-            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+            <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item redText' href='./userAuth/logout.php'>Loggout</a>
             </div>
         </div>
@@ -126,7 +126,7 @@ if (isset($_SESSION['logged_in'])){
             <a class='nav-link dropdown-toggle greyText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                 <i class='fas fa-user top greyText'></i>
             </a>
-            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+            <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item greenText' href='userAuth/adminLoginPage.php'>Admin Login</a>
                 <a class='dropdown-item greenText' href='userAuth/techLoginPage.php'>Tech Login</a>
                 <a class='dropdown-item greenText' href='userAuth/customerLoginPage.php'>Customer Login</a>
