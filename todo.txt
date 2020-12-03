@@ -1,1 +1,10 @@
-1. Fix styling on select incident page
+BUGS
+1. Register Product Fix
+    1.1 Add ids to session when auth
+    1.2 Change register product page index to search product
+
+TODO
+1. Add new customer form
+    1.1 add new button to table
+    1.2 use form from edit customer w/o filled in variables
+2. Add pop up box when deleting ____
