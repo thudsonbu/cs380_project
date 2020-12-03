@@ -46,7 +46,6 @@ makeHeader('Update Incident Index');
    			
    			?>
 		</form>
-	
     </div>
 </div>
 

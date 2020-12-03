@@ -46,7 +46,7 @@ if($inputError){
         $dateClosed,
         $title,
         $description
-        );
+    );
     
     // if succesful return to index and say it worked
     

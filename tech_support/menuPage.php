@@ -140,9 +140,7 @@ echo "
     </div>
 </nav>
 
-";
 
-?>
 
     <!-- PAGE TITLE -->
     <div class='pageTitleContainer'>
@@ -155,15 +153,31 @@ echo "
     </div>
 
     
-    <div class='homeButtonContainer'>
-        <a href='./customer_manager/index.php' class='squishyButton'><i class="fas fa-users"></i>Customers</a>
-        <a href='./product_manager/index.php' class='squishyButton' ><i class="fas fa-shopping-cart"></i>Products</a>
-        <a href='./technician_manager/index.php' class='squishyButton'><i class="fas fa-wrench"></i>Technicians</a>
-        <a href='./register_product/index.php' class='squishyButton'><i class="fas fa-cash-register"></i>Register Product</a>
-        <a href='./create_incident/index.php' class='squishyButton'><i class="fas fa-radiation-alt"></i>Create Incident</a>
-        <a href='./update_incident/index.php' class='squishyButton'><i class="fas fa-edit"></i>Update Incident</a>
-    </div>
+    <div class='homeButtonContainer'>";
 
-<?php
+        if($permission === 'admin'){
+            echo "
+            <a href='./customer_manager/index.php' class='squishyButton'><i class='fas fa-users'></i>Customers</a>
+            <a href='./product_manager/index.php' class='squishyButton' ><i class='fas fa-shopping-cart'></i>Products</a>
+            <a href='./technician_manager/index.php' class='squishyButton'><i class='fas fa-wrench'></i>Technicians</a>
+            <a href='./update_incident/index.php' class='squishyButton'><i class='fas fa-radiation-alt'></i>Incidents</a>
+            ";
+        }
+
+        if($permission === 'customer'){
+            echo "
+            <a href='./register_product/index.php' class='squishyButton'><i class='fas fa-cash-register'></i>Register Product</a>
+            ";
+        }       
+        
+        if($permission === 'tech'){
+            echo "
+            <a href='./tech_incident/index.php' class='squishyButton'><i class='fas fa-cash-register'></i>My Incidents</a>
+            ";
+        }
+    echo "
+    </div>
+    ";
+
 require './view/footer.php';
 ?>
