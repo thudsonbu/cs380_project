@@ -18,6 +18,8 @@ if($out[1]) {
 } else {
     
     $result = $out[0];
+
+    $user = $_SESSION['user'];
     
     // loop over for headers
     echo "<table class = 'peopleTable'>
@@ -25,6 +27,8 @@ if($out[1]) {
     <div class='sectionTitleContainer'>
         <div class='sectionTitle'>Open Incidents</div>
     </div>
+
+    <div class='sectionTitleContainer'>You are logged in as $user.</div>
         
     <tr class= 'tableHeaderRow'>";
     

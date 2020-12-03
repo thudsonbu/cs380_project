@@ -67,8 +67,6 @@ makeHeader('Tech Incident');
             
             require "techIncidentTable.php";
             
-            echo "You are logged in as ". $_SESSION['user'] ."";
-            
          
             ?>
         </div>
