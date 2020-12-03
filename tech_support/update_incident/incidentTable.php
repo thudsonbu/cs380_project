@@ -54,9 +54,11 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
         
         echo "<th class='tableHeader'> $fieldName </th>";
     }
-    
-    // select column of table header
-    echo "<th class='tableHeader'> Select </th>";
+
+    echo "
+    <th class='tableHeader'>
+        <a class='button green' href='../create_incident/index.php'>New</a>
+    </th>";
     
     // end table header
     echo "</tr>";

@@ -35,8 +35,9 @@ if($out[1]) {
         echo "<th class='tableHeader'> $field->name</th>  ";
     }
     
-    echo" <th class='tableHeader'>
-        <a class='buttone blue' href='index.php'>Refresh Incidents</a>
+    echo" 
+    <th class='tableHeader'>
+        <a class='button blue' href='index.php'>Refresh</a>
     </th>";
     
     echo "</tr>";
@@ -54,7 +55,7 @@ if($out[1]) {
         }
         
         // put close button on form
-        echo "<td><a class='button green' href='close.php?closeID=".$line['incidentID']."'>Close Incident</a></td>"  ;
+        echo "<td class='tableData'><a class='button green' href='close.php?closeID=".$line['incidentID']."'>Close</a></td>"  ;
     } // end while
     
     echo "</table>";
