@@ -24,30 +24,34 @@ makeHeader('Update Incident Index');
     <div class='pageTitle'>
         Display Incidents
     </div>
-    <div class='customerSearchBar'>
+<div>
+
+<div class='sectionContainer'>
+    <div class='filterForm'>
         <form action="" method="post">
-   			<?php 
-   			
-   			//if this is the pages first time being rendered, set the filter variable to empty
-   			if (!isset($_POST['filter'])) {
-   			    $_POST['filter'] = NULL;
-   			}
-   			
-   			//display the desired buttons depending on the user navigation of the filtering options
-   			if ($_POST['filter'] != 'full' & !empty($_POST['filter'])) {
-   			    echo "<button class='button blue' type='submit' name='filter' value='full'>All</button>";
-   			}
-   			if ($_POST['filter'] != 'open' || empty($_POST['filter'])) {
-   			    echo "<button class ='button blue' class = 'peopleTable' type='submit' name='filter' value='open'>Open</button>";
-   			} 
-   			if ($_POST['filter'] != 'unassigned' || empty($_POST['filter'])) {
-   			    echo "<button class='button blue' type='submit' name='filter' value='unassigned'>Unassigned</button>";   
-   			} 
-   			
-   			?>
-		</form>
+            <?php 
+            
+            //if this is the pages first time being rendered, set the filter variable to empty
+            if (!isset($_POST['filter'])) {
+                $_POST['filter'] = NULL;
+            }
+            
+            //display the desired buttons depending on the user navigation of the filtering options
+            if ($_POST['filter'] != 'full' & !empty($_POST['filter'])) {
+                echo "<button class='button blue' type='submit' name='filter' value='full'>All</button>";
+            }
+            if ($_POST['filter'] != 'open' || empty($_POST['filter'])) {
+                echo "<button class ='button blue' class = 'peopleTable' type='submit' name='filter' value='open'>Open</button>";
+            } 
+            if ($_POST['filter'] != 'unassigned' || empty($_POST['filter'])) {
+                echo "<button class='button blue' type='submit' name='filter' value='unassigned'>Unassigned</button>";   
+            } 
+            
+            ?>
+        </form>
     </div>
 </div>
+
 
 <!-- PAGE CONTENT -->
 <!-- MESSAGE BOXES -->

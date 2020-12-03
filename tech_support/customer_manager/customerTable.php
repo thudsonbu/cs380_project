@@ -78,7 +78,7 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
         }
 
         // add select button
-        echo "<td class='tableData'><a href='$selectLink'><button class='button blue'>Select</button></a></td>";
+        echo "<td class='tableData'><a href='$selectLink'><button class='button blue'>Edit</button></a></td>";
     
         // close table row
         echo "</tr>";
