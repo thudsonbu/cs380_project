@@ -25,22 +25,23 @@ echo "
             <div class='sectionTitle'>
                 Customer Login
             </div>
-        </div>
-        <div class='sectionContainer'>
-            ";
-if (!empty($_GET['error'])) {
+        </div>";
+        
+        if (!empty($_GET['error'])) {
 
-    $error = $_GET['error'];
+            $error = $_GET['error'];
 
-    require "../messages/errorMessage.php";
-
-    buttonlessErrorMessage($error);
-}
-echo "
-        </div>
-        <div class='sectionTitleContainer'>
-            <p>Enter your email to login.</p>
-        </div>
+            echo "<div class='sectionContainer'>";
+    
+            require "../messages/errorMessage.php";
+    
+            buttonlessErrorMessage($error);          
+            
+            echo "</div>";
+        }
+        
+        echo "
+        <p class='loginFormDescription'>Enter your email to login.</p>
         <div class='inputContainer'>
             <div class='input'>
                 <input class='inputBox' placeholder='Username' type='text' name='customerUser'>

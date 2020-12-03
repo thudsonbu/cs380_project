@@ -25,22 +25,23 @@ echo "
             <div class='sectionTitle'>
                 Admin Login
             </div>
-        </div>
-        <div class='sectionContainer'>
-            ";
-            if (!empty($_GET['error'])) {
+        </div>";
 
-                $error = $_GET['error'];
+        if (!empty($_GET['error'])) {
+
+            $error = $_GET['error'];
+
+            echo "<div class='sectionContainer'>";
+    
+            require "../messages/errorMessage.php";
+    
+            buttonlessErrorMessage($error);          
+            
+            echo "</div>";
+        }
         
-                require "../messages/errorMessage.php";
-        
-                buttonlessErrorMessage($error);                  
-            }
-            echo "
-        </div>
-        <div class='sectionTitleContainer'>
-            <p>Please enter your administrator credentials to login.</p>
-        </div>
+        echo "
+        <p class='loginFormDescription'>Please enter your administrator credentials to login.</p>
         <div class='inputContainer'>
             <div class='input'>
                 <input class='inputBox' placeholder='Username' type='text' name='adminUser'>

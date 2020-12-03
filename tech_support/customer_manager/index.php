@@ -37,42 +37,40 @@ makeHeader('Customer Index');
 </div>
 
 <!-- MESSAGE BOXES -->
-<div class='sectionContainer'>
-    <!-- FORM FOR SEARCHING CUSTOMERS -->
-    <?php
-    // this is used to check if there was a message 
-    // the message would be either updated succesfully or reports an error
-    if (!empty($_GET['success'])) {
+<!-- FORM FOR SEARCHING CUSTOMERS -->
+<?php
+// this is used to check if there was a message 
+// the message would be either updated succesfully or reports an error
+if (!empty($_GET['success'])) {
 
-        $success = $_GET['success'];
+    $success = $_GET['success'];
 
-        require "../messages/successMessage.php";
+    require "../messages/successMessage.php";
 
-        successMessage($success);
-                        
-    }
+    successMessage($success);
+                    
+}
 
-    if (!empty($_GET['message'])) {
+if (!empty($_GET['message'])) {
 
-        $message = $_GET['message'];
+    $message = $_GET['message'];
 
-        require "../messages/message.php";
+    require "../messages/message.php";
 
-        message($message);
-                        
-    }
+    message($message);
+                    
+}
 
-    if (!empty($_GET['error'])) {
+if (!empty($_GET['error'])) {
 
-        $error = $_GET['error'];
+    $error = $_GET['error'];
 
-        require "../messages/errorMessage.php";
+    require "../messages/errorMessage.php";
 
-        customErrorMessage($error);
-                        
-    }
-    ?>
-</div>
+    customErrorMessage($error);
+                    
+}
+?>
 
 <!-- CUSTOMER TABLE -->
 <div class='sectionContainer'>

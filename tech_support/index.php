@@ -147,7 +147,6 @@ echo "
             SportsPro
         </div>
         <div class='pageSubtitle'>
-            Smart sports management software.<br>
             Please Select your login type.
         </div>
     </div>
