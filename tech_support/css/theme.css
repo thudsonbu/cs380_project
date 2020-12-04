@@ -439,16 +439,16 @@ footer {
 
 .searchBar {
     font-size: .8rem;
-    padding: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    padding-bottom: 10px;
 }
 
 .searchBarInput {
-    margin-top:5px;
+    margin-top:6px;
     text-transform: uppercase;
     border: none;
     border-bottom: 2px #444444;

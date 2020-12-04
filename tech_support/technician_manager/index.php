@@ -27,45 +27,41 @@ if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot 
     </div>
 </div>
 
-    <!-- PAGE CONTENT -->
-    
-  <div class='sectionContainer'>
+<!-- PAGE CONTENT -->
+<?php
+// this is used to check if there was a message 
+// the message would be either updated succesfully or reports an error
+if (!empty($_GET['message'])) {
 
-    <?php
-    // this is used to check if there was a message 
-    // the message would be either updated succesfully or reports an error
-    if (!empty($_GET['message'])) {
+    $message = $_GET['message'];
 
-        $message = $_GET['message'];
+    require "../messages/successMessage.php";
 
-        require "../messages/successMessage.php";
+    successMessage($message);
+                    
+}
 
-        successMessage($message);
-                        
-    }
+if (!empty($_GET['error'])) {
 
-    if (!empty($_GET['error'])) {
+    $error = $_GET['error'];
 
-        $error = $_GET['error'];
+    require "../messages/errorMessage.php";
 
-        require "../messages/errorMessage.php";
-
-        customErrorMessage($error);
-                        
-    }
-    ?>
-</div>  
+    customErrorMessage($error);
+                    
+}
+?>
  
-    <div class='sectionContainer'>
-        <div class='tableContainer'>
-            <?php
-            $query = "SELECT * FROM technicians;";
-            
-            require "technicianTable.php";
-           
-            ?>
-        </div>
+<div class='sectionContainer'>
+    <div class='tableContainer'>
+        <?php
+        $query = "SELECT * FROM technicians;";
+        
+        require "technicianTable.php";
+        
+        ?>
     </div>
+</div>
    
 <?php
 
