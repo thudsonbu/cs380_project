@@ -423,6 +423,7 @@ footer {
 
 .searchForm {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
@@ -430,8 +431,24 @@ footer {
     background-color: #ffffff;
     border-radius: 5px;
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
+    width: 90%;
     max-width: 1000px;
     margin: 0 3vh 0 3vh ;
+}
+
+.searchBar {
+    font-size: .8rem;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.searchBarInput {
+    margin-top:5px;
+    text-transform: uppercase;
+    border: none;
+    border-bottom: 2px #444444;
 }
 
 .filterForm {

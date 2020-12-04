@@ -65,13 +65,11 @@ echo "
             <div class='sectionTitleContainer'>
                 <p>Search for customer with email.</p>
             </div>
-            <div class='inputContainer'>
-                <div class='input'>
+            <div class='searchBar'>
+                <div class='searchBarInput'>
                     <input class='inputBox' placeholder='Email' type='text' name='email' required>
                 </div>
-                <div class='input'>
                 <button type='submit' class='button blue'>Search</button>
-                </div>
             </div>
         </form>
     </div>";
