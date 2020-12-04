@@ -442,6 +442,8 @@ footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
 
 .searchBarInput {
@@ -449,20 +451,6 @@ footer {
     text-transform: uppercase;
     border: none;
     border-bottom: 2px #444444;
-}
-
-.filterForm {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 15px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
-    max-width: 300px;
-    margin-top: 8vh;
-    font-size: 1rem;
 }
 
 .loginForm {

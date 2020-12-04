@@ -20,15 +20,28 @@ makeHeader('Update Incident Index');
 ?>
 
 <!-- PAGE TITLE -->
-<div class='pageTitleContainer '>
+<div class='pageTitleContainer'>
     <div class='pageTitle'>
         Display Incidents
     </div>
 <div>
 
 <div class='sectionContainer'>
-    <div class='filterForm'>
+</div>
+
+<div class='sectionContainer'>
+    <div class='searchForm'>
         <form action="" method="post">
+            <div class='sectionTitleContainer'>
+                <div class='sectionTitle'>
+                    Filter Incidents
+                </div>
+            </div>
+            <div class='sectionTitleContainer'>
+                <p>Filter incidents by open or unassaigned.</p>
+            </div>
+            <div class='searchBar'>
+
             <?php 
             
             //if this is the pages first time being rendered, set the filter variable to empty
@@ -48,6 +61,7 @@ makeHeader('Update Incident Index');
             } 
             
             ?>
+            </div>
         </form>
     </div>
 </div>
