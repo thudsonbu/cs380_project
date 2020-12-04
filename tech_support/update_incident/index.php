@@ -24,9 +24,6 @@ makeHeader('Update Incident Index');
     <div class='pageTitle'>
         Display Incidents
     </div>
-<div>
-
-<div class='sectionContainer'>
 </div>
 
 <div class='sectionContainer'>
