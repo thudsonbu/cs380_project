@@ -1,9 +1,15 @@
 <?php
 
+require '../session/sessionConfig.php'; // required for session to be accessed (set variables)
+
+if($_SESSION['permission'] != 'customer'){ // if they are not an admin they cannot access
+
+    header('Location:../userAuth/adminLoginPage.php?error=Access Denied');
+}
+
 require '../view/header.php';
 
 makeHeader('Login');
-
 
 ?>
 

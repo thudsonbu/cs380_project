@@ -1,10 +1,14 @@
 BUGS
-1. Register Product Fix
-    1.1 Add ids to session when auth
-    1.2 Change register product page index to search product
+1. Register script does not check if there was nothing entered.
 
 TODO
 1. Add new customer form
     1.1 add new button to table
     1.2 use form from edit customer w/o filled in variables
 2. Add pop up box when deleting ____
+
+STYLE ISSUES
+- Incidents page footer is wonky
+- Customer search form on incidents page is weird
+- Hover over login is blue
+- Current icon is no bueno
