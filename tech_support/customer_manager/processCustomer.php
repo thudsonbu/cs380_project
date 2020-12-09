@@ -1,8 +1,14 @@
 <?php
 
 // put/post query
+require "../model/customer/newCustomer.php";
 require "../model/customer/postCustomer.php";
 require "../model/testInput.php";
+
+// passes through program using placeholder customerID ;p
+if (isset($_POST['new'] )) {
+    $_POST['customerID'] = 0;  
+}
 
 $customerID = $_POST['customerID'];
 $firstName = $_POST['firstName'];
@@ -18,8 +24,6 @@ $password = $_POST['password'];
 
 $inputError = false;
 $errorUrl = "Location: customerFormPage.php?customerID=$customerID";
-
-
 
 // for each value in _post append to query and test for html injection
 foreach($_POST as $key => $value) {
@@ -88,19 +92,35 @@ if($inputError){
 
 } else {
 
-    $out = postCustomer(
-        $firstName,
-        $lastName,
-        $address,
-        $city,
-        $state,
-        $postalCode,
-        $countryCode,
-        $phone,
-        $email,
-        $password,
-        $customerID
-    );
+    if ($_POST['customerID'] == 0){
+        $out = newCustomer(
+            $firstName,
+            $lastName,
+            $address,
+            $city,
+            $state,
+            $postalCode,
+            $countryCode,
+            $phone,
+            $email,
+            $password
+            ); 
+    }
+    else {
+        $out = postCustomer(
+            $firstName,
+            $lastName,
+            $address,
+            $city,
+            $state,
+            $postalCode,
+            $countryCode,
+            $phone,
+            $email,
+            $password,
+            $customerID
+        );
+    }
 
     // if succesful return to index and say it worked
 
