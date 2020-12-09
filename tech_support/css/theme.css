@@ -58,6 +58,7 @@ footer {
     padding: .7rem;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
 }
 
 
@@ -309,6 +310,7 @@ footer {
 .sectionTitle {
     width: 100%;
     font-size: 1.7rem;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-align: center;
@@ -470,6 +472,7 @@ footer {
 .loginFormDescription {
     text-align: center;
     padding: 0 20px 0 20px;
+    color: #979797;
 }
 
 .customerSearchTitle {
@@ -479,22 +482,37 @@ footer {
 
 .inputContainer {
     font-size: .8rem;
-    padding: 8px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .input {
     margin-top: 2vh;
     margin-right: 10px;
     text-transform: uppercase;
-    border: none;
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.inputBox {
+    border: none;
+    border-bottom: 1px solid #5e5e5e;
+    background-color: #e9e9e9;
+    height: 30px;
+    width: 85%;
+    padding: 5px;
+    margin-left: 5%;
+}
+
+.loginButton {
+    width: 86%;
+    height: 30px;
+    margin-left: 6%;
 }
 
 .reportFormEntry {

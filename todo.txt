@@ -8,7 +8,5 @@ TODO
 2. Add pop up box when deleting ____
 
 STYLE ISSUES
-- Incidents page footer is wonky
-- Customer search form on incidents page is weird
 - Hover over login is blue
 - Current icon is no bueno

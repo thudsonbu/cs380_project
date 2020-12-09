@@ -50,7 +50,7 @@ echo "
                 <input class='inputBox' placeholder='Password' type='password' name='adminPass'>
             </div>
             <div class='input'>
-                <button type='submit' class='button blue'>Login</button>
+                <button type='submit' class='button blue loginButton'>Login</button>
             </div>
         </div>
     </form>

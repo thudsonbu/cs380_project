@@ -47,7 +47,7 @@ echo "
                 <input class='inputBox' placeholder='Username' type='text' name='customerUser'>
             </div>
             <div class='input'>
-                <button type='submit' class='button blue'>Login</button>
+                <button type='submit' class='button blue loginButton'>Login</button>
             </div>
         </div>
     </form>
