@@ -6,8 +6,13 @@ require "../model/customer/postCustomer.php";
 require "../model/testInput.php";
 
 // passes through program using placeholder customerID ;p
-if (isset($_POST['new'] )) {
-    $_POST['customerID'] = 0;  
+if (!isset($_POST['customerID'] )) { // set error url for new customer page
+
+    $_POST['customerID'] = "";  
+    $errorUrl = "Location: newCustomerPage.php?";
+
+} else { // set error url for edit customer page
+    $errorUrl = "Location: customerFormPage.php?customerID=$customerID";
 }
 
 $customerID = $_POST['customerID'];
@@ -23,7 +28,6 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 
 $inputError = false;
-$errorUrl = "Location: customerFormPage.php?customerID=$customerID";
 
 // for each value in _post append to query and test for html injection
 foreach($_POST as $key => $value) {
@@ -31,8 +35,15 @@ foreach($_POST as $key => $value) {
     // test for html injection
     if(testHTMLInj($value)){
 
-        header("Location: customerFormPage.php?error=HTML INJECTION DETECTED");
+        if ($_POST['customerID'] === "") { // if it came from new customer form
 
+            header("Location: newCustomerPage.php?error=HTML INJECTION DETECTED");
+             
+        } else { // if it came from edit customer page
+
+            header("Location: customerFormPage.php?error=HTML INJECTION DETECTED");
+        }
+    
         exit();
     }
 
@@ -92,7 +103,8 @@ if($inputError){
 
 } else {
 
-    if ($_POST['customerID'] == 0){
+    if ($_POST['customerID'] === ""){ // new customer used if came from new cust form
+
         $out = newCustomer(
             $firstName,
             $lastName,
@@ -104,9 +116,10 @@ if($inputError){
             $phone,
             $email,
             $password
-            ); 
+        ); 
     }
-    else {
+    else { // post customer used if came from edit customer form
+
         $out = postCustomer(
             $firstName,
             $lastName,

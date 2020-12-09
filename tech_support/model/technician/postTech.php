@@ -39,7 +39,7 @@ function postTech(
                 
                 $query = mysqli_prepare($con, "INSERT INTO technicians 
                                                     (firstName, lastName, email, phone, password) 
-                                                    VALUES('$first', '$last', '$email', '$phone', '$pass')");
+                                                    VALUES(?, ?, ?, ?, ?)");
                 
                 mysqli_stmt_bind_param($query, "sssss",
                     $first,
@@ -47,7 +47,7 @@ function postTech(
                     $email,
                     $phone,
                     $pass
-                    );
+                );
                 
                 mysqli_stmt_execute($query);
                 $result = mysqli_stmt_get_result($query);

@@ -35,16 +35,16 @@ function newCustomer(
             $query = mysqli_prepare($con, "INSERT INTO Customers
                 (firstName, lastName, address, city, state, 
                  postalCode, countryCode, phone, email, password) VALUES (
-                    firstName=?,
-                    lastName=?,
-                    address=?,
-                    city=?,
-                    state=?,
-                    postalCode=?,
-                    countryCode=?,
-                    phone=?,
-                    email=?,
-                    password=?
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?,
+                    ?
                 )
         ");
             mysqli_stmt_bind_param($query, "ssssssssss",
@@ -57,8 +57,8 @@ function newCustomer(
                 $countryCode,
                 $phone,
                 $email,
-                $pass,
-                );
+                $pass
+            );
             mysqli_stmt_execute($query);
             $result = mysqli_stmt_get_result($query);
             
