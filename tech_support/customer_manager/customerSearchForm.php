@@ -8,7 +8,7 @@ echo "
                Add a New Customer
             </div>
         </div>
-        <a href='newCustomerPage.php' class='button blue'>Add Customer</a>
+        <a href='newCustomerPage.php' class='button green'>Add Customer</a>
     </div>
 </div>
 ";
