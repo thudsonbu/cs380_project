@@ -35,7 +35,7 @@ function postRegister(
             
             try {
                 
-                $query = mysqli_prepare($con, "REPLACE INTO registrations VALUES ('$customerID', '$productCode', '$date')");
+                $query = mysqli_prepare($con, "REPLACE INTO registrations VALUES (?, ?, ?)");
                 mysqli_stmt_bind_param($query, "sss",
                     $customerID,
                     $productCode,
