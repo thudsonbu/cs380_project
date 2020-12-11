@@ -33,7 +33,7 @@
         let logout = confirm('Are you sure you want to logout?');
 
         if(logout){
-            window.location.href = '../tech_support/userAuth/logout.php';
+            window.location.href = '../userAuth/logout.php';
         } else {
             alert('You are still logged in!');
         }
