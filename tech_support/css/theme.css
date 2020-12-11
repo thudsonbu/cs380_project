@@ -98,7 +98,7 @@ footer {
 }
 
 .username {
-    font-size: large;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 700;
     margin: 0px 5px 0px 5px;
@@ -121,13 +121,13 @@ footer {
     font-size: .8rem;
 }
 
-.dropdown-toggle::after {
-    top: 7px;
-}
-
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    font-size: 1.3rem;
 }
 
 .navbar {
@@ -139,8 +139,20 @@ footer {
     padding-top: 5px;
 }
 
+.topReverse {
+    margin-top: -5px;
+}
+
 .greenText {
     color: #83bb43;
+}
+
+.greenTextLink {
+    color: #83bb43;
+}
+
+.greenTextLink:hover {
+    color: #467f00;
 }
 
 .whiteText {
@@ -151,12 +163,20 @@ footer {
     color: #979797;
 }
 
+.greyTextLink {
+    color: #979797;
+}
+
+.greyTextLink:hover {
+    color: #5e5e5e;
+}
+
 .redText {
     color: #eb3d30;
 }
 
 .redText:hover {
-    color: #eb3d30;
+    color: #98271f;
 }
 
 /* MAIN BUTTON STYLES */

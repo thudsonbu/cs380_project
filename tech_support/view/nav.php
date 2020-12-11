@@ -107,12 +107,12 @@ if (isset($_SESSION['logged_in'])){
     $user = $_SESSION['user'];
 
     echo "
-        <p class='greenText username ml-auto'>$user</p>
-        <div class='nav-item dropdown'>
-            <a class='nav-link dropdown-toggle greenText' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                <i class='fas fa-user top greenText'></i>
+        <div class='nav-item dropdown ml-auto row top'>
+            <a class='nav-link dropdown-toggle greenTextLink row' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top topReverse greenTextLink'></i>
+                <p class='username topReverse'>$user</p>
             </a>
-            <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
+            <div class='dropdown-menu dropdown-menu-right top' aria-labelledby='navbarDropdownMenuLink'>
                 <a class='dropdown-item redText' onclick='confirmLogout()'>Logout</a>
             </div>
         </div>
@@ -122,13 +122,13 @@ if (isset($_SESSION['logged_in'])){
 
     echo "
         <div class='nav-item dropdown ml-auto'>
-            <a class='nav-link dropdown-toggle greyText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                <i class='fas fa-user top greyText'></i>
+            <a class='nav-link dropdown-toggle greyTextLink' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greyTextLink'></i>
             </a>
             <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item greenText' href='../userAuth/adminLoginPage.php'>Admin Login</a>
-                <a class='dropdown-item greenText' href='../userAuth/techLoginPage.php'>Tech Login</a>
-                <a class='dropdown-item greenText' href='../userAuth/customerLoginPage.php'>Customer Login</a>
+                <a class='dropdown-item greenText' href='userAuth/adminLoginPage.php'>Admin Login</a>
+                <a class='dropdown-item greenText' href='userAuth/techLoginPage.php'>Tech Login</a>
+                <a class='dropdown-item greenText' href='userAuth/customerLoginPage.php'>Customer Login</a>
             </div>
         </div>
     ";
