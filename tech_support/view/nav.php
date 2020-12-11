@@ -126,9 +126,9 @@ if (isset($_SESSION['logged_in'])){
                 <i class='fas fa-user top greyTextLink'></i>
             </a>
             <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item greenText' href='userAuth/adminLoginPage.php'>Admin Login</a>
-                <a class='dropdown-item greenText' href='userAuth/techLoginPage.php'>Tech Login</a>
-                <a class='dropdown-item greenText' href='userAuth/customerLoginPage.php'>Customer Login</a>
+                <a class='dropdown-item greenText' href='../userAuth/adminLoginPage.php'>Admin Login</a>
+                <a class='dropdown-item greenText' href='../userAuth/techLoginPage.php'>Tech Login</a>
+                <a class='dropdown-item greenText' href='../userAuth/customerLoginPage.php'>Customer Login</a>
             </div>
         </div>
     ";
