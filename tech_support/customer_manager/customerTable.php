@@ -24,12 +24,6 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     <div class='tableContainer'>
     <table class='peopleTable'>";
 
-    echo "
-    <div class='sectionTitleContainer'>
-        <div class='sectionTitle'>Customers</div>
-    </div>
-    ";
-
     echo "<tr class='tableHeaderRow'>";
 
     // create table header
