@@ -107,14 +107,16 @@ if (isset($_SESSION['logged_in'])){
     $user = $_SESSION['user'];
 
     echo "
-        <div class='nav-item dropdown ml-auto'>
-            <a class='nav-link dropdown-toggle greenText' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                <i class='fas fa-user top greenText'></i>$user
+        <p class='greenText username ml-auto'>$user</p>
+        <div class='nav-item dropdown'>
+            <a class='nav-link dropdown-toggle greenText' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <i class='fas fa-user top greenText'></i>
             </a>
             <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item redText' href='../userAuth/logout.php'>Logout</a>
+                <a class='dropdown-item redText' onclick='confirmLogout()'>Logout</a>
             </div>
         </div>
+        
     ";
 } else {
 

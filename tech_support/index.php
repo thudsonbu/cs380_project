@@ -115,7 +115,7 @@ if (isset($_SESSION['logged_in'])){
                 <i class='fas fa-user top greenText'></i>$user
             </a>
             <div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>
-                <a class='dropdown-item redText' href='./userAuth/logout.php'>Loggout</a>
+                <a class='dropdown-item redText' onclick='confirmLogout()'>Loggout</a>
             </div>
         </div>
     ";

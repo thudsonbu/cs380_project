@@ -56,9 +56,11 @@ if($out[1]) {
 
             echo "<td class='tableData'>", "$value", "</td>";
         }
+
+        $techID = $line['techID'];
         
         // put delete button on form
-        echo "<td><a class='button red' href='delete.php?did=".$line['techID']."'>Delete</a></td>"  ;
+        echo "<td><a class='button red' style='color: white' name='$techID' onclick='deleteTech()'>Delete</a></td>";
     } // end while
 
     echo "</table>";

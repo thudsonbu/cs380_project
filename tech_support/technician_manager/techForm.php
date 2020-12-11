@@ -13,6 +13,8 @@ $email = $_POST['email'];
 $phone = $_POST['phone'];
 $pass = $_POST['pass'];
 
+$htmlInjection = false;
+
 // test name for HTML characters to avoid HTML Injection
 foreach($_POST as $key => $value) {
     
@@ -24,7 +26,7 @@ foreach($_POST as $key => $value) {
 
 if(!$htmlInjection) {
     
-    // // remove the , from the query with substr (this causes sytax error)
+    // // remove the , from the query with substr (this causes syntax error)
     // $query = substr($query, 0, -2) . "WHERE customerID='$customerID'";
     
     $out = postTech(
@@ -33,7 +35,7 @@ if(!$htmlInjection) {
         $email,
         $phone,
         $pass
-        );
+    );
     
     if(!empty($out[1])){ // IF ERROR ( queryHandler returns array with result and boolean error )
         
@@ -55,7 +57,7 @@ if(!$htmlInjection) {
     }
 } else {
     
-    header("Location: customerFormPage.php?error='HTML INJECTION DETECTED");
+    header("Location: newTech.php?error=HTML INJECTION DETECTED");
 }
 
 

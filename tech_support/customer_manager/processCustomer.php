@@ -12,10 +12,11 @@ if (!isset($_POST['customerID'] )) { // set error url for new customer page
     $errorUrl = "Location: newCustomerPage.php?";
 
 } else { // set error url for edit customer page
+
+    $customerID = $_POST['customerID'];
     $errorUrl = "Location: customerFormPage.php?customerID=$customerID";
 }
 
-$customerID = $_POST['customerID'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $address = $_POST['address'];

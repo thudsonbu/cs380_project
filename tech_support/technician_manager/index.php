@@ -1,17 +1,17 @@
 
 <?php
 
-require '../session/sessionConfig.php';
-require '../session/expiredSession.php';
+    require '../session/sessionConfig.php';
+    require '../session/expiredSession.php';
 
-require '../view/header.php';
+    require '../view/header.php';
 
-makeHeader('Technician Index');
+    makeHeader('Technician Index');
 
-if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot access
+    if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot access
 
-    header('Location:../userAuth/adminLoginPage.php?error=Access Denied');
-}
+        header('Location:../userAuth/adminLoginPage.php?error=Access Denied');
+    }
 
 ?>
 
@@ -29,17 +29,17 @@ if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot 
 
 <!-- PAGE CONTENT -->
 <?php
-// this is used to check if there was a message 
-// the message would be either updated succesfully or reports an error
-if (!empty($_GET['message'])) {
+    // this is used to check if there was a message
+    // the message would be either updated successfully or reports an error
+    if (!empty($_GET['message'])) {
 
-    $message = $_GET['message'];
+        $message = $_GET['message'];
 
-    require "../messages/successMessage.php";
+        require "../messages/successMessage.php";
 
-    successMessage($message);
-                    
-}
+        successMessage($message);
+
+    }
 
 if (!empty($_GET['error'])) {
 
@@ -56,9 +56,7 @@ if (!empty($_GET['error'])) {
     <div class='tableContainer'>
         <?php
         $query = "SELECT * FROM technicians;";
-        
         require "technicianTable.php";
-        
         ?>
     </div>
 </div>

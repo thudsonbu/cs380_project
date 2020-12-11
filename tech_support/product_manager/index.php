@@ -15,7 +15,7 @@
     }
 ?>
 
-<!-- Responsive Nabvar -->
+<!-- Responsive Navbar -->
 
 <?php
     require '../view/nav.php';
@@ -29,9 +29,9 @@
 </div>
 
 
-    <?php
+<?php
     // this is used to check if there was a message 
-    // the message would be either updated succesfully or reports an error
+    // the message would be either updated successfully or reports an error
     if (!empty($_GET['message'])) {
 
         $message = $_GET['message'];
@@ -57,7 +57,6 @@
     <div class='sectionContainer'>
         <div class='tableContainer'>
             <?php    
-            // Test SQL query relevant to the products table
             $query = "SELECT * FROM products;";
             require "productTable.php";        
             ?>

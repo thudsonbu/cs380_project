@@ -138,7 +138,7 @@ echo "
     </div>
 
     <div class='formEntry'>
-        <div class='fieldName'>Phone</div>
+        <div class='fieldName'>Phone (XXX) XXX-XXXX</div>
         <input class='fieldInput' type='text' name='phone' required>";
 
     if(isset($_GET['phoneError'])){

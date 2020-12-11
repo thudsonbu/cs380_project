@@ -26,6 +26,20 @@ if($_SESSION['permission'] != 'admin'){ // if they are not an admin they cannot 
     </div>
 </div>
 
+<?php
+
+if(isset($_GET['error'])){
+
+    $error = $_GET['error'];
+
+    require "../messages/errorMessage.php";
+
+    customErrorMessage($error);
+
+}
+
+?>
+
     <div class='sectionContainer'>
         <form action="techForm.php" class='form' method="post">
             <div class='sectionTitleContainer'>

@@ -97,8 +97,15 @@ footer {
     height: 30px;
 }
 
+.username {
+    font-size: large;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0px 5px 0px 5px;
+}
+
 .link {
-    color: #444444;;
+    color: #444444;
 }
 
 .linkContainer {
@@ -113,6 +120,16 @@ footer {
     margin: 0px 5px 0px 5px;
     font-size: .8rem;
 }
+
+.dropdown-toggle::after {
+    top: 7px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
 .navbar {
     box-shadow: 0 5px 5px -1px rgba(0,0,0,.2);
     margin-bottom: 50px;
@@ -126,11 +143,19 @@ footer {
     color: #83bb43;
 }
 
+.whiteText {
+    color: #ffffff;
+}
+
 .greyText {
     color: #979797;
 }
 
 .redText {
+    color: #eb3d30;
+}
+
+.redText:hover {
     color: #eb3d30;
 }
 

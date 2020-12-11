@@ -5,7 +5,7 @@ require "../model/getHandler.php";
 
 $out = get($query);
 
-// if there waas an error report the error
+// if there was an error report the error
 if($out[1]) {
     
     require "../messages/errorMessage.php";
@@ -15,9 +15,11 @@ if($out[1]) {
 } else if(empty($out[0])) { // no results were returned
     
     echo "<p class='message'>No Results Found</p>";
-    echo "<th class='tableHeader'>
-        <a class='button green' href='addProduct.php'>Add Product</a>
-        </th>";
+    echo "
+        <th class='tableHeader'>
+            <a class='button green' href='addProduct.php'>Add Product</a>
+        </th>
+    ";
     
 } else {
     
@@ -30,7 +32,7 @@ if($out[1]) {
         <div class='sectionTitle'>Products</div>
     </div>
         
-    <tr class= 'tableHeaderRow'>";
+    <tr class='tableHeaderRow'>";
 
     $fields = mysqli_fetch_fields($result);
   
@@ -56,9 +58,11 @@ if($out[1]) {
             
             echo "<td class='tableData'>", "$value", "</td>";
         }
-        
+
+        $productID = $line['productCode'];
+
         // put delete button on form
-        echo "<td><a class='button red' href='delete.php?dProd=".$line['productCode']."'>Delete</a></td>"  ;
+        echo "<td><a class='button red' style='color: white' name='$productID' onclick='deleteProduct()'>Delete</a></td>";
     } // end while
     
     echo "</table>";
@@ -66,4 +70,6 @@ if($out[1]) {
 }
 
 ?>
+
+
      
