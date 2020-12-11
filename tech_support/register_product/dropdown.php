@@ -27,19 +27,19 @@ if($out[1]){ // IF ERROR ( query returns array with result and boolean error )
     
     echo "<form method='POST' action='register.php'>";
     
-    echo "<select name='productCode'>";
-    while ($row = mysqli_fetch_array($final, MYSQLI_ASSOC)) {
-        echo "<option value='" . $row['productCode'] . "'>" . $row['name'] . "</option>";
-    }
-    echo "</select>";
-    
-    echo "<div class='sectionTitleContainer'>";
-    
+    echo "<div class='searchBar'>
+            <div class='searchBarInput'>
+                <select name='productCode'>";
+        while ($row = mysqli_fetch_array($final, MYSQLI_ASSOC)) {
+            echo " <option value='" . $row['productCode'] . "'>" . $row['name'] . "</option>";
+        }
+    echo "    </select>
+            </div>";
 
-    echo"<input class='button green' type='submit' value='Register' name='register'>
+
+    echo"    <button class='button green' type='submit' value='Register' name='register'>Register</button>
+            </div>
         </form>";
-    
-    echo "</div>";
     
   
 }

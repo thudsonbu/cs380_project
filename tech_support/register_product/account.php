@@ -45,15 +45,16 @@ makeHeader('Login');
             $lastName = $_SESSION["lastName"];
             $email = $_SESSION['user'];
 
-            echo "<p> Welcome $firstName $lastName. </p>";
-
             echo "</div>";
                 
         require 'dropdown.php';
 
-        echo "You are logged in as $email <br><br>";
-        
-        echo "<a class='button red' style='color: #ffffff' onclick='confirmLogout()' title='Logout'>Logout</a>";
+        echo "  
+        <div class='sectionContainer'>
+            <p>You are logged in as $email</p>
+            <a class='button red' style='color: #ffffff; font-size: .8rem;' onclick='confirmLogout()' title='Logout'>Logout</a>
+        </div>      
+        ";
         
     ?>    
     </div>
