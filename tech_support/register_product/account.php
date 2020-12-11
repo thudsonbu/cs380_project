@@ -53,7 +53,7 @@ makeHeader('Login');
 
         echo "You are logged in as $email <br><br>";
         
-        echo "<a class='button red' href='../userAuth/logout.php' title='Logout'>Logout</a>";
+        echo "<a class='button red' onclick='confirmLogout()' title='Logout'>Logout</a>";
         
     ?>    
     </div>

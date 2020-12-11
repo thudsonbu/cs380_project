@@ -159,8 +159,6 @@ echo "
     </div>
 
 
-?>
-
 <footer class='footer'>
     <div class='footerCopyright'>
         &#169; SportPro Technologies 2020
