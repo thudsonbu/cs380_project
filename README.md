@@ -1,4 +1,4 @@
-# Sport Pro
+# Sports Pro
 Sports pro is a sports software company management app using the LAMP stack. The app allows you to manage customers, technicians, and products and
 is a great example of synchronous database functions with PHP and MySQL. It also features a good example of permission levels, prepared statements,
 and error handling in php.
